@@ -143,7 +143,11 @@
     "large-pool-heat-pumps": "For large pools",
     "ladders": "Ladders & handrails",
     "showers": "Solar showers",
-    "liners": "Liners"
+    "liners": "Liners",
+    "up-to-5m": "Up to 5 m",
+    "5-7m": "5 to 7 m",
+    "7-9m": "7 to 9 m",
+    "over-9m": "Over 9 m"
   },
   "products": {
     "title": "Products",

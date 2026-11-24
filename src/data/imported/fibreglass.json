@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "santoryna",
+    "name": "Santoryna",
+    "length": 7.9,
+    "width": 3.2,
+    "depth": 1.55,
+    "weight": 600,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Santoryna to jeden z większych basenów z pięknymi rzymskimi schodami. Maksymalne wykorzystanie powierzchni do pływania, wypustka na skimmer i dodatkowe miejsca do siedzenia to walory tego basenu.",
+    "sourceUrl": "https://baslux.pl/santoryna-7-9m-x-3-2m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/santoryna/1.webp",
+        "width": 1490,
+        "height": 1057,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "ikaria",
+    "name": "Ikaria",
+    "length": 7.4,
+    "width": 3.15,
+    "depth": 1.5,
+    "weight": 580,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Ikaria z antypoślizgowymi schodkami i bardzo oryginalnym kształcie i dodatkowymi miejscami do siedzenia.",
+    "sourceUrl": "https://baslux.pl/ikaria-7-4m-x-3-15m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/ikaria/1.webp",
+        "width": 1644,
+        "height": 1098,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "madagaskar",
+    "name": "Madagaskar",
+    "length": 6,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 460,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Komfortowy basen, podwójny zestaw stopni umożliwia wchodzenie oraz opuszczenie basenu w bezpieczny sposób. Wypustki na końcach pozwalają na ukrycie w nich skimmera.",
+    "sourceUrl": "https://baslux.pl/madagaskar-6-x-31-x-15/",
+    "images": [
+      {
+        "src": "/products/fibreglass/madagaskar/1.webp",
+        "width": 1019,
+        "height": 660,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "delos",
+    "name": "Delos",
+    "length": 4.8,
+    "width": 2.5,
+    "depth": 1.2,
+    "weight": 210,
+    "shapePl": "owal",
+    "descriptionPl": "Owalny oraz kompaktowy basen do zamontowania w ogrodzie bądź w domu. Schody boczne minimalistyczne umożliwiające maksymalną przestrzeń do pływania.",
+    "sourceUrl": "https://baslux.pl/delos-4-8m-x-2-5m-x-1-2m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/delos/1.webp",
+        "width": 866,
+        "height": 736,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "filus-ii",
+    "name": "Filuś Ii",
+    "length": 2.95,
+    "width": 2.95,
+    "depth": 1,
+    "weight": 200,
+    "shapePl": "okrągły",
+    "descriptionPl": "Basen przeznaczony dla dzieci i nie tylko. Małe stopnie oraz kompaktowy rozmiar pozwala na instalację niecki nawet na najmniejszej działce czy w pomieszczeniu.",
+    "sourceUrl": "https://baslux.pl/filus-ii-2-95m-x-1m/",
+    "images": []
+  },
+  {
+    "slug": "filus-i",
+    "name": "Filuś I",
+    "length": 2.3,
+    "width": 2.3,
+    "depth": 0.8,
+    "weight": 130,
+    "shapePl": "okrągły",
+    "descriptionPl": "Mały basen stworzony dla potrzeb małych użytkowników. Jeden stopień pozwalający na maksymalne wykorzystanie przestrzeni w basenie. Niewielka głębokość zapewnia bezpieczeństwo użytkowania. Jako jeden z niewielu basenów Baslux nie musi być wkopany całkowicie w ziemię.",
+    "sourceUrl": "https://baslux.pl/filus-i-2-3m-x-0-8m/",
+    "images": []
+  },
+  {
+    "slug": "majorka-xl",
+    "name": "Majorka Xl",
+    "length": 8.4,
+    "width": 3.6,
+    "depth": 1.5,
+    "weight": 900,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen Majorka XL to doskonała propozycja dla osób ceniących sobie komfort, trwałość i estetykę. Jego elegancki, prostokątny kształt sprawia, że idealnie komponuje się w każdym ogrodzie, zarówno w nowoczesnej, jak i klasycznej aranżacji. To rozwiązanie przeznaczone dla rodzin, miłośników relaksu oraz wszystkich, którzy marzą o prywatnej strefie wodnej tuż przy swoim domu.",
+    "sourceUrl": "https://baslux.pl/basen-majorka-xl-840-m-x-360-m-x-150-m/",
+    "images": []
+  },
+  {
+    "slug": "majorka",
+    "name": "Majorka",
+    "length": 8,
+    "width": 3.2,
+    "depth": 1.3,
+    "weight": 600,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen Majorka to doskonała propozycja dla osób ceniących sobie komfort, trwałość i estetykę. Jego elegancki, prostokątny kształt sprawia, że idealnie komponuje się w każdym ogrodzie, zarówno w nowoczesnej, jak i klasycznej aranżacji. To rozwiązanie przeznaczone dla rodzin, miłośników relaksu oraz wszystkich, którzy marzą o prywatnej strefie wodnej tuż przy swoim domu.",
+    "sourceUrl": "https://baslux.pl/basen-majorka-800-m-x-320-m-x-130-m/",
+    "images": []
+  },
+  {
+    "slug": "barbados",
+    "name": "Barbados",
+    "length": 5,
+    "width": 2.8,
+    "depth": 1.35,
+    "weight": 330,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Niewielki, przydomowy basen, stosunkowo płytki z wąskimi stopniami pokrytymi opatentowaną strukturą antypoślizgową. Miejsca siedzące w rogach oraz wąskie schody umożliwiają pełny wypoczynek. Niewielki kształt będzie się idealnie komponować z niewielkim ogrodem.",
+    "sourceUrl": "https://baslux.pl/barbados-5m-x-2-8m-x-1-35m/",
+    "images": []
+  }
+]
