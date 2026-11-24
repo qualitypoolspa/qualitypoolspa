@@ -6,6 +6,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const links = [
     { to: "/products", label: dict.nav.products },
+    { to: "/gallery", label: dict.nav.gallery },
     { to: "/about", label: dict.nav.about },
     { to: "/contact", label: dict.nav.contact },
   ];

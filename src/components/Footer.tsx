@@ -22,6 +22,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           <p className="eyebrow !text-white/60">{dict.footer.explore}</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href={href(lang, "/products")} className="hover:text-white">{dict.nav.products}</Link></li>
+            <li><Link href={href(lang, "/gallery")} className="hover:text-white">{dict.nav.gallery}</Link></li>
             <li><Link href={href(lang, "/about")} className="hover:text-white">{dict.nav.about}</Link></li>
             <li><Link href={href(lang, "/contact")} className="hover:text-white">{dict.nav.contact}</Link></li>
           </ul>

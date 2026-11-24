@@ -12,6 +12,7 @@ npm run build
 - `src/config/site.ts` (+ `.env.example`): email, WhatsApp number, phone, locations.
 - `src/data/categories.ts`: categories (priority ones: pool covers, spas, saunas).
 - `src/data/products.ts`: products (current ones are samples; replace with real data).
+- `src/data/gallery.ts`: gallery photos (add the image to `public/gallery/` and an entry here).
 - `src/i18n/`: languages. Live: English. Planned: es, sv, fr, de, ru.
   To add a language: copy `dictionaries/en.json`, translate, register it in
   `dictionaries.ts`, add it to `locales` in `config.ts`, and add translations to products' `Localized` fields.

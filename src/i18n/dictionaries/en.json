@@ -5,6 +5,7 @@
   },
   "nav": {
     "products": "Products",
+    "gallery": "Gallery",
     "about": "About us",
     "contact": "Contact",
     "getQuote": "Get a quote",
@@ -21,9 +22,18 @@
     "badgeSub": "Design, quality and adaptation."
   },
   "trust": {
-    "one": { "title": "Advice from start to finish", "text": "We help you choose the right solution." },
-    "two": { "title": "For Costa del Sol & Mallorca", "text": "Local presence with personal service." },
-    "three": { "title": "Quality products from Europe", "text": "Pools, spas and wellness from trusted suppliers." }
+    "one": {
+      "title": "Advice from start to finish",
+      "text": "We help you choose the right solution."
+    },
+    "two": {
+      "title": "For Costa del Sol & Mallorca",
+      "text": "Local presence with personal service."
+    },
+    "three": {
+      "title": "Quality products from Europe",
+      "text": "Pools, spas and wellness from trusted suppliers."
+    }
   },
   "home": {
     "assortmentEyebrow": "Our assortment",
@@ -54,14 +64,38 @@
     "ctaText": "Tell us what you are looking for and we will help you further, from the first question to the finished result."
   },
   "categories": {
-    "pool-covers": { "name": "Pool covers", "blurb": "Safety, solar and automatic covers that keep your pool clean, warm and safe." },
-    "spas": { "name": "Spas", "blurb": "Jacuzzis and swim spas for relaxation, training and family time." },
-    "saunas-hammam": { "name": "Sauna & Hammam", "blurb": "Wellness at home: barrel saunas, infrared cabins and steam rooms." },
-    "epp-pools": { "name": "EP pools", "blurb": "Lightweight, insulated pools for terraces and gardens." },
-    "fibreglass-pools": { "name": "Fibreglass pools", "blurb": "Ready-made pool shells in many sizes and shapes." },
-    "concrete-pools": { "name": "Concrete pools", "blurb": "Fully tailored pools built to your design." },
-    "pool-renovation-liners": { "name": "Pool renovation & liners", "blurb": "Give an existing pool a new life." },
-    "pool-accessories": { "name": "Pool accessories", "blurb": "Equipment, care and finishing touches for your pool." }
+    "pool-covers": {
+      "name": "Pool covers",
+      "blurb": "Safety, solar and automatic covers that keep your pool clean, warm and safe."
+    },
+    "spas": {
+      "name": "Spas",
+      "blurb": "Jacuzzis and swim spas for relaxation, training and family time."
+    },
+    "saunas-hammam": {
+      "name": "Sauna & Hammam",
+      "blurb": "Wellness at home: barrel saunas, infrared cabins and steam rooms."
+    },
+    "epp-pools": {
+      "name": "EP pools",
+      "blurb": "Lightweight, insulated pools for terraces and gardens."
+    },
+    "fibreglass-pools": {
+      "name": "Fibreglass pools",
+      "blurb": "Ready-made pool shells in many sizes and shapes."
+    },
+    "concrete-pools": {
+      "name": "Concrete pools",
+      "blurb": "Fully tailored pools built to your design."
+    },
+    "pool-renovation-liners": {
+      "name": "Pool renovation & liners",
+      "blurb": "Give an existing pool a new life."
+    },
+    "pool-accessories": {
+      "name": "Pool accessories",
+      "blurb": "Equipment, care and finishing touches for your pool."
+    }
   },
   "products": {
     "title": "Products",
@@ -102,5 +136,20 @@
     "contact": "Contact",
     "rights": "All rights reserved."
   },
-  "notFound": { "title": "Page not found", "text": "The page you are looking for does not exist.", "back": "Back to the start" }
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist.",
+    "back": "Back to the start"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "intro": "A look at pools, spas, saunas and covers we have supplied and installed.",
+    "all": "All",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "sample": "Sample image",
+    "ctaTitle": "Want something like this?",
+    "ctaText": "Tell us about your project and we will help you find the right solution."
+  }
 }
