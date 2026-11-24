@@ -58,6 +58,17 @@ const LINES = {
   "spa-mosaico": "mosaic-line",
 };
 
+// Aquavia's "spa for N people" pages (Spanish paths) -> number of people.
+const SEATS = {
+  "spas-2-plazas": 2,
+  "spa-3-plazas": 3,
+  "spas-4-plazas": 4,
+  "spa-5-plazas": 5,
+  "spas-6-plazas": 6,
+  "spa-7-plazas": 7,
+  "spa-8-plazas": 8,
+};
+
 // Fetched first, so the most important products are ready soonest (English slugs).
 const PRIORITY = ["spa-touch-pro", "spa-feel", "spa-essence", "spa-touch-5-pro", "spa-cube-ergo"];
 
@@ -212,24 +223,40 @@ function urlToImageId(xml) {
 }
 
 /** Returns Map(English product slug -> collection key) from Aquavia's collection pages. */
-async function fetchLines(enXml) {
+/** English product slugs listed on one of Aquavia's (Spanish) listing pages. */
+async function listingSlugs(pathName, cacheFile, esToImg, imgToEnSlug) {
+  const html = await cached(`${BASE}/${pathName}`, cacheFile);
+  if (!html) return [];
+  const $ = cheerio.load(html);
+  const slugs = new Set();
+  $("a[href]").each((_, a) => {
+    const esUrl = $(a).attr("href").split("#")[0].split("?")[0];
+    const img = esToImg.get(esUrl);
+    const enSlug = img && imgToEnSlug.get(img);
+    if (enSlug) slugs.add(enSlug);
+  });
+  return [...slugs];
+}
+
+/** Collections (lines) and sizes (people) for each English product slug. */
+async function fetchGroupings(enXml) {
   const esXml = await cached(`${BASE}/es/sitemap/product/1.xml`, "sitemap-es.xml");
   const esToImg = urlToImageId(esXml || "");
   const imgToEnSlug = new Map([...urlToImageId(enXml)].map(([u, img]) => [img, u.split("/").pop()]));
 
   const lineOf = new Map();
   for (const [pathName, key] of Object.entries(LINES)) {
-    const html = await cached(`${BASE}/${pathName}`, `lines/${pathName}-1.html`);
-    if (!html) continue;
-    const $ = cheerio.load(html);
-    $("a[href]").each((_, a) => {
-      const esUrl = $(a).attr("href").split("#")[0].split("?")[0];
-      const img = esToImg.get(esUrl);
-      const enSlug = img && imgToEnSlug.get(img);
-      if (enSlug && !lineOf.has(enSlug)) lineOf.set(enSlug, key);
-    });
+    for (const slug of await listingSlugs(pathName, `lines/${pathName}-1.html`, esToImg, imgToEnSlug)) {
+      if (!lineOf.has(slug)) lineOf.set(slug, key);
+    }
   }
-  return lineOf;
+  const seatsOf = new Map();
+  for (const [pathName, n] of Object.entries(SEATS)) {
+    for (const slug of await listingSlugs(pathName, `seats/${pathName}-1.html`, esToImg, imgToEnSlug)) {
+      seatsOf.set(slug, [...(seatsOf.get(slug) ?? []), n]);
+    }
+  }
+  return { lineOf, seatsOf };
 }
 
 async function main() {
@@ -274,9 +301,12 @@ async function main() {
 
   // Last: sort spas into Aquavia's collections (Exclusive Line, Aurora Line, ...).
   // Professional spas and accessories keep their own section.
-  const lineOf = await fetchLines(xml);
+  const { lineOf, seatsOf } = await fetchGroupings(xml);
   for (const p of products) {
     if (p.collection === "hot-tubs" || p.collection === "swim-spas") p.collection = lineOf.get(p.slug) ?? p.collection;
+    // Sizes only for spas (not swim spas, professional spas or accessories).
+    const seats = seatsOf.get(p.slug);
+    if (seats && !["swim-spas", "professional-spas", "accessories"].includes(p.collection)) p.seats = seats;
   }
   await fs.writeFile(OUT, JSON.stringify(products, null, 2) + "\n");
   console.log(`${lineOf.size} products mapped to ${Object.keys(LINES).length} collections`);

@@ -7,6 +7,7 @@ type Imported = {
   slug: string;
   name: string;
   collection: string;
+  seats?: number[];
   description: string;
   specs: { group: string; label: string; value: string }[];
   images: { src: string; width: number; height: number }[];
@@ -41,6 +42,7 @@ export const aquaviaProducts: Product[] = (raw as Imported[])
       slug: p.slug,
       category: "spas",
       collection: p.collection,
+      seats: p.seats,
       name: tidyName(p.name),
       brand: "Aquavia Spa",
       tagline: { en: firstSentence(description) },

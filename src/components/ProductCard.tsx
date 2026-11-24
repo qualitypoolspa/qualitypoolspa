@@ -1,29 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getCategory } from "@/data/categories";
-import type { Product } from "@/data/products";
-import { href, pick, type Locale } from "@/i18n/config";
-import type { Dictionary } from "@/i18n/dictionaries";
+import { getCategory, type CategorySlug } from "@/data/categories";
+import type { ProductCardData, ProductImage as Img } from "@/data/products";
+import { href, type Locale } from "@/i18n/config";
 
+/** A product's main photo, or tasteful placeholder art when it has none. */
 export function ProductImage({
-  product,
+  name,
+  category,
+  image,
   className = "",
   sizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
 }: {
-  product: Product;
+  name: string;
+  category: CategorySlug;
+  image?: Img;
   className?: string;
   sizes?: string;
 }) {
-  const cat = getCategory(product.category);
-  const img = product.images?.[0];
-  return img ? (
-    <div className={`relative overflow-hidden ${img.contain ? "bg-white" : "bg-sand"} ${className}`}>
+  const cat = getCategory(category);
+  return image ? (
+    <div className={`relative overflow-hidden ${image.contain ? "bg-white" : "bg-sand"} ${className}`}>
       <Image
-        src={img.src}
-        alt={product.name}
+        src={image.src}
+        alt={name}
         fill
         sizes={sizes}
-        className={`transition duration-700 group-hover:scale-105 ${img.contain ? "object-contain p-4" : "object-cover"}`}
+        className={`transition duration-700 group-hover:scale-105 ${image.contain ? "object-contain p-4" : "object-cover"}`}
       />
     </div>
   ) : (
@@ -31,22 +34,23 @@ export function ProductImage({
       className={`flex items-center justify-center bg-gradient-to-br ${cat?.tone ?? ""} ${className}`}
       aria-hidden="true"
     >
-      <span className="font-serif text-xl italic text-white/70">{product.name}</span>
+      <span className="font-serif text-xl italic text-white/70">{name}</span>
     </div>
   );
 }
 
-export function ProductCard({ product, lang, dict }: { product: Product; lang: Locale; dict: Dictionary }) {
+/** Product card. Works in server and client components (takes plain card data). */
+export function ProductCard({ product, lang, sampleLabel }: { product: ProductCardData; lang: Locale; sampleLabel: string }) {
   return (
     <Link
       href={href(lang, `/products/${product.category}/${product.slug}`)}
       className="group block overflow-hidden bg-white transition hover:shadow-xl"
     >
       <div className="relative">
-        <ProductImage product={product} className="aspect-[4/3] w-full" />
+        <ProductImage name={product.name} category={product.category} image={product.image} className="aspect-[4/3] w-full" />
         {product.sample && (
           <span className="absolute left-3 top-3 rounded bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-navy">
-            {dict.products.sample}
+            {sampleLabel}
           </span>
         )}
       </div>
@@ -55,7 +59,7 @@ export function ProductCard({ product, lang, dict }: { product: Product; lang: L
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brass">{product.brand}</p>
         )}
         <h3 className="mt-1 font-serif text-xl text-navy group-hover:text-teal">{product.name}</h3>
-        <p className="mt-1 line-clamp-2 text-sm text-navy/70">{pick(product.tagline, lang)}</p>
+        <p className="mt-1 line-clamp-2 text-sm text-navy/70">{product.tagline}</p>
       </div>
     </Link>
   );

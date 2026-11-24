@@ -11,7 +11,16 @@
     "contact": "Contact",
     "getQuote": "Get a quote",
     "menu": "Menu",
-    "allProducts": "All products"
+    "allProducts": "All products",
+    "pool": "Pool",
+    "spas": "Spas",
+    "poolCovers": "Pool covers",
+    "poolAccessories": "Pool accessories",
+    "sauna": "Sauna",
+    "campaigns": "Campaigns",
+    "terms": "Terms of purchase",
+    "contactUs": "Contact us",
+    "viewAll": "View all"
   },
   "hero": {
     "eyebrow": "Pools · Spas · Wellness",
@@ -75,8 +84,20 @@
       "blurb": "Jacuzzis and swim spas for relaxation, training and family time."
     },
     "saunas-hammam": {
-      "name": "Sauna & Hammam",
-      "blurb": "Wellness at home: barrel saunas, infrared cabins and steam rooms."
+      "name": "Saunas",
+      "blurb": "Indoor saunas for everyday wellness at home."
+    },
+    "ep-pools": {
+      "name": "EP pools",
+      "blurb": "Lightweight, insulated pools for terraces and gardens."
+    },
+    "fibreglass-pools": {
+      "name": "Glass-fibre pools",
+      "blurb": "Ready-made glass-fibre pools in many shapes and sizes, quick to install."
+    },
+    "thermopool": {
+      "name": "Thermopool",
+      "blurb": "Design your own insulated pool in four sizes and send us your request."
     },
     "heat-pumps": {
       "name": "Heat pumps",
@@ -97,18 +118,6 @@
     "pool-renovation-liners": {
       "name": "Liners & renovation",
       "blurb": "Made-to-measure liners and renovation to give an existing pool a new life."
-    },
-    "epp-pools": {
-      "name": "EP pools",
-      "blurb": "Lightweight, insulated pools for terraces and gardens."
-    },
-    "fibreglass-pools": {
-      "name": "Fibreglass pools",
-      "blurb": "Ready-made pool shells in many sizes and shapes."
-    },
-    "concrete-pools": {
-      "name": "Concrete pools",
-      "blurb": "Fully tailored pools built to your design."
     }
   },
   "collections": {
@@ -128,7 +137,7 @@
     "professional-spas": "Professional spas",
     "accessories": "Spa accessories",
     "slatted-covers": "Slatted covers",
-    "solar-covers": "Solar covers",
+    "solar-covers": "Bubble covers",
     "inverter-heat-pumps": "Inverter heat pumps",
     "on-off-heat-pumps": "Classic heat pumps",
     "large-pool-heat-pumps": "For large pools",
@@ -148,7 +157,14 @@
     "askAbout": "Ask about this product",
     "sample": "Sample product",
     "related": "More in this category",
-    "selectionIntro": "Hand-picked by our team: the models we recommend most often."
+    "selectionIntro": "Hand-picked by our team: the models we recommend most often.",
+    "bySize": "By size",
+    "collectionsTitle": "Collections",
+    "allSizes": "All sizes",
+    "forPeople": "For {n} people",
+    "forPeopleShort": "{n} people",
+    "allSpas": "All spas",
+    "showing": "{count} spas for {n} people"
   },
   "contact": {
     "title": "Contact us",
@@ -166,7 +182,9 @@
     "consultation": "Book a private consultation",
     "consultationSubject": "Private consultation request",
     "consultationBody": "Hello, I would like to book a private consultation about a project. Preferred location and timing:",
-    "consultationWhatsapp": "Hello! I would like to book a private consultation about a project."
+    "consultationWhatsapp": "Hello! I would like to book a private consultation about a project.",
+    "campaignSubject": "Enquiry about the campaign",
+    "campaignWhatsapp": "Hello! I would like to know more about the campaign:"
   },
   "about": {
     "title": "About us",
@@ -332,5 +350,50 @@
         "text": "Tell us about your property and we will recommend what fits, and take care of delivery and installation."
       }
     }
+  },
+  "builder": {
+    "intro": "Choose a size and the details below and send us your request. We will get back to you with advice and a personal offer. No obligation.",
+    "steps": {
+      "size": "Size",
+      "depth": "Depth",
+      "stairs": "Stairs",
+      "finish": "Liner colour",
+      "extras": "Extras",
+      "project": "Your project",
+      "contact": "Your details"
+    },
+    "extrasHint": "Choose as many as you like.",
+    "location": "Location",
+    "timeframe": "When",
+    "notes": "Anything else we should know?",
+    "notesPlaceholder": "Garden access, slope, existing pool, wishes…",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "required": "Please add your name and an email or phone number.",
+    "summary": "Your pool",
+    "noneSelected": "None selected",
+    "send": "Send request by email",
+    "sendWhatsapp": "Send via WhatsApp",
+    "sendNote": "Opens your email or WhatsApp with your choices filled in, ready to send to us.",
+    "subject": "Thermopool request",
+    "greeting": "Hello, I would like an offer for a Thermopool with these choices:",
+    "drawing": "Top view (not to scale)"
+  },
+  "campaigns": {
+    "title": "Campaigns & packages",
+    "intro": "Current offers and package deals on pools, spas and covers. Ask us for the details and a personal quote.",
+    "includes": "Included",
+    "validUntil": "Valid until {date}",
+    "ask": "Ask about this offer",
+    "sample": "Sample",
+    "empty": "There are no campaigns right now. Ask us about package deals for your project.",
+    "bar": "Planning a pool or spa?",
+    "barLink": "Ask us about our current campaigns"
+  },
+  "terms": {
+    "title": "Terms of purchase",
+    "updated": "Last updated {date}",
+    "draft": "Draft: these terms are being reviewed and will be finalised soon."
   }
 }

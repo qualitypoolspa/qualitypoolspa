@@ -23,6 +23,6 @@ export const gallery: GalleryItem[] = [
   { id: "g5", category: "spas", title: { en: "Swim spa by the sea" }, location: "Mallorca", sample: true },
   { id: "g6", category: "pool-renovation-liners", title: { en: "Renovated pool with new liner" }, location: "Costa del Sol", sample: true },
   { id: "g7", category: "saunas-hammam", title: { en: "Indoor infrared cabin" }, location: "Marbella", sample: true },
-  { id: "g8", category: "concrete-pools", title: { en: "Custom concrete pool" }, location: "Mallorca", sample: true },
+  { id: "g8", category: "thermopool", title: { en: "Thermopool installation" }, location: "Mallorca", sample: true },
   { id: "g9", category: "pool-covers", title: { en: "Solar cover in use" }, location: "Costa del Sol", sample: true },
 ];

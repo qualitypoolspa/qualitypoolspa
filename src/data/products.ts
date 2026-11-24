@@ -1,4 +1,4 @@
-import type { Localized } from "@/i18n/config";
+import { pick, type Locale, type Localized } from "@/i18n/config";
 import type { CategorySlug } from "./categories";
 import { aquaviaProducts } from "./suppliers/aquavia";
 import { astralpoolProducts } from "./suppliers/astralpool";
@@ -18,6 +18,8 @@ export type Product = {
   category: CategorySlug;
   /** Sub-group within a category, e.g. "hot-tubs" or "swim-spas" (names in dict.collections). */
   collection?: string;
+  /** Spas: the numbers of people it is listed for (e.g. [4, 5]). */
+  seats?: number[];
   /** Model name (not translated) */
   name: string;
   /** Optional supplier / brand, shown on the product page when set */
@@ -34,29 +36,8 @@ export type Product = {
 };
 
 // Hand-written products. Supplier imports are merged in below.
-// TODO(client): replace the remaining samples (saunas) with real products.
+// TODO(client): saunas (Harvia) are added once the dealer material arrives.
 const manualProducts: Product[] = [
-  {
-    slug: "barrel-sauna",
-    category: "saunas-hammam",
-    name: "Barrel Sauna",
-    tagline: { en: "Classic outdoor sauna with a Nordic feel." },
-    description: {
-      en: "A heat-treated timber barrel sauna for gardens and terraces. Sample text, replace with the real product description.",
-    },
-    specs: [{ label: { en: "Capacity" }, value: "4 to 6 people" }],
-    sample: true,
-  },
-  {
-    slug: "infrared-cabin",
-    category: "saunas-hammam",
-    name: "Infrared Cabin",
-    tagline: { en: "Gentle infrared warmth for indoor wellness." },
-    description: {
-      en: "An indoor infrared cabin that heats up fast and uses little energy. Sample text, replace with the real product description.",
-    },
-    sample: true,
-  },
 ];
 
 // The client's hand-picked spas: shown first on the spa page ("Our selection").
@@ -84,3 +65,28 @@ export const getProduct = (category: string, slug: string) =>
   products.find((p) => p.category === category && p.slug === slug);
 
 export const productsIn = (category: CategorySlug) => products.filter((p) => p.category === category);
+
+/** The light version of a product used by product cards (also in client components). */
+export type ProductCardData = {
+  slug: string;
+  category: CategorySlug;
+  collection?: string;
+  seats?: number[];
+  name: string;
+  brand?: string;
+  tagline: string;
+  image?: ProductImage;
+  sample?: boolean;
+};
+
+export const toCard = (p: Product, lang: Locale): ProductCardData => ({
+  slug: p.slug,
+  category: p.category,
+  collection: p.collection,
+  seats: p.seats,
+  name: p.name,
+  brand: p.brand,
+  tagline: pick(p.tagline, lang),
+  image: p.images?.[0],
+  sample: p.sample,
+});

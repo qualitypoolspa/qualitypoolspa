@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CategoryBrowser } from "@/components/CategoryBrowser";
 import { ContactButtons } from "@/components/ContactButtons";
-import { ProductCard } from "@/components/ProductCard";
-import { categories, getCategory } from "@/data/categories";
-import { productsIn, selectionIn } from "@/data/products";
+import { PoolBuilder } from "@/components/PoolBuilder";
+import { builderCategories, categories, getCategory } from "@/data/categories";
+import { productsIn, selectionIn, toCard } from "@/data/products";
 import { hasLocale, href, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -25,17 +26,27 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/produc
   if (!hasLocale(lang) || !cat) notFound();
   const dict = await getDictionary(lang);
   const items = productsIn(cat.slug);
+  const names = dict.collections as Record<string, string>;
 
   // Group by collection in the order defined in the dictionary; ungrouped products last.
-  const order = Object.keys(dict.collections);
+  const order = Object.keys(names);
   const byKey = new Map<string, typeof items>();
   for (const p of items) byKey.set(p.collection ?? "other", [...(byKey.get(p.collection ?? "other") ?? []), p]);
-  const groups = [...byKey].sort(([a], [b]) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
+  const groups = [...byKey]
+    .sort(([a], [b]) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99))
+    .map(([key, list]) => ({ key, name: names[key] ?? dict.categories[cat.slug].name, items: list.map((p) => toCard(p, lang)) }));
   // The client's hand-picked models go first (they also stay in their own collection).
   const selection = selectionIn(cat.slug);
-  if (selection.length) groups.unshift(["selection", selection]);
-  const collectionName = (key: string) =>
-    (dict.collections as Record<string, string>)[key] ?? dict.categories[cat.slug].name;
+  if (selection.length) {
+    groups.unshift({
+      key: "selection",
+      name: names.selection,
+      items: selection.map((p) => toCard(p, lang)),
+      ...{ intro: dict.products.selectionIntro },
+    });
+  }
+  const seats = [...new Set(items.flatMap((p) => p.seats ?? []))].sort((a, b) => a - b);
+  const isBuilder = builderCategories.includes(cat.slug);
 
   return (
     <>
@@ -50,32 +61,20 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/produc
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-14">
-        {items.length > 0 ? (
-          <>
-            {groups.length > 1 && (
-              <nav className="mb-12 flex flex-wrap gap-2">
-                {groups.map(([key, list]) => (
-                  <a key={key} href={`#${key}`} className="rounded-full border border-line bg-white px-4 py-1.5 text-sm text-navy hover:border-teal">
-                    {collectionName(key)} <span className="text-navy/40">{list.length}</span>
-                  </a>
-                ))}
-              </nav>
-            )}
-            <div className="space-y-20">
-              {groups.map(([key, list]) => (
-                <div key={key} id={key} className="scroll-mt-28">
-                  {groups.length > 1 && <h2 className="font-serif text-3xl text-navy">{collectionName(key)}</h2>}
-                  {key === "selection" && <p className="mt-2 text-sm text-navy/60">{dict.products.selectionIntro}</p>}
-                  <div className="mb-8" />
-                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {list.map((p) => (
-                      <ProductCard key={p.slug} product={p} lang={lang} dict={dict} />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </>
+        {isBuilder ? (
+          <PoolBuilder lang={lang} t={dict.builder} />
+        ) : items.length > 0 ? (
+          <CategoryBrowser
+            groups={groups}
+            seats={seats}
+            lang={lang}
+            labels={{
+              sample: dict.products.sample,
+              allSizes: dict.products.allSizes,
+              forPeopleShort: dict.products.forPeopleShort,
+              showing: dict.products.showing,
+            }}
+          />
         ) : (
           <div className="max-w-xl">
             <p className="text-navy/75">{dict.products.empty}</p>
