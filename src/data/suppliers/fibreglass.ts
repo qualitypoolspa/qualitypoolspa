@@ -24,10 +24,18 @@ const shapes: Record<string, string> = {
   owalny: "Oval",
   okrągły: "Round",
   "kształt nieregularny": "Freeform",
+  "prostokąt zaokrąglony": "Rounded rectangle",
+  "okrągły nieregularny": "Round, freeform",
   nieregularny: "Freeform",
 };
 
 const translations = en as Record<string, string>;
+
+// Corrections where the supplier's page is wrong (checked against the model's drawing).
+const overrides: Record<string, Partial<Imported>> = {
+  // The page repeats the Filuś II specs; the drawing and page address give 4.5 × 2.5 × 1.2 m.
+  agos: { length: 4.5, width: 2.5, depth: 1.2, weight: undefined, shapePl: undefined },
+};
 const m = (n?: number) => (n === undefined ? "–" : `${n.toLocaleString("en", { maximumFractionDigits: 2 })} m`);
 
 /** Length groups, matching how the supplier groups its range. */
@@ -36,6 +44,7 @@ const lengthGroup = (l = 0) => (l <= 5 ? "up-to-5m" : l <= 7 ? "5-7m" : l <= 9 ?
 const g = (group: string, label: string, value: string) => ({ group: { en: group }, label: { en: label }, value });
 
 export const fibreglassProducts: Product[] = (raw as Imported[])
+  .map((p) => ({ ...p, ...overrides[p.slug] }))
   .filter((p) => p.name && p.length)
   .sort((a, b) => (a.length ?? 0) - (b.length ?? 0))
   .map((p) => {

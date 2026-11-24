@@ -67,18 +67,29 @@ function parse(html, pagePath) {
   const shape = specText.match(/Kształt:\s*([^\n]+?)(?:$|Długość|Szerokość|Głębokość|Waga)/i)?.[1]?.trim();
 
   // Technical drawing: the image with "rzut" (plan) in its file name, at full size.
+  // Some drawings are named by their dimensions instead ("500-x-280-x-135-BARBADOS.jpg").
   let drawing;
   $("img").each((_, e) => {
-    const s = $(e).attr("data-src") || $(e).attr("src") || "";
-    if (!drawing && /rzut/i.test(s)) drawing = s.replace(/-\d+x\d+(\.\w+)$/, "$1");
+    const s = ($(e).attr("data-src") || $(e).attr("src") || "").replace(/-\d+x\d+(\.\w+)$/, "$1");
+    const file = s.split("/").pop() ?? "";
+    if (!drawing && /wp-content\/uploads/.test(s) && (/rzut/i.test(file) || /\d{2,4}-?x-?\d{2,4}-?x-?\d{2,4}/i.test(file) || /\d{1,4}-x-\d{1,4}-[A-Z]/.test(file))) drawing = s;
   });
+
+  // Dimensions from the page address when the page has none ("skiatos-xl-803m-x-322m-x-150m").
+  const fromPath = pagePath.match(/(\d[\d-]*)-?m?-x-(\d[\d-]*)-?m?-x-(\d[\d-]*)/);
+  const pathDim = (v) => {
+    if (!v) return undefined;
+    const t = v.replace(/-$/, "");
+    if (t.includes("-")) return Number(t.replace("-", "."));
+    return t.length >= 3 ? Number(t) / 100 : Number(t);
+  };
 
   return {
     slug,
     name,
-    length: num(m("Długość")),
-    width: num(m("Szerokość")),
-    depth: num(m("Głębokość")),
+    length: num(m("Długość")) ?? pathDim(fromPath?.[1]),
+    width: num(m("Szerokość")) ?? pathDim(fromPath?.[2]),
+    depth: num(m("Głębokość")) ?? pathDim(fromPath?.[3]),
     weight: num(m("Waga")),
     shapePl: shape,
     descriptionPl: description,
@@ -118,6 +129,7 @@ async function main() {
     try {
       const html = await cached(BASE + p, `models/${p.replace(/\//g, "")}.html`);
       const pool = parse(html, p);
+      if (pools.some((x) => x.slug === pool.slug)) continue; // same model listed twice
       pool.images = pool.drawing ? [await saveDrawing(pool.drawing, pool.slug)] : [];
       delete pool.drawing;
       pools.push(pool);
