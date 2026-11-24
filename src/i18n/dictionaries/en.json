@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Quality Pool & Spa",
+    "description": "Pools, spas, saunas and wellness products with personal advice and local installation on the Costa del Sol and Mallorca."
+  },
+  "nav": {
+    "products": "Products",
+    "about": "About us",
+    "contact": "Contact",
+    "getQuote": "Get a quote",
+    "menu": "Menu"
+  },
+  "hero": {
+    "eyebrow": "Pools · Spas · Wellness",
+    "title1": "Your pool.",
+    "title2": "Your oasis.",
+    "body": "Discover pool covers, spas, saunas and wellness products for life by the Mediterranean. From first idea to finished installation in Marbella, Costa del Sol and Mallorca.",
+    "ctaProducts": "Explore products",
+    "ctaAdvice": "Get personal advice",
+    "badge": "Made for outdoor living.",
+    "badgeSub": "Design, quality and adaptation."
+  },
+  "trust": {
+    "one": { "title": "Advice from start to finish", "text": "We help you choose the right solution." },
+    "two": { "title": "For Costa del Sol & Mallorca", "text": "Local presence with personal service." },
+    "three": { "title": "Quality products from Europe", "text": "Pools, spas and wellness from trusted suppliers." }
+  },
+  "home": {
+    "assortmentEyebrow": "Our assortment",
+    "assortmentTitle": "What are you",
+    "assortmentTitleAccent": "looking for?",
+    "assortmentText": "Choose a category to explore our selection or ask us for advice.",
+    "explore": "Explore",
+    "notSure": "Not sure which solution suits you?",
+    "talkToUs": "Talk to us",
+    "bandEyebrow": "Our experience",
+    "bandTitle": "From the first thought to the",
+    "bandTitleAccent": "first dip.",
+    "bandText": "We help you with the idea, planning, delivery and installation. Whether you dream of a new spa, a sauna or a way to cover and protect your pool.",
+    "bandBullets": [
+      "Advice tailored to your project",
+      "Pool covers, spas and saunas under one roof",
+      "Local presence in Marbella and Mallorca"
+    ],
+    "bandCta": "Tell us about your project",
+    "bandCard": "More than just a pool",
+    "bandCardSub": "A wellness solution",
+    "featuredEyebrow": "Featured",
+    "featuredTitle": "Popular products",
+    "viewAll": "View all products",
+    "ctaEyebrow": "Contact us",
+    "ctaTitle": "Your next project starts",
+    "ctaTitleAccent": "here.",
+    "ctaText": "Tell us what you are looking for and we will help you further, from the first question to the finished result."
+  },
+  "categories": {
+    "pool-covers": { "name": "Pool covers", "blurb": "Safety, solar and automatic covers that keep your pool clean, warm and safe." },
+    "spas": { "name": "Spas", "blurb": "Jacuzzis and swim spas for relaxation, training and family time." },
+    "saunas-hammam": { "name": "Sauna & Hammam", "blurb": "Wellness at home: barrel saunas, infrared cabins and steam rooms." },
+    "epp-pools": { "name": "EP pools", "blurb": "Lightweight, insulated pools for terraces and gardens." },
+    "fibreglass-pools": { "name": "Fibreglass pools", "blurb": "Ready-made pool shells in many sizes and shapes." },
+    "concrete-pools": { "name": "Concrete pools", "blurb": "Fully tailored pools built to your design." },
+    "pool-renovation-liners": { "name": "Pool renovation & liners", "blurb": "Give an existing pool a new life." },
+    "pool-accessories": { "name": "Pool accessories", "blurb": "Equipment, care and finishing touches for your pool." }
+  },
+  "products": {
+    "title": "Products",
+    "intro": "Browse our range. Every product can be discussed with us for advice and a personal offer.",
+    "inCategory": "products in this category",
+    "empty": "We are adding products to this category. Contact us and we will gladly help you right away.",
+    "backToProducts": "All products",
+    "specs": "Specifications",
+    "description": "Description",
+    "downloads": "Downloads",
+    "askAbout": "Ask about this product",
+    "sample": "Sample product",
+    "related": "More in this category"
+  },
+  "contact": {
+    "title": "Contact us",
+    "intro": "Tell us about your project. We usually reply within one working day.",
+    "email": "Email us",
+    "whatsapp": "Chat on WhatsApp",
+    "phone": "Call us",
+    "areas": "We work in",
+    "emailSubject": "Enquiry from the website",
+    "emailBody": "Hello, I would like to know more about your products.",
+    "whatsappText": "Hello! I would like to know more about your products.",
+    "productSubject": "Enquiry about",
+    "productBody": "Hello, I am interested in the product below and would like more information:",
+    "productWhatsapp": "Hello! I am interested in"
+  },
+  "about": {
+    "title": "About us",
+    "text1": "Quality Pool & Spa brings pools, spas, saunas and wellness products to life on the Costa del Sol and Mallorca, with Swedish West Coast roots.",
+    "text2": "We select products from trusted European suppliers, and we help you from the first idea through planning and delivery to installation.",
+    "text3": "Our aim is simple: quality products, honest advice and a result you will enjoy for many years."
+  },
+  "footer": {
+    "blurb": "Pools, spas, saunas and wellness products with personal advice and local installation.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "notFound": { "title": "Page not found", "text": "The page you are looking for does not exist.", "back": "Back to the start" }
+}
