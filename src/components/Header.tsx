@@ -7,6 +7,7 @@ export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const links = [
     { to: "/products", label: dict.nav.products },
     { to: "/gallery", label: dict.nav.gallery },
+    { to: "/services", label: dict.nav.services },
     { to: "/about", label: dict.nav.about },
     { to: "/contact", label: dict.nav.contact },
   ];

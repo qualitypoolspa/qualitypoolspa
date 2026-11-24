@@ -6,6 +6,7 @@
   "nav": {
     "products": "Products",
     "gallery": "Gallery",
+    "services": "Services",
     "about": "About us",
     "contact": "Contact",
     "getQuote": "Get a quote",
@@ -122,7 +123,11 @@
     "whatsappText": "Hello! I would like to know more about your products.",
     "productSubject": "Enquiry about",
     "productBody": "Hello, I am interested in the product below and would like more information:",
-    "productWhatsapp": "Hello! I am interested in"
+    "productWhatsapp": "Hello! I am interested in",
+    "consultation": "Book a private consultation",
+    "consultationSubject": "Private consultation request",
+    "consultationBody": "Hello, I would like to book a private consultation about a project. Preferred location and timing:",
+    "consultationWhatsapp": "Hello! I would like to book a private consultation about a project."
   },
   "about": {
     "title": "About us",
@@ -134,7 +139,9 @@
     "blurb": "Pools, spas, saunas and wellness products with personal advice and local installation.",
     "explore": "Explore",
     "contact": "Contact",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "guides": "Guides",
+    "locations": "Where we work"
   },
   "notFound": {
     "title": "Page not found",
@@ -151,5 +158,140 @@
     "sample": "Sample image",
     "ctaTitle": "Want something like this?",
     "ctaText": "Tell us about your project and we will help you find the right solution."
+  },
+  "services": {
+    "title": "Services",
+    "intro": "From the first conversation to the first dip, we look after every step so that you can simply enjoy the result.",
+    "stepLabel": "Step",
+    "steps": [
+      {
+        "title": "Private consultation",
+        "text": "We listen to how you want to live with your pool, spa or sauna, and visit your property when it helps."
+      },
+      {
+        "title": "Design and planning",
+        "text": "We recommend the right products and help with placement, access, power and groundwork."
+      },
+      {
+        "title": "Delivery",
+        "text": "Careful delivery and coordination, including large and heavy items, to your door."
+      },
+      {
+        "title": "Installation",
+        "text": "Professional installation with local partners, tested and handed over ready to use."
+      },
+      {
+        "title": "Aftercare",
+        "text": "Advice on care and maintenance, and a contact you can reach when you need help."
+      }
+    ],
+    "ctaTitle": "Start with a conversation",
+    "ctaText": "Tell us about your property and what you have in mind. There is no obligation."
+  },
+  "guides": {
+    "title": "Guides",
+    "intro": "Straightforward advice to help you choose well. Draft content, to be reviewed with the client.",
+    "read": "Read the guide",
+    "seeProducts": "See the products",
+    "ctaTitle": "Not sure what suits your home?",
+    "ctaText": "We are happy to talk it through with you.",
+    "items": {
+      "pool-covers": {
+        "title": "How to choose a pool cover",
+        "intro": "A good cover keeps your pool cleaner, warmer and safer, and cuts the work of looking after it.",
+        "sections": [
+          {
+            "h": "Why cover your pool",
+            "p": "A cover reduces evaporation and heat loss, keeps out leaves and dirt, and adds safety, especially with children or pets. Over a season it can noticeably reduce running costs."
+          },
+          {
+            "h": "Common types",
+            "p": "Automatic covers open and close at the touch of a button and can sit above or below the water. Solar covers capture heat from the sun. Safety covers are built to carry weight. Each suits a different mix of convenience, budget and look."
+          },
+          {
+            "h": "What to consider",
+            "p": "Your pool's shape and size, how you use it through the year, how important convenience and appearance are, and whether the cover should be hidden when open. These decide which type fits."
+          },
+          {
+            "h": "Installation",
+            "p": "Some covers suit existing pools and others are easiest to plan with a new build. We can advise once we know your pool and site."
+          }
+        ]
+      },
+      "spas": {
+        "title": "How to choose a spa",
+        "intro": "A spa is for relaxation, recovery and time together. The right choice depends on space, use and setting.",
+        "sections": [
+          {
+            "h": "Hot tub or swim spa",
+            "p": "A hot tub is for relaxing and socialising. A swim spa adds a current to swim against and suits training as well as leisure, but needs more space."
+          },
+          {
+            "h": "Size and seating",
+            "p": "Think about how many people will use it at once and whether you prefer to sit, lie down or both."
+          },
+          {
+            "h": "Indoors or outdoors",
+            "p": "Outdoor spas need a solid base and sensible access. Indoor spas need floor strength, ventilation and moisture control."
+          },
+          {
+            "h": "Power and groundwork",
+            "p": "Spas need a suitable electrical supply and a level base. We help you plan both before delivery."
+          },
+          {
+            "h": "Care",
+            "p": "Modern spas make water care straightforward. We explain the routine and can arrange service if you prefer."
+          }
+        ]
+      },
+      "saunas-hammam": {
+        "title": "How to choose a sauna or hammam",
+        "intro": "Heat at home is one of the simplest wellness upgrades. The best option depends on how and where you will use it.",
+        "sections": [
+          {
+            "h": "Types",
+            "p": "Traditional saunas give classic dry heat. Infrared cabins warm you directly at lower air temperatures. A hammam is a steam room with high humidity. Barrel saunas are a popular outdoor option."
+          },
+          {
+            "h": "Indoors or outdoors",
+            "p": "Outdoor saunas are easier to place and look good in a garden. Indoor ones are available year-round and need good ventilation and moisture protection."
+          },
+          {
+            "h": "Heating",
+            "p": "Electric heaters are quick and simple. Wood-fired stoves give a classic experience where regulations allow."
+          },
+          {
+            "h": "Space and comfort",
+            "p": "Choose size by how many people will use it, and think about seating height and changing space."
+          }
+        ]
+      }
+    }
+  },
+  "locations": {
+    "title": "Where we work",
+    "intro": "Local advice, delivery and installation across the Costa del Sol and Mallorca.",
+    "ctaTitle": "Tell us about your property",
+    "ctaText": "We will help you find the right pool, spa or sauna, and arrange everything from delivery to installation.",
+    "items": {
+      "marbella": {
+        "name": "Marbella",
+        "title": "Pools, spas and saunas in Marbella",
+        "intro": "Outdoor living is part of life in Marbella. We help homeowners choose, deliver and install pool covers, spas and saunas that suit their property.",
+        "text": "From villas in the hills to apartments with terraces, we match the product to the space and handle the details."
+      },
+      "costa-del-sol": {
+        "name": "Costa del Sol",
+        "title": "Pools, spas and saunas on the Costa del Sol",
+        "intro": "With long, warm seasons, a well-chosen pool, spa or sauna gets used for much of the year. We support homes and projects along the coast.",
+        "text": "We offer personal advice and work with trusted local installers, so you deal with one team from first idea to finish."
+      },
+      "mallorca": {
+        "name": "Mallorca",
+        "title": "Pools, spas and saunas in Mallorca",
+        "intro": "We bring the same personal service to Mallorca, for private homes and fincas alike.",
+        "text": "Tell us about your property and we will recommend what fits, and take care of delivery and installation."
+      }
+    }
   }
 }
