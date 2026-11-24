@@ -1072,5 +1072,30 @@
         "height": 150
       }
     ]
+  },
+  {
+    "slug": "roll-up-cover-swimspa",
+    "name": "Roll-up Cover Swimspa",
+    "collection": "accessories",
+    "description": "Protect your swimspa with the Roll-up Cover Swimspa, an easy-to-use, durable, thermally insulated roll-up fabric cover designed to maintain the water temperature.",
+    "specs": [],
+    "sourceUrl": "https://aquaviaspa.com/en/accessories/roll-up-cover-swimspa",
+    "images": [
+      {
+        "src": "/products/aquavia/roll-up-cover-swimspa/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/roll-up-cover-swimspa/2.webp",
+        "width": 1080,
+        "height": 1300
+      },
+      {
+        "src": "/products/aquavia/roll-up-cover-swimspa/3.webp",
+        "width": 1080,
+        "height": 1300
+      }
+    ]
   }
 ]
