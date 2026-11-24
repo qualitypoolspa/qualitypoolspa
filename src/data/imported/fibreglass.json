@@ -134,5 +134,41 @@
     "descriptionPl": "Niewielki, przydomowy basen, stosunkowo płytki z wąskimi stopniami pokrytymi opatentowaną strukturą antypoślizgową. Miejsca siedzące w rogach oraz wąskie schody umożliwiają pełny wypoczynek. Niewielki kształt będzie się idealnie komponować z niewielkim ogrodem.",
     "sourceUrl": "https://baslux.pl/barbados-5m-x-2-8m-x-1-35m/",
     "images": []
+  },
+  {
+    "slug": "swim-comfort",
+    "name": "Swim Comfort",
+    "length": 8.8,
+    "width": 3.5,
+    "depth": 1.5,
+    "weight": 900,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Zamontowana podwodna roleta zapewniająca ochronę przed nieczystościami. Pełen pakiet, pełna ochrona naszego basenu. Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo, a dodatkowa leżanka pomoże się zrelaksować i poczuć jak we własnym spa.",
+    "sourceUrl": "https://baslux.pl/swim-comfort-880m-x-350m-x-150m/",
+    "images": []
+  },
+  {
+    "slug": "maxi-spa",
+    "name": "Maxi Spa",
+    "length": 8,
+    "width": 3.5,
+    "depth": 1.5,
+    "weight": 950,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo, a dodatkowa leżanka pomoże się zrelaksować i poczuć jak we własnym spa.",
+    "sourceUrl": "https://baslux.pl/maxi-spa-800-m-x-350m-x-150m/",
+    "images": []
+  },
+  {
+    "slug": "full-relax",
+    "name": "Full Relax",
+    "length": 7.5,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 660,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo, a dodatkowa leżanka pomoże się zrelaksować i poczuć jak we własnym spa.",
+    "sourceUrl": "https://baslux.pl/full-relax-750m-x-310m-x-150m/",
+    "images": []
   }
 ]
