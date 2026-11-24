@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Fraunces, Inter } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { CampaignBar } from "@/components/CampaignBar";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { site } from "@/config/site";
 import { hasLocale, locales } from "@/i18n/config";
@@ -34,6 +35,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   return (
     <html lang={lang} className={`${inter.variable} ${fraunces.variable} antialiased`}>
       <body className="flex min-h-screen flex-col">
+        <CampaignBar lang={lang} dict={dict} />
         <Header lang={lang} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer lang={lang} dict={dict} />

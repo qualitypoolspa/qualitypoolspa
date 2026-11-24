@@ -7,7 +7,7 @@ import { ProductGallery } from "@/components/ProductGallery";
 import type { Product } from "@/data/products";
 import { site } from "@/config/site";
 import { getCategory } from "@/data/categories";
-import { getProduct, products, productsIn } from "@/data/products";
+import { getProduct, products, productsIn, toCard } from "@/data/products";
 import { hasLocale, href, locales, pick, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -59,7 +59,7 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
           {product.images?.length ? (
             <ProductGallery images={product.images} name={product.name} />
           ) : (
-            <ProductImage product={product} className="aspect-[4/3] w-full" />
+            <ProductImage name={product.name} category={product.category} className="aspect-[4/3] w-full" />
           )}
         </div>
 
@@ -128,7 +128,7 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
           <h2 className="font-serif text-2xl text-navy">{dict.products.related}</h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
-              <ProductCard key={p.slug} product={p} lang={lang} dict={dict} />
+              <ProductCard key={p.slug} product={toCard(p, lang)} lang={lang} sampleLabel={dict.products.sample} />
             ))}
           </div>
         </section>

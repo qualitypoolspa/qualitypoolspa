@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { CategoryGrid } from "@/components/CategoryGrid";
 import { ContactButtons } from "@/components/ContactButtons";
 import { ProductCard } from "@/components/ProductCard";
-import { featuredProducts } from "@/data/products";
+import { featuredProducts, toCard } from "@/data/products";
 import { hasLocale, href } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { heroImage, publicImage } from "@/lib/assets";
@@ -102,7 +102,11 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 </li>
               ))}
             </ul>
-            <Link href={href(lang, "/contact")} className="btn btn-light mt-10">{dict.home.bandCta}</Link>
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <Link href={href(lang, "/contact")} className="btn btn-light">{dict.home.bandCta}</Link>
+              <Link href={href(lang, "/services")} className="border-b border-white/40 pb-0.5 text-sm text-white/85 hover:text-white">{dict.nav.services} →</Link>
+              <Link href={href(lang, "/gallery")} className="border-b border-white/40 pb-0.5 text-sm text-white/85 hover:text-white">{dict.nav.gallery} →</Link>
+            </div>
           </div>
         </div>
       </section>
@@ -119,7 +123,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((p) => (
-              <ProductCard key={p.slug} product={p} lang={lang} dict={dict} />
+              <ProductCard key={p.slug} product={toCard(p, lang)} lang={lang} sampleLabel={dict.products.sample} />
             ))}
           </div>
         </section>

@@ -1,0 +1,1148 @@
+[
+  {
+    "slug": "santoryna",
+    "name": "Santoryna",
+    "length": 7.9,
+    "width": 3.2,
+    "depth": 1.55,
+    "weight": 600,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Santoryna to jeden z większych basenów z pięknymi rzymskimi schodami. Maksymalne wykorzystanie powierzchni do pływania, wypustka na skimmer i dodatkowe miejsca do siedzenia to walory tego basenu.",
+    "sourceUrl": "https://baslux.pl/santoryna-7-9m-x-3-2m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/santoryna/1.webp",
+        "width": 1490,
+        "height": 1057,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "ikaria",
+    "name": "Ikaria",
+    "length": 7.4,
+    "width": 3.15,
+    "depth": 1.5,
+    "weight": 580,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Ikaria z antypoślizgowymi schodkami i bardzo oryginalnym kształcie i dodatkowymi miejscami do siedzenia.",
+    "sourceUrl": "https://baslux.pl/ikaria-7-4m-x-3-15m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/ikaria/1.webp",
+        "width": 1644,
+        "height": 1098,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "madagaskar",
+    "name": "Madagaskar",
+    "length": 6,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 460,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Komfortowy basen, podwójny zestaw stopni umożliwia wchodzenie oraz opuszczenie basenu w bezpieczny sposób. Wypustki na końcach pozwalają na ukrycie w nich skimmera.",
+    "sourceUrl": "https://baslux.pl/madagaskar-6-x-31-x-15/",
+    "images": [
+      {
+        "src": "/products/fibreglass/madagaskar/1.webp",
+        "width": 1019,
+        "height": 660,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "delos",
+    "name": "Delos",
+    "length": 4.8,
+    "width": 2.5,
+    "depth": 1.2,
+    "weight": 210,
+    "shapePl": "owal",
+    "descriptionPl": "Owalny oraz kompaktowy basen do zamontowania w ogrodzie bądź w domu. Schody boczne minimalistyczne umożliwiające maksymalną przestrzeń do pływania.",
+    "sourceUrl": "https://baslux.pl/delos-4-8m-x-2-5m-x-1-2m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/delos/1.webp",
+        "width": 866,
+        "height": 736,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "filus-ii",
+    "name": "Filuś Ii",
+    "length": 2.95,
+    "width": 2.95,
+    "depth": 1,
+    "weight": 200,
+    "shapePl": "okrągły",
+    "descriptionPl": "Basen przeznaczony dla dzieci i nie tylko. Małe stopnie oraz kompaktowy rozmiar pozwala na instalację niecki nawet na najmniejszej działce czy w pomieszczeniu.",
+    "sourceUrl": "https://baslux.pl/filus-ii-2-95m-x-1m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/filus-ii/1.webp",
+        "width": 1041,
+        "height": 775,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "filus-i",
+    "name": "Filuś I",
+    "length": 2.3,
+    "width": 2.3,
+    "depth": 0.8,
+    "weight": 130,
+    "shapePl": "okrągły",
+    "descriptionPl": "Mały basen stworzony dla potrzeb małych użytkowników. Jeden stopień pozwalający na maksymalne wykorzystanie przestrzeni w basenie. Niewielka głębokość zapewnia bezpieczeństwo użytkowania. Jako jeden z niewielu basenów Baslux nie musi być wkopany całkowicie w ziemię.",
+    "sourceUrl": "https://baslux.pl/filus-i-2-3m-x-0-8m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/filus-i/1.webp",
+        "width": 973,
+        "height": 727,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "majorka-xl",
+    "name": "Majorka Xl",
+    "length": 8.4,
+    "width": 3.6,
+    "depth": 1.5,
+    "weight": 900,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen Majorka XL to doskonała propozycja dla osób ceniących sobie komfort, trwałość i estetykę. Jego elegancki, prostokątny kształt sprawia, że idealnie komponuje się w każdym ogrodzie, zarówno w nowoczesnej, jak i klasycznej aranżacji. To rozwiązanie przeznaczone dla rodzin, miłośników relaksu oraz wszystkich, którzy marzą o prywatnej strefie wodnej tuż przy swoim domu.",
+    "sourceUrl": "https://baslux.pl/basen-majorka-xl-840-m-x-360-m-x-150-m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/majorka-xl/1.webp",
+        "width": 1680,
+        "height": 1011,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "majorka",
+    "name": "Majorka",
+    "length": 8,
+    "width": 3.2,
+    "depth": 1.3,
+    "weight": 600,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen Majorka to doskonała propozycja dla osób ceniących sobie komfort, trwałość i estetykę. Jego elegancki, prostokątny kształt sprawia, że idealnie komponuje się w każdym ogrodzie, zarówno w nowoczesnej, jak i klasycznej aranżacji. To rozwiązanie przeznaczone dla rodzin, miłośników relaksu oraz wszystkich, którzy marzą o prywatnej strefie wodnej tuż przy swoim domu.",
+    "sourceUrl": "https://baslux.pl/basen-majorka-800-m-x-320-m-x-130-m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/majorka/1.webp",
+        "width": 1680,
+        "height": 1013,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "barbados",
+    "name": "Barbados",
+    "length": 5,
+    "width": 2.8,
+    "depth": 1.35,
+    "weight": 330,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Niewielki, przydomowy basen, stosunkowo płytki z wąskimi stopniami pokrytymi opatentowaną strukturą antypoślizgową. Miejsca siedzące w rogach oraz wąskie schody umożliwiają pełny wypoczynek. Niewielki kształt będzie się idealnie komponować z niewielkim ogrodem.",
+    "sourceUrl": "https://baslux.pl/barbados-5m-x-2-8m-x-1-35m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/barbados/1.webp",
+        "width": 1021,
+        "height": 759,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "swim-comfort",
+    "name": "Swim Comfort",
+    "length": 8.8,
+    "width": 3.5,
+    "depth": 1.5,
+    "weight": 900,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Zamontowana podwodna roleta zapewniająca ochronę przed nieczystościami. Pełen pakiet, pełna ochrona naszego basenu. Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo, a dodatkowa leżanka pomoże się zrelaksować i poczuć jak we własnym spa.",
+    "sourceUrl": "https://baslux.pl/swim-comfort-880m-x-350m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/swim-comfort/1.webp",
+        "width": 1680,
+        "height": 1027,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "maxi-spa",
+    "name": "Maxi Spa",
+    "length": 8,
+    "width": 3.5,
+    "depth": 1.5,
+    "weight": 950,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo, a dodatkowa leżanka pomoże się zrelaksować i poczuć jak we własnym spa.",
+    "sourceUrl": "https://baslux.pl/maxi-spa-800-m-x-350m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/maxi-spa/1.webp",
+        "width": 1607,
+        "height": 1039,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "full-relax",
+    "name": "Full Relax",
+    "length": 7.5,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 660,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo, a dodatkowa leżanka pomoże się zrelaksować i poczuć jak we własnym spa.",
+    "sourceUrl": "https://baslux.pl/full-relax-750m-x-310m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/full-relax/1.webp",
+        "width": 1544,
+        "height": 1037,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "bora-bora",
+    "name": "Bora Bora",
+    "length": 10,
+    "width": 3.75,
+    "depth": 1.5,
+    "weight": 1150,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Największa niecka basenowa. Powierzchnia do pływania jest przy tym modelu maksymalnie wykorzystana. Perfekcyjny basen dla dużej rodziny. Miejsca siedzące oraz wygodne stopnie zapewniają odprężenie oraz wyciszenie po ciężkim dniu. Dzięki wypustkom dostęp do skimmera a przy tym podpięcie odkurzacza ręcznego jest ułatwione.",
+    "sourceUrl": "https://baslux.pl/bora-bora-1000m-x-375m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/bora-bora/1.webp",
+        "width": 1680,
+        "height": 1119,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "jawa",
+    "name": "Jawa",
+    "length": 10,
+    "width": 3.75,
+    "depth": 1.5,
+    "weight": 1150,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen w którym bez problemu zmieści się cała rodzina. Dzięki maksymalnej szerokości niecki można śmiało pływać w obydwu kierunkach. Podwójne schodki umożliwiają wejście do basenu dwóm osobom naraz. Wygodne siedzisko między schodkami i dwa na ściance na przeciwko wejścia. Komfort jakiego potrzebujesz.",
+    "sourceUrl": "https://baslux.pl/jawa-1000m-x-375m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/jawa/1.webp",
+        "width": 1680,
+        "height": 1032,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "itaka",
+    "name": "Itaka",
+    "length": 10,
+    "width": 3.7,
+    "depth": 1.55,
+    "weight": 1150,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Największa niecka basenowa z pięknymi rzymskimi schodkami i dwoma siedziskami na przeciwko schodków. Powierzchnia do pływania jest przy tym modelu maksymalnie wykorzystana. Dzięki wypustkom dostęp do skimmera a przy tym podpięcie odkurzacza ręcznego jest ułatwione.",
+    "sourceUrl": "https://baslux.pl/itaka-10m-x-3-7m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/itaka/1.webp",
+        "width": 1667,
+        "height": 1074,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "kefalina",
+    "name": "Kefalina",
+    "length": 9.5,
+    "width": 3.7,
+    "depth": 1.55,
+    "weight": 1150,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Kefalina jest bardzo doceniany ze względu na dodatkową „leżankę”. Komfort i uczucie odpoczynku zachęci do częstego korzystania.",
+    "sourceUrl": "https://baslux.pl/kefalina-9-5m-x-3-70m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/kefalina/1.webp",
+        "width": 1628,
+        "height": 1061,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "korsyka",
+    "name": "Korsyka",
+    "length": 9,
+    "width": 3.7,
+    "depth": 1.55,
+    "weight": 1050,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Korsyka przyciąga wyraźnymi schodkami rzymskimi i znaczną przestrzenią do pływania.",
+    "sourceUrl": "https://baslux.pl/korsyka-9m-x-3-7m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/korsyka/1.webp",
+        "width": 1547,
+        "height": 1045,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "king",
+    "name": "King",
+    "length": 9,
+    "width": 3.7,
+    "depth": 1.5,
+    "weight": 1050,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen w którym bez problemu zmieści się cała rodzina. Dzięki maksymalnej szerokości niecki można śmiało pływać w obydwu kierunkach. Podwójne schodki umożliwiają wejście do basenu dwóm osobom naraz. Wygodne siedzisko między schodkami i dwa na ściance na przeciwko wejścia. Komfort jakiego potrzebujesz.",
+    "sourceUrl": "https://baslux.pl/king-900m-x-370m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/king/1.webp",
+        "width": 1680,
+        "height": 1021,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "kos",
+    "name": "Kos",
+    "length": 8.4,
+    "width": 3.2,
+    "depth": 1.55,
+    "weight": 640,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Kos przenosi w klimatyczny nastrój tej wyjątkowej, greckiej wyspy. Znaczna przestrzeń do pływania to niepodważalny walor tego basenu, a rzymskie schody z antypoślizgową powierzchnią dopełniają całości.",
+    "sourceUrl": "https://baslux.pl/kos-8-4m-x-3-2m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/kos/1.webp",
+        "width": 955,
+        "height": 670,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "dominikana",
+    "name": "Dominikana",
+    "length": 8.1,
+    "width": 3.16,
+    "depth": 1.4,
+    "weight": 620,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Dominikana to jeden z większych basenów z klasycznymi schodami rzymskimi. Komfort i bezpieczeństwo zapewnione.",
+    "sourceUrl": "https://baslux.pl/dominikana-8-1m-x-3-16m-x-1-4m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/dominikana/1.webp",
+        "width": 1602,
+        "height": 1043,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "sycylia",
+    "name": "Sycylia",
+    "length": 8,
+    "width": 3.75,
+    "depth": 1.5,
+    "weight": 900,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Włoskie klimaty Sycylii to klasyczny kształt i schodki wpasowane w róg basenu. Dodatkowe miejsca do siedzenia dają komfort i wypoczynek",
+    "sourceUrl": "https://baslux.pl/sycylia-8m-x-3-75m-x-1-50m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/sycylia/1.webp",
+        "width": 1576,
+        "height": 1118,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "borneo",
+    "name": "Borneo",
+    "length": 8,
+    "width": 3.75,
+    "depth": 1.5,
+    "weight": 900,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen w którym bez problemu zmieści się cała rodzina. Dzięki maksymalnej szerokości niecki można śmiało pływać w obydwu kierunkach. Podwójne schodki umożliwiają wejście do basenu dwóm osobom naraz. Wygodne siedzisko między schodkami i dwa na ściance na przeciwko wejścia. Komfort jakiego potrzebujesz.",
+    "sourceUrl": "https://baslux.pl/borneo-800m-x-375m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/borneo/1.webp",
+        "width": 1680,
+        "height": 1082,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "rodos",
+    "name": "Rodos",
+    "length": 8,
+    "width": 3.7,
+    "depth": 1.55,
+    "weight": 900,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Rodos oferuje dodatkowe miejsce do leżakowania oraz schodki które nie ujmują przestrzeni do pływania. Dodatkowe miejsce do siedzenia i wypustki na skimmer czynią basen jeszcze bardziej praktycznym.",
+    "sourceUrl": "https://baslux.pl/rodos-8m-x-3-7m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/rodos/1.webp",
+        "width": 1669,
+        "height": 1205,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "skiatos-xl",
+    "name": "Skiatos Xl",
+    "length": 8.03,
+    "width": 3.22,
+    "depth": 1.5,
+    "descriptionPl": "Nasze baseny są zaprojektowane w taki sposób aby zapewnić maksymalne bezpieczeństwo i komfort użytkowania. Dzięki funkcjonalnym kształtom i powłoce antypoślizgowej na schodach, nasze niecki basenowe są bezpieczne także dla dzieci i osób starszych.",
+    "sourceUrl": "https://baslux.pl/skiatos-xl-803m-x-322m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/skiatos-xl/1.webp",
+        "width": 1680,
+        "height": 1126,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "okinawa",
+    "name": "Okinawa",
+    "length": 7.8,
+    "width": 3.2,
+    "depth": 1.5,
+    "weight": 800,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Jedyny basen z zamontowaną podwodną roletą zapewniająca ochronę przed nieczystościami. Pełen pakiet, pełna ochrona naszego basenu. Prosty, geometryczny kształt. Wygodne długie siedzisko przy szerokich, bezpiecznych schodkach.",
+    "sourceUrl": "https://baslux.pl/okinawa-780m-x-320m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/okinawa/1.webp",
+        "width": 1680,
+        "height": 1166,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "malta",
+    "name": "Malta",
+    "length": 7.6,
+    "width": 3,
+    "depth": 1.5,
+    "weight": 600,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Technologia i wytrzymałość basenów Baslux jest wzorem na rynku, którego inne firmy mogą tylko pozazdrościć. Nasze wyśrubowane normy jakości sprawiają, że baseny, które oferujemy są znakomitą inwestycją, dla wszystkich, którzy chcą zapewnić sobie odrobinę luksusu we własnym domu czy ogrodzie!",
+    "sourceUrl": "https://baslux.pl/malta-7-6m-x-3m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/malta/1.webp",
+        "width": 1680,
+        "height": 1072,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "riviera",
+    "name": "Riviera",
+    "length": 7.5,
+    "width": 3.15,
+    "depth": 1.5,
+    "weight": 600,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Klasyczny przydomowy basen, wprost stworzony dla rodziny z dziećmi. Ciekawe, szerokie stopnie zapewniają bezpieczeństwo użytkowania. Dwa siedziska na przeciwko schodów umożliwiają wypoczynek.",
+    "sourceUrl": "https://baslux.pl/riviera-7-50-m-x-3-15-m-x-1-50-m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/riviera/1.webp",
+        "width": 1103,
+        "height": 776,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "haiti",
+    "name": "Haiti",
+    "length": 7.5,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 650,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Haiti przyciąga ciekawym układem schodków z obu stron. Dodatkowe miejsca do siedzenia by po pływaniu chwilę odpocząć. Komfort i przyjemność.",
+    "sourceUrl": "https://baslux.pl/haiti-7-5m-x-3-1m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/haiti/1.webp",
+        "width": 1158,
+        "height": 725,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "aqua-relax",
+    "name": "Aqua Relax",
+    "length": 7,
+    "width": 3.5,
+    "depth": 1.5,
+    "weight": 720,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo, a dodatkowa leżanka pomoże się zrelaksować i poczuć jak we własnym spa.",
+    "sourceUrl": "https://baslux.pl/aqua-relax-700m-x-350m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/aqua-relax/1.webp",
+        "width": 1543,
+        "height": 1037,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "teneryfa",
+    "name": "Teneryfa",
+    "length": 7,
+    "width": 3.5,
+    "depth": 1.55,
+    "weight": 680,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Teneryfa i rzymskie schody mają swój urok i zwiększają powierzchnię do pływania. Zanurz się stopniowo i bezpiecznie dzięki antypoślizgowej strukturze na schodkach, a następnie delektuj się pływaniem.",
+    "sourceUrl": "https://baslux.pl/teneryfa-7m-x-3-5m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/teneryfa/1.webp",
+        "width": 1504,
+        "height": 1034,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "skiatos",
+    "name": "Skiatos",
+    "length": 7,
+    "width": 3.22,
+    "depth": 1.5,
+    "weight": 550,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen Skiatos – klasyczny prostokątny kształt, ze schodkami w jednym z rogów basenu, dodatkowymi miejscami do siedzenia zapewni komfort pływania na większej przestrzeni.",
+    "sourceUrl": "https://baslux.pl/skiatos-7m-x-3-22m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/skiatos/1.webp",
+        "width": 1668,
+        "height": 1171,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "kreta",
+    "name": "Kreta",
+    "length": 7,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 520,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen Kreta zapewni komfort pływania, delikatne stopniowe schodki pokryte antypoślizgową strukturą podnoszą bezpieczeństwo korzystania z basenu.",
+    "sourceUrl": "https://baslux.pl/kreta-7m-x-3-1m-x-1-50m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/kreta/1.webp",
+        "width": 1570,
+        "height": 1030,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "jamajka",
+    "name": "Jamajka",
+    "length": 7,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 540,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen Jamajka z ciekawym i praktycznym rozłożeniem schodków w dwóch rogach. Bezpieczna struktura anytpoślizgowa.",
+    "sourceUrl": "https://baslux.pl/jamajka-7m-x-3-1m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/jamajka/1.webp",
+        "width": 1309,
+        "height": 1029,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "zanzibar",
+    "name": "Zanzibar",
+    "length": 7,
+    "width": 3.1,
+    "depth": 1.35,
+    "weight": 480,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Klasyczny prostokątny kształt basenu Zanzibar – schodki narożne i maksymalna przestrzeń do pływania.",
+    "sourceUrl": "https://baslux.pl/zanzibar-7m-x-3-1m-x-1-35m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/zanzibar/1.webp",
+        "width": 1068,
+        "height": 761,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "kalamos",
+    "name": "Kalamos",
+    "length": 6.9,
+    "width": 3.2,
+    "depth": 1.55,
+    "weight": 500,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Klasyczny kształt połączony z najwyższą jakością wyrobu firmy Baslux. Miejsca siedzące pozwalające na odpoczynek oraz relax po ciężkim dniu.",
+    "sourceUrl": "https://baslux.pl/kalamos-6-9m-x-3-2m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/kalamos/1.webp",
+        "width": 1415,
+        "height": 1044,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "sardynia",
+    "name": "Sardynia",
+    "length": 6.5,
+    "width": 3,
+    "depth": 1.5,
+    "weight": 500,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Ten basen z kolei przeniesie nas w bardziej włoskie klimaty. Miejsca do siedzenia i niewielka przestrzeń wygospodarowana na schodki daje dużo miejsca do pływania.",
+    "sourceUrl": "https://baslux.pl/sardynia-6-5m-x-3m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/sardynia/1.webp",
+        "width": 1627,
+        "height": 1047,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "kapri",
+    "name": "Kapri",
+    "length": 6.4,
+    "width": 3.15,
+    "depth": 1.5,
+    "weight": 460,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Tak jak poprzednia wersja Kapri z różnicą braku wypustek na skimmer – wtedy dopasowujemy odpowiedni rodzaj euro – skimmera.",
+    "sourceUrl": "https://baslux.pl/kapri-6-4m-x-3-15m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/kapri/1.webp",
+        "width": 1257,
+        "height": 1057,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "bali",
+    "name": "Bali",
+    "length": 6.3,
+    "width": 3.15,
+    "depth": 1.5,
+    "weight": 480,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Klasyczny przydomowy basen. Idealny dla rodziny z dziećmi. Klasyczne bezpieczne stopnie zapewniają bezpieczeństwo użytkowania.",
+    "sourceUrl": "https://baslux.pl/bali-6-30m-x-3-15m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/bali/1.webp",
+        "width": 1616,
+        "height": 1174,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "aqua-fit",
+    "name": "Aqua Fit",
+    "length": 6.3,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 500,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo, a dodatkowa leżanka pomoże się zrelaksować i poczuć jak we własnym spa.",
+    "sourceUrl": "https://baslux.pl/aqua-fit-630m-x-310m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/aqua-fit/1.webp",
+        "width": 1494,
+        "height": 1013,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "tinos",
+    "name": "Tinos",
+    "length": 6.3,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 480,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen ogrodowy bardzo wysokiej jakości. Klasyczny prostokątny kształt, ze schodkami w jednym z rogów basenu zapewni komfort pływania na większej przestrzeni.",
+    "sourceUrl": "https://baslux.pl/tinos-630m-x-310m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/tinos/1.webp",
+        "width": 1680,
+        "height": 1148,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "minorka",
+    "name": "Minorka",
+    "length": 6.3,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 480,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Prostokątny, nowoczesny kształt. Układ stopni zapewnia komfort i bezpieczeństwo. Długie siedzisko przy schodkach i dwa mniejsze na przeciwko schodów zapewniają wypoczynek po wodnych szaleństwach.",
+    "sourceUrl": "https://baslux.pl/minorka-630m-x-310m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/minorka/1.webp",
+        "width": 1572,
+        "height": 1166,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "mykonos",
+    "name": "Mykonos",
+    "length": 6.2,
+    "width": 3.75,
+    "depth": 1.5,
+    "weight": 480,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen ogrodowy bardzo wysokiej jakości. Podwójne stopnie oraz podwójne miejsce do odpoczynku równa się podwójnej dawce relaksu i komfortu.",
+    "sourceUrl": "https://baslux.pl/mykonos-620m-x-375m-x-150m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/mykonos/1.webp",
+        "width": 1680,
+        "height": 1220,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "kuba",
+    "name": "Kuba",
+    "length": 6,
+    "width": 3.1,
+    "depth": 1.5,
+    "weight": 460,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen ogrodowy bardzo wysokiej jakości. Podwójne stopnie oraz podwójne miejsce do odpoczynku równa się podwójnej dawce relaksu i komfortu.",
+    "sourceUrl": "https://baslux.pl/kuba-600m-x-310m-x-150-m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/kuba/1.webp",
+        "width": 1023,
+        "height": 693,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "samos",
+    "name": "Samos",
+    "length": 6,
+    "width": 3.1,
+    "depth": 1.35,
+    "weight": 400,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Perfekcyjny basen dla dużej rodziny. Miejsca siedzące oraz wygodne stopnie zapewniają odprężenie oraz wyciszenie po ciężkim dniu.",
+    "sourceUrl": "https://baslux.pl/samos-6m-x-3-1m-x-1-35m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/samos/1.webp",
+        "width": 1000,
+        "height": 731,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "ibiza-ii",
+    "name": "Ibiza Ii",
+    "length": 6,
+    "width": 3,
+    "depth": 1.4,
+    "weight": 370,
+    "shapePl": "prostokąt zaokrąglony",
+    "descriptionPl": "Twoja Ibiza, twoje miejsce. Niecka wyposażona jest w dwa miejsca siedzące z których relaksujący się dorośli mogą doglądać swoich kąpiących się pociech. Wypustki na końcach pozwalają na instalację skimmera.",
+    "sourceUrl": "https://baslux.pl/ibiza-ii-6m-x-3m-x-1-4m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/ibiza-ii/1.webp",
+        "width": 1680,
+        "height": 1157,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "cypr",
+    "name": "Cypr",
+    "length": 5.4,
+    "width": 3,
+    "depth": 1.5,
+    "weight": 350,
+    "shapePl": "prostokąt zaokrąglony",
+    "descriptionPl": "Podoba Ci się nasz basen Barbados, lecz wolałbyś aby był głębszy? Basen Cypr jest właśnie dla Ciebie. Prosty design i maksymalne wykorzystanie przestrzeni pozwala na prawdziwy wypoczynek i komfort pływania.",
+    "sourceUrl": "https://baslux.pl/cypr-5-4m-x-3m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/cypr/1.webp",
+        "width": 1497,
+        "height": 1044,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "floryda",
+    "name": "Floryda",
+    "length": 5,
+    "width": 2.8,
+    "depth": 1.35,
+    "weight": 330,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Niewielki basen o wielkich możliwościach. Głębokość odpowiednia dla dzieci. Pamiętajmy że nie napełniamy basenu po brzegi. Woda będzie sięgała 1,20m. Prosty, nowoczesny kształt. Stabilne, szerokie stopnie zapewniają wygodę i bezpieczeństwo. Długie siedzisko przy schodkach i dwa mniejsze na przeciwko schodów pozwalają odpocząć.",
+    "sourceUrl": "https://baslux.pl/floryda-500m-x-280m-x-135m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/floryda/1.webp",
+        "width": 1680,
+        "height": 1225,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "egina",
+    "name": "Egina",
+    "length": 5,
+    "width": 2.7,
+    "depth": 1.3,
+    "weight": 280,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen poliestrowy z szerokimi stopniami zdecydowanie pomieści więcej niż jedną osobę. Komfort i praktyczność w jednym.",
+    "sourceUrl": "https://baslux.pl/egina-5m-x-2-7m-x-1-3m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/egina/1.webp",
+        "width": 810,
+        "height": 590,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "agos",
+    "name": "Agos",
+    "length": 2.95,
+    "width": 2.95,
+    "depth": 1,
+    "weight": 250,
+    "shapePl": "okrągły",
+    "descriptionPl": "Technologia i wytrzymałość basenów Baslux jest wzorem na rynku, którego inne firmy mogą tylko pozazdrościć. Nasze wyśrubowane normy jakości sprawiają, że baseny, które oferujemy są znakomitą inwestycją, dla wszystkich, którzy chcą zapewnić sobie odrobinę luksusu we własnym domu czy ogrodzie!",
+    "sourceUrl": "https://baslux.pl/agos-4-5m-x-2-5m-x-1-2m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/agos/1.webp",
+        "width": 967,
+        "height": 807,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "polus",
+    "name": "Poluś",
+    "length": 3,
+    "width": 2.35,
+    "depth": 0.8,
+    "weight": 200,
+    "shapePl": "okrągły nieregularny",
+    "descriptionPl": "Mały kompaktowy basen. Idealny na ogród dla małych i dużych użytkowników. Szerokie stopnie oraz optymalna głębokość pozwala na bezpieczne użytkowanie produktu.",
+    "sourceUrl": "https://baslux.pl/polus-3m-x-2-35m-x-0-8m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/polus/1.webp",
+        "width": 1516,
+        "height": 1142,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "miami",
+    "name": "Miami",
+    "length": 6.3,
+    "width": 3.1,
+    "depth": 1.5,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Niezwykle trwała i elegancka niecka basenowa idealna do Twojego ogrodu. Dodatkowe miejsca do siedzenia dają komfort i wypoczynek. Jej solidna konstrukcja gwarantuje długotrwałą trwałość. Wbudowana studzienka na osprzęt pozwala ograniczyć ilość miejsca potrzebnego do instalacji niecki.",
+    "sourceUrl": "https://baslux.pl/miami-630m-x-310m-x-150-m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/miami/1.webp",
+        "width": 1678,
+        "height": 1055,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "paros",
+    "name": "Paros",
+    "length": 8,
+    "width": 3.2,
+    "depth": 1.5,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Paros przyciąga oryginalnym kształtem schodków. Dodatkowe miejsca do siedzenia, wypustki na skimmery dodają uroku i praktyczności.",
+    "sourceUrl": "https://baslux.pl/paros-8m-x-3-2m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/paros/1.webp",
+        "width": 1653,
+        "height": 1222,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "naksos",
+    "name": "Naksos",
+    "length": 7.7,
+    "width": 3.2,
+    "depth": 1.55,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Naksos posiada bardzo ciekawy kształt schodków. Antypoślizgowa struktura na schodkach daje poczucie bezpieczeństwa, a znaczna przestrzeń zwiększa komfort pływania.",
+    "sourceUrl": "https://baslux.pl/naksos-7-7m-x-3-2m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/naksos/1.webp",
+        "width": 1628,
+        "height": 1240,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "milos",
+    "name": "Milos",
+    "length": 7.5,
+    "width": 3.1,
+    "depth": 1.55,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Oryginalny basen z bardzo ładnym ułożeniem schodków. Przestrzeń do pływania, dodatkowe miejsca do siedzenia dają uczucie komfortu, a antypoślizgowa powierzchnia bezpieczne schodzenie i wychodzenie z basenu.",
+    "sourceUrl": "https://baslux.pl/milos-7-5m-x-3-1m-x-1-55m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/milos/1.webp",
+        "width": 1418,
+        "height": 1015,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "skiatos-ii",
+    "name": "Skiatos Ii",
+    "length": 7,
+    "width": 3.22,
+    "depth": 1.5,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen Skiatos – klasyczny prostokątny kształt, ze schodkami w jednym z rogów basenu, dodatkowymi miejscami do siedzenia zapewni komfort pływania na większej przestrzeni.",
+    "sourceUrl": "https://baslux.pl/skiatos-ii-700-x-322-x-150/",
+    "images": [
+      {
+        "src": "/products/fibreglass/skiatos-ii/1.webp",
+        "width": 1680,
+        "height": 1210,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "lindos",
+    "name": "Lindos",
+    "length": 7,
+    "width": 3,
+    "depth": 1.3,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Lindos to bardzo ciekawe rozwiązanie z oryginalnymi schodkami, miejscami do siedzenia i wypustkami na skimmer. Pomieści większą liczbę osób i zapewni wysoki komfort pływania.",
+    "sourceUrl": "https://baslux.pl/lindos-7m-x-3m-x-1-3m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/lindos/1.webp",
+        "width": 1680,
+        "height": 1158,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "madera",
+    "name": "Madera",
+    "length": 7,
+    "width": 3,
+    "depth": 1.45,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Madera przyciąga oryginalnymi schodkami i dodatkowymi miejscami do siedzenia. Zapewni komfort pływania i głęboki odpoczynek.",
+    "sourceUrl": "https://baslux.pl/madera-7m-x-3m-x-1-45m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/madera/1.webp",
+        "width": 1568,
+        "height": 1213,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "korfu-ii",
+    "name": "Korfu Ii",
+    "length": 6.5,
+    "width": 3,
+    "depth": 1.4,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen Korfu w wersji bez wypustek skłania do zainstalowania euro – skimmera. Praktyczne schodki i miejsca do siedzenia podnoszą walory basenu.",
+    "sourceUrl": "https://baslux.pl/korfu-ii-6-5m-x-3m-x-1-4m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/korfu-ii/1.webp",
+        "width": 1680,
+        "height": 1134,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "fiji",
+    "name": "Fiji",
+    "length": 8.4,
+    "width": 3.1,
+    "depth": 1.5,
+    "shapePl": "prostokąt",
+    "descriptionPl": "Basen ogrodowy bardzo wysokiej jakości. Klasyczny prostokątny kształt, ze schodkami w jednym z rogów basenu zapewni komfort pływania na większej przestrzeni. Bezpieczna struktura anytpoślizgowa.",
+    "sourceUrl": "https://baslux.pl/fiji-840m-x-310-m-x-150-m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/fiji/1.webp",
+        "width": 1680,
+        "height": 1022,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "gados",
+    "name": "Gados",
+    "length": 6.2,
+    "width": 3,
+    "depth": 1.5,
+    "shapePl": "prostokąt nieregularny",
+    "descriptionPl": "Basen przydomowy o oryginalnym projekcie stopni z dwoma siedzeniami oraz wypustkami na ukrycie skimmera.",
+    "sourceUrl": "https://baslux.pl/gados-6-2m-x-3m-x-1-5m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/gados/1.webp",
+        "width": 1568,
+        "height": 1215,
+        "contain": true
+      }
+    ]
+  },
+  {
+    "slug": "kastos-ii",
+    "name": "Kastos Ii",
+    "length": 5.5,
+    "width": 3,
+    "depth": 1.4,
+    "shapePl": "prostokąt zaokrąglony",
+    "descriptionPl": "W basenach Kastos II wypustki na końcu basenu pozwalają zainstalować skimmer tak aby był jak najmniej widoczny. Podnosi to estetykę basenu.",
+    "sourceUrl": "https://baslux.pl/kastos-ii-5-5m-x-3m-x-1-4m/",
+    "images": [
+      {
+        "src": "/products/fibreglass/kastos-ii/1.webp",
+        "width": 1653,
+        "height": 1164,
+        "contain": true
+      }
+    ]
+  }
+]

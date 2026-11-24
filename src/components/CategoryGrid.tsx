@@ -8,7 +8,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 type Cat = (typeof categories)[number];
 
 // Tall, image-led tiles. Uses /public/categories/<slug>.jpg when present.
-function Tile({ c, lang, dict, big }: { c: Cat; lang: Locale; dict: Dictionary; big: boolean }) {
+export function Tile({ c, lang, dict, big }: { c: Cat; lang: Locale; dict: Dictionary; big: boolean }) {
   const img = categoryImage(c.slug);
   return (
     <Link
@@ -39,6 +39,18 @@ function Tile({ c, lang, dict, big }: { c: Cat; lang: Locale; dict: Dictionary; 
         </span>
       </div>
     </Link>
+  );
+}
+
+/** Tiles for a given set of categories (e.g. one menu group), all the same size. */
+export function CategoryTiles({ slugs, lang, dict }: { slugs: readonly string[]; lang: Locale; dict: Dictionary }) {
+  const list = categories.filter((c) => slugs.includes(c.slug));
+  return (
+    <div className={`grid gap-4 sm:grid-cols-2 md:gap-5 ${list.length > 3 ? "lg:grid-cols-3" : "lg:grid-cols-3"}`}>
+      {list.map((c) => (
+        <Tile key={c.slug} c={c} lang={lang} dict={dict} big={false} />
+      ))}
+    </div>
   );
 }
 
