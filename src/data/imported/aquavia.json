@@ -4795,5 +4795,877 @@
         "height": 844
       }
     ]
+  },
+  {
+    "id": "52",
+    "slug": "spa-home",
+    "name": "Home Hot Tub",
+    "collection": "hot-tubs",
+    "description": "The Home Spa is a jacuzzi designed for couples, ideal for hotel suites or for a private home. Jacuzzi for 4 people with a 15-year guarantee.",
+    "specs": [
+      {
+        "group": "General specifications",
+        "label": "Spa dimensions (cm)",
+        "value": "215 x 174 x 75"
+      },
+      {
+        "group": "General specifications",
+        "label": "Number of Spa places (sitting/lying down)",
+        "value": "4 (4/-)"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa water volume (litres)",
+        "value": "520"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa weight (empty - full)",
+        "value": "331 Kg / 851 Kg"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa massage pump",
+        "value": "1,850 W / 2.5 HP"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa blower pump",
+        "value": "1.150 W"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa filtration pump",
+        "value": "200 W"
+      },
+      {
+        "group": "General specifications",
+        "label": "Electric Spa Heating",
+        "value": "3,000 W"
+      },
+      {
+        "group": "General specifications",
+        "label": "Low Amp required power (W) / (A) at 230 V",
+        "value": "3,400 W / 14.6 A"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa Voltage",
+        "value": "230 V / 400 V III"
+      },
+      {
+        "group": "Equipment",
+        "label": "Number of Spa jets",
+        "value": "20"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with air injectors",
+        "value": "8"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with headrest",
+        "value": "2"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with digital control panel",
+        "value": "Touch panel"
+      },
+      {
+        "group": "Equipment",
+        "label": "Ultraviolet Treatment UV",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with insulating ABS base",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Colour Sense",
+        "value": "4 LED"
+      },
+      {
+        "group": "Equipment",
+        "label": "Stainless Steel Jets/Nozzles",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with Filter",
+        "value": "Cartridge"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with isothermal cover",
+        "value": "Prime Tex Cover"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa Helmet Colors",
+        "value": "Alba, Pearl Shadow, Silver, Sterling, White"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Type of coating Outdoor furniture",
+        "value": "White Solid Surface"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Surround Bluetooth Audio",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Programmable Wifi with Touch Panel",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Pure Line",
+        "value": "Yes"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa with double thermal insulation EcoSpa",
+        "value": "Yes"
+      }
+    ],
+    "sourceUrl": "https://aquaviaspa.com/en/hot-tubs/spa-home",
+    "images": [
+      {
+        "src": "/products/aquavia/spa-home/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-home/2.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-home/3.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/spa-home/4.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/spa-home/5.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/spa-home/6.webp",
+        "width": 1080,
+        "height": 1920
+      }
+    ]
+  },
+  {
+    "id": "51",
+    "slug": "swimspa-compact-pool",
+    "name": "Swimspa Compact Pool",
+    "collection": "swim-spas",
+    "description": "The Swimspa Compact Pool is a spacious and compact private pool that offers a large bathing area as well as a vertical massage column.",
+    "specs": [
+      {
+        "group": "General specifications",
+        "label": "Spa dimensions (cm)",
+        "value": "400 x 230 x 138"
+      },
+      {
+        "group": "General specifications",
+        "label": "Number of Spa places (sitting/lying down)",
+        "value": "1 (/-/-/1)"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa water volume (litres)",
+        "value": "6.000"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa weight (empty - full)",
+        "value": "1,150 / 7,150 Kg."
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa massage pump",
+        "value": "3 x 2,200 W / 3 HP"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa filtration pump",
+        "value": "400 W"
+      },
+      {
+        "group": "General specifications",
+        "label": "Electric Spa Heating",
+        "value": "3,000 W"
+      },
+      {
+        "group": "General specifications",
+        "label": "Low Amp required power (W) / (A) at 230 V",
+        "value": "7,000 W / 30.5 A"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa Voltage",
+        "value": "230 V / 400 V III"
+      },
+      {
+        "group": "Equipment",
+        "label": "Number of Spa jets",
+        "value": "16"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with digital control panel",
+        "value": "Touch panel"
+      },
+      {
+        "group": "Equipment",
+        "label": "Ultraviolet Treatment UV",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with insulating ABS base",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Colour Sense",
+        "value": "5 LED + Illuminated Accessories"
+      },
+      {
+        "group": "Equipment",
+        "label": "Stainless Steel Jets/Nozzles",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with Filter",
+        "value": "2 x Cartridge"
+      },
+      {
+        "group": "Equipment",
+        "label": "Swimming and fitness kit for swimspa or pool",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa Helmet Colors",
+        "value": "Sterling, White"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Type of coating Outdoor furniture",
+        "value": "Swell Moca"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Surround Bluetooth Audio",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Programmable Wifi with Touch Panel",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa with double thermal insulation EcoSpa",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa no cabinet",
+        "value": "Optional, see technical specifications for the Inground model in the commercial sheet"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Design Line",
+        "value": "Yes"
+      }
+    ],
+    "sourceUrl": "https://aquaviaspa.com/en/swimspa/swimspa-compact-pool",
+    "images": [
+      {
+        "src": "/products/aquavia/swimspa-compact-pool/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/swimspa-compact-pool/2.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/swimspa-compact-pool/3.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/swimspa-compact-pool/4.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/swimspa-compact-pool/5.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/swimspa-compact-pool/6.webp",
+        "width": 1080,
+        "height": 1920
+      }
+    ]
+  },
+  {
+    "id": "50",
+    "slug": "swimspa-duo",
+    "name": "Swimspa Duo",
+    "collection": "swim-spas",
+    "description": "The Swimspa Duo is a mini pool with hydromassage, counter-current swimming area and independent temperature. Up to 15 years warranty.",
+    "specs": [
+      {
+        "group": "General specifications",
+        "label": "Spa dimensions (cm)",
+        "value": "600 x 230 x 138"
+      },
+      {
+        "group": "General specifications",
+        "label": "Number of Spa places (sitting/lying down)",
+        "value": "4 (2/ 2)"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa water volume (litres)",
+        "value": "1,000 + 6,000"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa weight (empty - full)",
+        "value": "1,500 / 8.500Kg."
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa massage pump",
+        "value": "2,200W / 3CV + 3 x 2,200 W / 3CV"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa filtration pump",
+        "value": "200W + 400 W"
+      },
+      {
+        "group": "General specifications",
+        "label": "Electric Spa Heating",
+        "value": "3,000 W + 3,000 W"
+      },
+      {
+        "group": "General specifications",
+        "label": "Low Amp required power (W) / (A) at 230 V",
+        "value": "3,280 W / 14.3 A + 7,000 W / 30.5 A"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa Voltage",
+        "value": "230 V / 400 V III"
+      },
+      {
+        "group": "Equipment",
+        "label": "Number of Spa jets",
+        "value": "30 + 16"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with headrest",
+        "value": "2"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with digital control panel",
+        "value": "Touch panel"
+      },
+      {
+        "group": "Equipment",
+        "label": "Ultraviolet Treatment UV",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with insulating ABS base",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Colour Sense",
+        "value": "3 LED Illuminated Accessories + 5 LED Illuminated Accessories"
+      },
+      {
+        "group": "Equipment",
+        "label": "Stainless Steel Jets/Nozzles",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with Filter",
+        "value": "1 x Cartridge + 2 x Cartridge"
+      },
+      {
+        "group": "Equipment",
+        "label": "Swimming and fitness kit for swimspa or pool",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "Rowing kit for swimspa fitness",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa Helmet Colors",
+        "value": "Sterling, White"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Type of coating Outdoor furniture",
+        "value": "Swell Moca, Warm Grey"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Surround Bluetooth Audio",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Programmable Wifi with Touch Panel",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa with double thermal insulation EcoSpa",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa no cabinet",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Design Line",
+        "value": "Yes"
+      }
+    ],
+    "sourceUrl": "https://aquaviaspa.com/en/swimspa/swimspa-duo",
+    "images": [
+      {
+        "src": "/products/aquavia/swimspa-duo/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/swimspa-duo/2.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/swimspa-duo/3.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/swimspa-duo/4.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/swimspa-duo/5.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/swimspa-duo/6.webp",
+        "width": 1080,
+        "height": 1920
+      }
+    ]
+  },
+  {
+    "id": "49",
+    "slug": "capri-spa",
+    "name": "Capri Hot Tub",
+    "collection": "professional-spas",
+    "description": "The Capri Spa is a circular, overflowing hot tub for 5 people and for commercial, indoor and outdoor use. Up to 15 years warranty.",
+    "specs": [
+      {
+        "group": "General specifications",
+        "label": "Spa dimensions (cm)",
+        "value": "Ø 230"
+      },
+      {
+        "group": "General specifications",
+        "label": "Number of Spa places (sitting/lying down)",
+        "value": "5 (5 / -)"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa water volume (litres)",
+        "value": "1.120"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa weight (empty - full)",
+        "value": "176 Kg / 1.296 Kg"
+      },
+      {
+        "group": "Equipment",
+        "label": "Number of Spa jets",
+        "value": "8"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with air injectors",
+        "value": "10"
+      },
+      {
+        "group": "Equipment",
+        "label": "Ultraviolet Treatment UV",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "Stainless Steel Jets/Nozzles",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with isothermal cover",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "White LED Spotlight",
+        "value": "1 LED"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spas with piezoelectric push buttons",
+        "value": "2"
+      },
+      {
+        "group": "Equipment",
+        "label": "Overflowing Spa",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Compensation deposit",
+        "value": "Optional (1,000 l.)"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa Helmet Colors",
+        "value": "Alba, Pearl Shadow, Sterling, White"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Chromotherapy LED Spotlight",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Teak wood grate",
+        "value": "Optional"
+      }
+    ],
+    "sourceUrl": "https://aquaviaspa.com/en/professional-spas/capri-spa",
+    "images": [
+      {
+        "src": "/products/aquavia/capri-spa/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/capri-spa/2.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/capri-spa/3.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/capri-spa/4.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/capri-spa/5.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/capri-spa/6.webp",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
+  },
+  {
+    "id": "48",
+    "slug": "spa-bali",
+    "name": "Bali Hot Tub",
+    "collection": "professional-spas",
+    "description": "The Bali Spa is a round 9-person hot tub, suitable for commercial use and easy to install. Up to 15 years warranty, find out more!",
+    "specs": [
+      {
+        "group": "General specifications",
+        "label": "Spa dimensions (cm)",
+        "value": "Ø 300"
+      },
+      {
+        "group": "General specifications",
+        "label": "Number of Spa places (sitting/lying down)",
+        "value": "9 (9 / -)"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa water volume (litres)",
+        "value": "2.290"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa weight (empty - full)",
+        "value": "323 Kg / 2.613 Kg"
+      },
+      {
+        "group": "Equipment",
+        "label": "Number of Spa jets",
+        "value": "18"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with air injectors",
+        "value": "18"
+      },
+      {
+        "group": "Equipment",
+        "label": "Ultraviolet Treatment UV",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Stainless Steel Jets/Nozzles",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with isothermal cover",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "White LED Spotlight",
+        "value": "1 LED"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spas with piezoelectric push buttons",
+        "value": "2"
+      },
+      {
+        "group": "Equipment",
+        "label": "Overflowing Spa",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Compensation deposit",
+        "value": "Optional (2,000 l.)"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa Helmet Colors",
+        "value": "Sterling, White"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Type of hull finish",
+        "value": "Acrylic"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Chromotherapy LED Spotlight",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Teak wood grate",
+        "value": "Optional"
+      }
+    ],
+    "sourceUrl": "https://aquaviaspa.com/en/professional-spas/spa-bali",
+    "images": [
+      {
+        "src": "/products/aquavia/spa-bali/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-bali/2.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-bali/3.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-bali/4.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-bali/5.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-bali/6.webp",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
+  },
+  {
+    "id": "47",
+    "slug": "spa-oasis-40",
+    "name": "Oasis 40 Hot Tub",
+    "collection": "professional-spas",
+    "description": "The Spa Oasis 40 is a round indoor/outdoor jacuzzi for 6 people with glass mosaic tiles. Up to 15 years warranty.",
+    "specs": [
+      {
+        "group": "General specifications",
+        "label": "Spa dimensions (cm)",
+        "value": "Ø 250"
+      },
+      {
+        "group": "General specifications",
+        "label": "Number of Spa places (sitting/lying down)",
+        "value": "6 (6 / -)"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa water volume (litres)",
+        "value": "1.410"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa weight (empty - full)",
+        "value": "333 Kg / 1.743 Kg"
+      },
+      {
+        "group": "Equipment",
+        "label": "Number of Spa jets",
+        "value": "25"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with air injectors",
+        "value": "12"
+      },
+      {
+        "group": "Equipment",
+        "label": "Ultraviolet Treatment UV",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "Stainless Steel Jets/Nozzles",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with isothermal cover",
+        "value": "Optional"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spas with piezoelectric push buttons",
+        "value": "2"
+      },
+      {
+        "group": "Equipment",
+        "label": "Overflowing Spa",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Compensation deposit",
+        "value": "Optional (1,000 l.)"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa Helmet Colors",
+        "value": "Aster, Bahamas, Camel, Fusain, Noisetier, Pierre, Zinnia"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Type of hull finish",
+        "value": "Mosaic"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Chromotherapy LED Spotlight",
+        "value": "Optional"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Teak wood grate",
+        "value": "Optional"
+      }
+    ],
+    "sourceUrl": "https://aquaviaspa.com/en/professional-spas/spa-oasis-40",
+    "images": [
+      {
+        "src": "/products/aquavia/spa-oasis-40/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-oasis-40/2.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/spa-oasis-40/3.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/spa-oasis-40/4.webp",
+        "width": 1600,
+        "height": 844
+      },
+      {
+        "src": "/products/aquavia/spa-oasis-40/5.webp",
+        "width": 1067,
+        "height": 1896
+      }
+    ]
   }
 ]

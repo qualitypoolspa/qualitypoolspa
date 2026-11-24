@@ -1,6 +1,7 @@
 import type { Localized } from "@/i18n/config";
 import type { CategorySlug } from "./categories";
 import { aquaviaProducts } from "./suppliers/aquavia";
+import { astralpoolProducts } from "./suppliers/astralpool";
 
 export type ProductImage = { src: string; width: number; height: number };
 
@@ -25,32 +26,8 @@ export type Product = {
 };
 
 // Hand-written products. Supplier imports are merged in below.
-// TODO(client): replace the remaining samples (pool covers, saunas) with real products.
+// TODO(client): replace the remaining samples (saunas) with real products.
 const manualProducts: Product[] = [
-  {
-    slug: "automatic-roller-cover",
-    category: "pool-covers",
-    name: "Automatic Roller Cover",
-    tagline: { en: "Cover or open your pool at the touch of a button." },
-    description: {
-      en: "An automatic pool cover that keeps debris out, reduces evaporation and heat loss, and adds safety. Sample text, replace with the real product description.",
-    },
-    specs: [
-      { label: { en: "Type" }, value: "Automatic, above or below water" },
-      { label: { en: "Control" }, value: "Key switch or remote" },
-    ],
-    sample: true,
-  },
-  {
-    slug: "solar-bubble-cover",
-    category: "pool-covers",
-    name: "Solar Bubble Cover",
-    tagline: { en: "Free heat from the sun, less evaporation." },
-    description: {
-      en: "A cost-effective cover that captures solar heat and cuts water loss. Sample text, replace with the real product description.",
-    },
-    sample: true,
-  },
   {
     slug: "barrel-sauna",
     category: "saunas-hammam",
@@ -74,11 +51,12 @@ const manualProducts: Product[] = [
   },
 ];
 
-// The client's hand-picked models: shown first ("Our selection") and on the home page.
+// The client's hand-picked spas: shown first on the spa page ("Our selection").
 export const selectionSlugs = ["spa-touch-pro", "spa-feel", "spa-essence", "spa-touch-5-pro", "spa-cube-ergo"];
-const featuredSlugs = selectionSlugs;
+// Home page "Popular products": the priority categories, pool covers and spas, mixed.
+const featuredSlugs = ["octeo", "spa-touch-pro", "bellasun", "spa-feel", "sveltea", "spa-essence"];
 
-const all = [...manualProducts, ...aquaviaProducts];
+const all = [...manualProducts, ...astralpoolProducts, ...aquaviaProducts];
 
 export const products: Product[] = all.map((p) => ({ ...p, featured: featuredSlugs.includes(p.slug) }));
 

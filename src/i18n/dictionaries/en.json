@@ -67,7 +67,7 @@
   "categories": {
     "pool-covers": {
       "name": "Pool covers",
-      "blurb": "Safety, solar and automatic covers that keep your pool clean, warm and safe."
+      "blurb": "Automatic slatted covers and solar covers that keep your pool clean, warm and safe."
     },
     "spas": {
       "name": "Spas",
@@ -113,7 +113,9 @@
     "mosaic-line": "Mosaic Line",
     "hot-tubs": "More hot tubs",
     "professional-spas": "Professional spas",
-    "accessories": "Spa accessories"
+    "accessories": "Spa accessories",
+    "slatted-covers": "Slatted covers",
+    "solar-covers": "Solar covers"
   },
   "products": {
     "title": "Products",

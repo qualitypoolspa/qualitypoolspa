@@ -13,7 +13,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const featured = featuredProducts(3);
+  const featured = featuredProducts(6);
   const hero = heroImage();
   const bandImg = publicImage("/hero/project.jpg", "/hero/project.webp", "/hero/project.png");
 
