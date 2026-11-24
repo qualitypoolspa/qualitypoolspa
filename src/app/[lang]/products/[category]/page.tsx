@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ContactButtons } from "@/components/ContactButtons";
 import { ProductCard } from "@/components/ProductCard";
 import { categories, getCategory } from "@/data/categories";
-import { productsIn } from "@/data/products";
+import { productsIn, selectionIn } from "@/data/products";
 import { hasLocale, href, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -26,6 +26,17 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/produc
   const dict = await getDictionary(lang);
   const items = productsIn(cat.slug);
 
+  // Group by collection in the order defined in the dictionary; ungrouped products last.
+  const order = Object.keys(dict.collections);
+  const byKey = new Map<string, typeof items>();
+  for (const p of items) byKey.set(p.collection ?? "other", [...(byKey.get(p.collection ?? "other") ?? []), p]);
+  const groups = [...byKey].sort(([a], [b]) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
+  // The client's hand-picked models go first (they also stay in their own collection).
+  const selection = selectionIn(cat.slug);
+  if (selection.length) groups.unshift(["selection", selection]);
+  const collectionName = (key: string) =>
+    (dict.collections as Record<string, string>)[key] ?? dict.categories[cat.slug].name;
+
   return (
     <>
       <section className={`bg-gradient-to-br ${cat.tone} text-white`}>
@@ -40,11 +51,31 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/produc
 
       <section className="mx-auto max-w-6xl px-5 py-14">
         {items.length > 0 ? (
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {items.map((p) => (
-              <ProductCard key={p.slug} product={p} lang={lang} dict={dict} />
-            ))}
-          </div>
+          <>
+            {groups.length > 1 && (
+              <nav className="mb-12 flex flex-wrap gap-2">
+                {groups.map(([key, list]) => (
+                  <a key={key} href={`#${key}`} className="rounded-full border border-line bg-white px-4 py-1.5 text-sm text-navy hover:border-teal">
+                    {collectionName(key)} <span className="text-navy/40">{list.length}</span>
+                  </a>
+                ))}
+              </nav>
+            )}
+            <div className="space-y-20">
+              {groups.map(([key, list]) => (
+                <div key={key} id={key} className="scroll-mt-28">
+                  {groups.length > 1 && <h2 className="font-serif text-3xl text-navy">{collectionName(key)}</h2>}
+                  {key === "selection" && <p className="mt-2 text-sm text-navy/60">{dict.products.selectionIntro}</p>}
+                  <div className="mb-8" />
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {list.map((p) => (
+                      <ProductCard key={p.slug} product={p} lang={lang} dict={dict} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         ) : (
           <div className="max-w-xl">
             <p className="text-navy/75">{dict.products.empty}</p>

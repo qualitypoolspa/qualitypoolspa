@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { CategoryGrid } from "@/components/CategoryGrid";
 import { ContactButtons } from "@/components/ContactButtons";
 import { ProductCard } from "@/components/ProductCard";
-import { products } from "@/data/products";
+import { featuredProducts } from "@/data/products";
 import { hasLocale, href } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { heroImage, publicImage } from "@/lib/assets";
@@ -13,7 +13,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const featured = products.filter((p) => p.featured).slice(0, 3);
+  const featured = featuredProducts(3);
   const hero = heroImage();
   const bandImg = publicImage("/hero/project.jpg", "/hero/project.webp", "/hero/project.png");
 
