@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f5ef;
-  --foreground: #12303d;
+  --background: #faf8f3;
+  --foreground: #0b1f2a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-navy: #0f3040;
-  --color-teal: #0e7c86;
-  --color-teal-dark: #0a626b;
+  --color-navy: #0b1f2a;
+  --color-ink: #08171f;
+  --color-teal: #0f6f7a;
+  --color-teal-dark: #0a565f;
+  --color-brass: #8a6d3f;
   --color-sand: #efe9df;
-  --color-line: #ddd6c8;
+  --color-line: #e1dacc;
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
 }
@@ -28,11 +30,11 @@ body {
 }
 
 .eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--color-teal);
+  color: var(--color-brass);
 }
 
 .btn {
@@ -40,18 +42,34 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 0.375rem;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.875rem;
+  border-radius: 9999px;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   font-weight: 600;
   transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
 .btn-primary {
-  background: var(--color-teal);
+  background: var(--color-navy);
   color: #fff;
 }
 .btn-primary:hover {
-  background: var(--color-teal-dark);
+  background: var(--color-teal);
+}
+.btn-light {
+  background: #fff;
+  color: var(--color-navy);
+}
+.btn-light:hover {
+  background: var(--color-sand);
+}
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 .btn-outline {
   border: 1px solid var(--color-line);
@@ -67,4 +85,29 @@ body {
 }
 .btn-whatsapp:hover {
   background: #168a44;
+}
+
+/* Placeholder "water" backdrop until a real hero photo is supplied */
+.hero-water {
+  background:
+    radial-gradient(60% 70% at 78% 30%, rgba(63, 175, 190, 0.45), transparent 70%),
+    radial-gradient(50% 60% at 15% 90%, rgba(15, 111, 122, 0.55), transparent 70%),
+    linear-gradient(160deg, #0b2a36 0%, #08171f 100%);
+}
+
+/* Gentle scroll reveal, progressive enhancement (ignored where unsupported) */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { animation: none; }
+  html { scroll-behavior: auto; }
 }

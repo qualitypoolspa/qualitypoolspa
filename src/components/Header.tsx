@@ -11,19 +11,19 @@ export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
     { to: "/contact", label: dict.nav.contact },
   ];
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+    <header className="sticky top-0 z-40 border-b border-line/70 bg-[#faf8f3]">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5">
         <Link href={href(lang)} aria-label={dict.meta.title}>
           <Image src="/brand/logo.png" alt={dict.meta.title} width={781} height={123} priority className="h-8 w-auto" />
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm font-medium text-navy md:flex">
+        <nav className="hidden items-center gap-9 text-[12px] font-semibold uppercase tracking-[0.16em] text-navy md:flex">
           {links.map((l) => (
             <Link key={l.to} href={href(lang, l.to)} className="hover:text-teal">
               {l.label}
             </Link>
           ))}
-          <Link href={href(lang, "/contact")} className="btn btn-primary !py-2">
+          <Link href={href(lang, "/contact")} className="btn btn-primary !py-2.5">
             {dict.nav.getQuote}
           </Link>
         </nav>

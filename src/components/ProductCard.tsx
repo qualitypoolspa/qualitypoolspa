@@ -24,7 +24,7 @@ export function ProductCard({ product, lang, dict }: { product: Product; lang: L
   return (
     <Link
       href={href(lang, `/products/${product.category}/${product.slug}`)}
-      className="group overflow-hidden rounded-lg border border-line bg-white transition hover:shadow-md"
+      className="group block overflow-hidden bg-white transition hover:shadow-xl"
     >
       <div className="relative">
         <ProductImage product={product} className="aspect-[4/3] w-full" />
@@ -35,7 +35,7 @@ export function ProductCard({ product, lang, dict }: { product: Product; lang: L
         )}
       </div>
       <div className="p-5">
-        <h3 className="font-serif text-lg text-navy group-hover:text-teal">{product.name}</h3>
+        <h3 className="font-serif text-xl text-navy group-hover:text-teal">{product.name}</h3>
         <p className="mt-1 text-sm text-navy/70">{pick(product.tagline, lang)}</p>
       </div>
     </Link>
