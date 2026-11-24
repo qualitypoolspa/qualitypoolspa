@@ -2,8 +2,16 @@ import type { Localized } from "@/i18n/config";
 import type { CategorySlug } from "./categories";
 import { aquaviaProducts } from "./suppliers/aquavia";
 import { astralpoolProducts } from "./suppliers/astralpool";
+import { fluidraRangeProducts } from "./suppliers/fluidra-range";
+import { zodiacProducts } from "./suppliers/zodiac";
 
-export type ProductImage = { src: string; width: number; height: number };
+export type ProductImage = {
+  src: string;
+  width: number;
+  height: number;
+  /** Studio shot on white: show the whole product (no cropping) on a white panel. */
+  contain?: boolean;
+};
 
 export type Product = {
   slug: string;
@@ -56,7 +64,7 @@ export const selectionSlugs = ["spa-touch-pro", "spa-feel", "spa-essence", "spa-
 // Home page "Popular products": the priority categories, pool covers and spas, mixed.
 const featuredSlugs = ["octeo", "spa-touch-pro", "bellasun", "spa-feel", "sveltea", "spa-essence"];
 
-const all = [...manualProducts, ...astralpoolProducts, ...aquaviaProducts];
+const all = [...manualProducts, ...astralpoolProducts, ...zodiacProducts, ...fluidraRangeProducts, ...aquaviaProducts];
 
 export const products: Product[] = all.map((p) => ({ ...p, featured: featuredSlugs.includes(p.slug) }));
 

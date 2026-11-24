@@ -10,7 +10,8 @@
     "about": "About us",
     "contact": "Contact",
     "getQuote": "Get a quote",
-    "menu": "Menu"
+    "menu": "Menu",
+    "allProducts": "All products"
   },
   "hero": {
     "eyebrow": "Pools · Spas · Wellness",
@@ -77,6 +78,26 @@
       "name": "Sauna & Hammam",
       "blurb": "Wellness at home: barrel saunas, infrared cabins and steam rooms."
     },
+    "heat-pumps": {
+      "name": "Heat pumps",
+      "blurb": "Quiet, efficient heat pumps that extend your swimming season, from compact inverters to large-pool systems."
+    },
+    "pool-robots": {
+      "name": "Pool robots",
+      "blurb": "Robotic cleaners that keep the floor, walls and waterline spotless, with app control on top models."
+    },
+    "lighting": {
+      "name": "Pool lighting",
+      "blurb": "LED lights for pools and spas, in white, warm white or colour, to set the mood after dark."
+    },
+    "pool-accessories": {
+      "name": "Ladders & showers",
+      "blurb": "Stainless-steel ladders, handrails and solar showers to finish your pool in style."
+    },
+    "pool-renovation-liners": {
+      "name": "Liners & renovation",
+      "blurb": "Made-to-measure liners and renovation to give an existing pool a new life."
+    },
     "epp-pools": {
       "name": "EP pools",
       "blurb": "Lightweight, insulated pools for terraces and gardens."
@@ -88,14 +109,6 @@
     "concrete-pools": {
       "name": "Concrete pools",
       "blurb": "Fully tailored pools built to your design."
-    },
-    "pool-renovation-liners": {
-      "name": "Pool renovation & liners",
-      "blurb": "Give an existing pool a new life."
-    },
-    "pool-accessories": {
-      "name": "Pool accessories",
-      "blurb": "Equipment, care and finishing touches for your pool."
     }
   },
   "collections": {
@@ -115,7 +128,13 @@
     "professional-spas": "Professional spas",
     "accessories": "Spa accessories",
     "slatted-covers": "Slatted covers",
-    "solar-covers": "Solar covers"
+    "solar-covers": "Solar covers",
+    "inverter-heat-pumps": "Inverter heat pumps",
+    "on-off-heat-pumps": "Classic heat pumps",
+    "large-pool-heat-pumps": "For large pools",
+    "ladders": "Ladders & handrails",
+    "showers": "Solar showers",
+    "liners": "Liners"
   },
   "products": {
     "title": "Products",

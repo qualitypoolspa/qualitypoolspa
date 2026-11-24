@@ -10,7 +10,7 @@ export function ProductGallery({ images, name }: { images: ProductImage[]; name:
   const main = images[active] ?? images[0];
   return (
     <div className="space-y-3">
-      <div className="relative aspect-[4/3] overflow-hidden bg-sand">
+      <div className={`relative aspect-[4/3] overflow-hidden ${main.contain ? "bg-white" : "bg-sand"}`}>
         <Image
           key={main.src}
           src={main.src}
@@ -18,7 +18,7 @@ export function ProductGallery({ images, name }: { images: ProductImage[]; name:
           fill
           priority
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover"
+          className={main.contain ? "object-contain p-6" : "object-cover"}
         />
       </div>
       {images.length > 1 && (
@@ -30,11 +30,11 @@ export function ProductGallery({ images, name }: { images: ProductImage[]; name:
               onClick={() => setActive(i)}
               aria-label={`${name} ${i + 1}`}
               aria-current={i === active}
-              className={`relative aspect-square overflow-hidden bg-sand ring-offset-2 transition ${
+              className={`relative aspect-square overflow-hidden ${img.contain ? "bg-white" : "bg-sand"} ring-offset-2 transition ${
                 i === active ? "ring-2 ring-navy" : "opacity-70 hover:opacity-100"
               }`}
             >
-              <Image src={img.src} alt="" fill sizes="100px" className="object-cover" />
+              <Image src={img.src} alt="" fill sizes="100px" className={img.contain ? "object-contain p-1" : "object-cover"} />
             </button>
           ))}
         </div>
