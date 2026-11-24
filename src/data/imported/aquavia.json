@@ -3,7 +3,7 @@
     "id": "63",
     "slug": "spa-touch-pro",
     "name": "Touch Pro Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "premium-line",
     "description": "The Spa Touch is an ideal hot tub for couples, suitable for indoor and outdoor use, with capacity for 4 people. Discover it now!",
     "specs": [
       {
@@ -150,7 +150,7 @@
     "id": "55",
     "slug": "spa-feel",
     "name": "Feel Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aqualife-line",
     "description": "The Spa Feel is a high-performance family jacuzzi with capacity for 5 people. Unbeatable value for money. Discover it!",
     "specs": [
       {
@@ -327,7 +327,7 @@
     "id": "54",
     "slug": "spa-essence",
     "name": "Essence Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "premium-line",
     "description": "The Essence Spa is an indoor and outdoor jacuzzi, suitable for built-in installation and with capacity for 5 people. Up to 15 years warranty.",
     "specs": [
       {
@@ -504,7 +504,7 @@
     "id": "64",
     "slug": "spa-touch-5-pro",
     "name": "Touch 5 Pro Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "premium-line",
     "description": "The Touch 5 is a multi-functional 5-person hot tub , ideal for families looking for a hot tub with excellent massage features.",
     "specs": [
       {
@@ -661,7 +661,7 @@
     "id": "1",
     "slug": "spa-cube-ergo",
     "name": "Cube Ergo hot tub",
-    "collection": "hot-tubs",
+    "collection": "exclusive-line",
     "description": "The Spa Cube Ergo is a high-end 5-person hot tub with a brilliant design and fantastic ergonomics. Up to 15 years warranty. Find out more!",
     "specs": [
       {
@@ -1295,7 +1295,7 @@
     "id": "1304",
     "slug": "hot-tub-suite-4-seasons",
     "name": "Suite 4 Seasons Hot tub",
-    "collection": "hot-tubs",
+    "collection": "city-line",
     "description": "The Suite Spa 4 Seasons is a 4-person hot tub ideal for indoor and outdoor use. Enjoy maximum comfort all year round at home or in a hotel, with up to 15 years’ warranty.",
     "specs": [
       {
@@ -1960,7 +1960,7 @@
     "id": "102",
     "slug": "tiled-300",
     "name": "Hot tub Tiled 300",
-    "collection": "hot-tubs",
+    "collection": "mosaic-line",
     "description": "Built-in mosaic spa Tiled 300 for 8 people, with 26 massage jets, LED lighting, and optional chromotherapy. Designed for spacious areas and shared comfort.",
     "specs": [
       {
@@ -2042,7 +2042,7 @@
     "id": "101",
     "slug": "tiled-280",
     "name": "Hot tub Tiled 280",
-    "collection": "hot-tubs",
+    "collection": "mosaic-line",
     "description": "Built-in mosaic spa Tiled 280 for 7 people, perfect for creating a spacious and elegant relaxation area. Integrated circular design and shared wellness experience.",
     "specs": [
       {
@@ -2124,7 +2124,7 @@
     "id": "100",
     "slug": "tiled-220",
     "name": "Spa Tiled 220",
-    "collection": "hot-tubs",
+    "collection": "mosaic-line",
     "description": "Built-in mosaic spa Tiled 220 for 5 people, designed to create an elegant and private relaxation space. Enveloping hydromassage, integrated design and everyday comfort for indoor or outdoor use.",
     "specs": [
       {
@@ -2201,7 +2201,7 @@
     "id": "99",
     "slug": "tiled-190",
     "name": "Spa Tiled 190",
-    "collection": "hot-tubs",
+    "collection": "mosaic-line",
     "description": "Circular mosaic spa Tiled 190 for 5 people with 26 jets, LED lighting and low energy consumption. Elegant design, ideal for indoor and outdoor use.",
     "specs": [
       {
@@ -2502,7 +2502,7 @@
     "id": "94",
     "slug": "velvet-aurora-spa-5-seats-hydrotherapy-efficiency",
     "name": "Velvet Aurora Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aurora-line",
     "description": "Experience luxury with the Velvet Spa by Aquavia. 5 seats, 52 jets, chromotherapy, music therapy, and energy efficiency for a unique experience.",
     "specs": [
       {
@@ -2679,7 +2679,7 @@
     "id": "93",
     "slug": "soft-aurora-jacuzzi-6-seats-hydromassage-luxury",
     "name": "Soft Aurora Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aurora-line",
     "description": "Transform your garden with the Soft Jacuzzi by Aquavia Spa. 6 seats, 60 jets, chromotherapy, bluetooth audio, and exceptional performance.",
     "specs": [
       {
@@ -2856,7 +2856,7 @@
     "id": "92",
     "slug": "essence-outdoor-jacuzzi-5-seats-hydromassage",
     "name": "Essence Aurora Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aurora-line",
     "description": "Transform your home with the Essence Outdoor Jacuzzi by Aquavia. 5 seats, 65 jets, chromotherapy, and optional audio for ultimate comfort and style.",
     "specs": [
       {
@@ -3584,7 +3584,7 @@
     "id": "62",
     "slug": "spa-touch-5",
     "name": "Touch 5 Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aqualife-line",
     "description": "The Touch 5 is a versatile hot tub suitable for 5 people aimed at a family audience looking to purchase a hot tub with excellent massage features.",
     "specs": [
       {
@@ -3741,7 +3741,7 @@
     "id": "61",
     "slug": "serenity-spa",
     "name": "Serenity Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "exclusive-line",
     "description": "The Serenity Spa evolves towards a minimalist and zen design, optimizing movement and improving the hydromassage experience.",
     "specs": [
       {
@@ -3878,7 +3878,7 @@
     "id": "60",
     "slug": "hotel-spa",
     "name": "Hotel Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "city-line",
     "description": "The Hotel Spa model is a high-performance hydromassage with an avant-garde design and equipped with high added value technology.",
     "specs": [
       {
@@ -4172,7 +4172,7 @@
     "id": "58",
     "slug": "spa-aqua-8",
     "name": "Aqua 8 Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "built-in-line",
     "description": "The Aqua 8 Spa is the most powerful 5-person built-in hot tub for residential use. Up to 15 years warranty. Find out more!",
     "specs": [
       {
@@ -4294,7 +4294,7 @@
     "id": "57",
     "slug": "spa-soft",
     "name": "Soft Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "premium-line",
     "description": "The Spa Soft is an indoor and outdoor jacuzzi, suitable for built-in installation and with capacity for 6 people. Up to 15 years warranty.",
     "specs": [
       {
@@ -4456,7 +4456,7 @@
     "id": "56",
     "slug": "spa-pulse",
     "name": "Pulse Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aqualife-line",
     "description": "The Spa Pulse is an indoor and outdoor jacuzzi for 6 people. It stands out for its spaciousness and efficiency. Up to 15 years warranty.",
     "specs": [
       {
@@ -4633,7 +4633,7 @@
     "id": "53",
     "slug": "spa-suite",
     "name": "Suite Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "city-line",
     "description": "The Suite Spa is a 4-seater indoor and outdoor hot tub, ideal for home or hotel suites. Up to 15 years warranty.",
     "specs": [
       {
@@ -4800,7 +4800,7 @@
     "id": "52",
     "slug": "spa-home",
     "name": "Home Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "exclusive-line",
     "description": "The Home Spa is a jacuzzi designed for couples, ideal for hotel suites or for a private home. Jacuzzi for 4 people with a 15-year guarantee.",
     "specs": [
       {
@@ -6377,7 +6377,7 @@
     "id": "41",
     "slug": "spa-mallorca",
     "name": "Mallorca Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "built-in-line",
     "description": "The Mallorca Spa is the built-in 6-person hot tub for residential use with the highest performance. Up to 15 years warranty.",
     "specs": [
       {
@@ -6494,7 +6494,7 @@
     "id": "40",
     "slug": "spa-round-2",
     "name": "Round 2 Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "built-in-line",
     "description": "The Spa Round 2 is a built-in or semi-built-in jacuzzi for 5 people and for private or residential use. Ideal for small spaces.",
     "specs": [
       {
@@ -6606,7 +6606,7 @@
     "id": "39",
     "slug": "spa-touch",
     "name": "Touch Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aqualife-line",
     "description": "The Spa Touch is a small jacuzzi, ideal for couples, for indoor and outdoor use and with capacity for 4 people.",
     "specs": [
       {
@@ -6768,7 +6768,7 @@
     "id": "38",
     "slug": "spa-sundown",
     "name": "Sundown Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aqualife-line",
     "description": "The Spa Sundown is a circular, built-in jacuzzi, for indoor and outdoor use and with capacity for 5 people.",
     "specs": [
       {
@@ -6920,7 +6920,7 @@
     "id": "37",
     "slug": "spa-aqualife-5",
     "name": "Aqualife 5 Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "aqualife-line",
     "description": "The Aqualife 5 Spa is an easily accessible jacuzzi ideal for the home, indoors and outdoors, built-in and for up to 5 people.",
     "specs": [
       {
@@ -7097,7 +7097,7 @@
     "id": "36",
     "slug": "spa-velvet",
     "name": "Velvet Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "premium-line",
     "description": "The Spa Velvet is a 5-seater hot tub for indoor and outdoor use, ideal for tall and large users. Up to 15 years warranty. Find out more!",
     "specs": [
       {
@@ -7254,7 +7254,7 @@
     "id": "35",
     "slug": "spa-quantum",
     "name": "Quantum Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "city-line",
     "description": "The Spa Quantum is a hot tub for home use, with capacity for 4 people and a minimalist design. Up to 15 years warranty. Find out more!",
     "specs": [
       {
@@ -7411,7 +7411,7 @@
     "id": "34",
     "slug": "spa-cube",
     "name": "Cube Hot Tub",
-    "collection": "hot-tubs",
+    "collection": "exclusive-line",
     "description": "Spa Cube is an indoor and outdoor jacuzzi with capacity for 4 people and a minimalist design. Up to 15 years warranty. Find out more!",
     "specs": [
       {
@@ -7973,6 +7973,131 @@
         "src": "/products/aquavia/recessed-spa-access-bar/5.webp",
         "width": 150,
         "height": 150
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "slug": "spa-access-bar",
+    "name": "hot tub access bar",
+    "collection": "accessories",
+    "description": "Safety and stability when entering and exiting your hot tub with the Aquavia access bar. Ergonomic design for a firm grip.",
+    "specs": [],
+    "sourceUrl": "https://aquaviaspa.com/en/accessories/spa-access-bar",
+    "images": [
+      {
+        "src": "/products/aquavia/spa-access-bar/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-access-bar/2.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/spa-access-bar/3.webp",
+        "width": 150,
+        "height": 150
+      },
+      {
+        "src": "/products/aquavia/spa-access-bar/4.webp",
+        "width": 150,
+        "height": 150
+      },
+      {
+        "src": "/products/aquavia/spa-access-bar/5.webp",
+        "width": 150,
+        "height": 150
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "slug": "swimspa-access-ladder",
+    "name": "Swimspa access stairs",
+    "collection": "accessories",
+    "description": "Designed for swimspas , the Aquavia Swimspa Access Ladder offers stability and safety in larger hot tubs .",
+    "specs": [],
+    "sourceUrl": "https://aquaviaspa.com/en/accessories/swimspa-access-ladder",
+    "images": [
+      {
+        "src": "/products/aquavia/swimspa-access-ladder/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/swimspa-access-ladder/2.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/swimspa-access-ladder/3.webp",
+        "width": 150,
+        "height": 150
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "slug": "premium-access-ladder",
+    "name": "Premium Stairs",
+    "collection": "accessories",
+    "description": "Elevate the aesthetics of your hot tub with Aquavia &#039;s Premium Ladder. Superior finishes and maximum safety for elegant access",
+    "specs": [],
+    "sourceUrl": "https://aquaviaspa.com/en/accessories/premium-access-ladder",
+    "images": [
+      {
+        "src": "/products/aquavia/premium-access-ladder/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/premium-access-ladder/2.webp",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "slug": "basic-access-ladder",
+    "name": "Basic Stairs",
+    "collection": "accessories",
+    "description": "Safe and easy access to your hot tub with the Aquavia Basic ladder. Functional and sturdy design for easy entry and exit",
+    "specs": [],
+    "sourceUrl": "https://aquaviaspa.com/en/accessories/basic-access-ladder",
+    "images": [
+      {
+        "src": "/products/aquavia/basic-access-ladder/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/basic-access-ladder/2.webp",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "slug": "venice-pergola",
+    "name": "Venice pergola with awning",
+    "collection": "accessories",
+    "description": "Transform your hot tub into an oasis of relaxation with the Aquavia Venice Pergola. Elegant design and sun protection to make the most of your hot tub",
+    "specs": [],
+    "sourceUrl": "https://aquaviaspa.com/en/accessories/venice-pergola",
+    "images": [
+      {
+        "src": "/products/aquavia/venice-pergola/1.webp",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/products/aquavia/venice-pergola/2.webp",
+        "width": 1080,
+        "height": 1080
       }
     ]
   }
