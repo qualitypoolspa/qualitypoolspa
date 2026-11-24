@@ -17,13 +17,13 @@ export function ProductImage({
   const cat = getCategory(product.category);
   const img = product.images?.[0];
   return img ? (
-    <div className={`relative overflow-hidden bg-sand ${className}`}>
+    <div className={`relative overflow-hidden ${img.contain ? "bg-white" : "bg-sand"} ${className}`}>
       <Image
         src={img.src}
         alt={product.name}
         fill
         sizes={sizes}
-        className="object-cover transition duration-700 group-hover:scale-105"
+        className={`transition duration-700 group-hover:scale-105 ${img.contain ? "object-contain p-4" : "object-cover"}`}
       />
     </div>
   ) : (

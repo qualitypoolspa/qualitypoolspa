@@ -52,7 +52,7 @@ export function CategoryGrid({ lang, dict }: { lang: Locale; dict: Dictionary })
           <Tile key={c.slug} c={c} lang={lang} dict={dict} big />
         ))}
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-5">
+      <div className="grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-4">
         {rest.map((c) => (
           <Tile key={c.slug} c={c} lang={lang} dict={dict} big={false} />
         ))}
