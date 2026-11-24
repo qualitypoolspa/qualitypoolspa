@@ -23,3 +23,11 @@ npm run build
 - `public/hero/project.jpg`: portrait image beside "From the first thought" (4:5).
 - `public/categories/<slug>.jpg`: category tiles, e.g. `pool-covers.jpg`, `spas.jpg`, `saunas-hammam.jpg` (portrait 4:5 for the three main ones).
 - `public/gallery/`: project photos, referenced from `src/data/gallery.ts`.
+
+## Supplier imports
+- **Aquavia Spa**: `node scripts/import-aquavia.mjs` pulls spas, swim spas, professional spas and
+  accessories from aquaviaspa.com into `src/data/imported/aquavia.json` and photos into
+  `public/products/aquavia/`. It waits 10 s between requests (their robots.txt), caches pages in
+  `.cache/` and can be stopped and resumed. A full run takes about an hour.
+  `src/data/suppliers/aquavia.ts` maps the data onto the site's product format.
+- Only reuse a supplier's photos and texts with their permission (dealer agreement).

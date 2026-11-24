@@ -3,11 +3,25 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactButtons } from "@/components/ContactButtons";
 import { ProductCard, ProductImage } from "@/components/ProductCard";
+import { ProductGallery } from "@/components/ProductGallery";
+import type { Product } from "@/data/products";
 import { site } from "@/config/site";
 import { getCategory } from "@/data/categories";
 import { getProduct, products, productsIn } from "@/data/products";
-import { hasLocale, href, locales, pick } from "@/i18n/config";
+import { hasLocale, href, locales, pick, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+
+type Spec = NonNullable<Product["specs"]>[number];
+
+/** Groups specs by their (translated) group name, keeping the original order. */
+function groupSpecs(specs: Spec[], lang: Locale): [string, Spec[]][] {
+  const groups = new Map<string, Spec[]>();
+  for (const s of specs) {
+    const g = s.group ? pick(s.group, lang) : "";
+    groups.set(g, [...(groups.get(g) ?? []), s]);
+  }
+  return [...groups];
+}
 
 export const generateStaticParams = () =>
   locales.flatMap((lang) => products.map((p) => ({ lang, category: p.category, slug: p.slug })));
@@ -41,15 +55,11 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
       </div>
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 py-8 md:grid-cols-2">
-        <div className="space-y-3">
-          <ProductImage product={product} className="aspect-[4/3] w-full rounded-lg" />
-          {product.images && product.images.length > 1 && (
-            <div className="grid grid-cols-4 gap-3">
-              {product.images.slice(1, 5).map((src) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={src} src={src} alt={product.name} className="aspect-[4/3] rounded object-cover" />
-              ))}
-            </div>
+        <div>
+          {product.images?.length ? (
+            <ProductGallery images={product.images} name={product.name} />
+          ) : (
+            <ProductImage product={product} className="aspect-[4/3] w-full" />
           )}
         </div>
 
@@ -59,12 +69,18 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
               {dict.products.sample}
             </span>
           )}
-          <h1 className="mt-3 font-serif text-4xl text-navy">{product.name}</h1>
-          {product.brand && <p className="mt-1 text-sm text-navy/60">{product.brand}</p>}
+          {product.brand && (
+            <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">{product.brand}</p>
+          )}
+          <h1 className="mt-2 font-serif text-4xl text-navy md:text-5xl">{product.name}</h1>
           <p className="mt-4 text-lg text-navy/80">{pick(product.tagline, lang)}</p>
 
-          <h2 className="eyebrow mt-8">{dict.products.description}</h2>
-          <p className="mt-3 leading-relaxed text-navy/75">{pick(product.description, lang)}</p>
+          {pick(product.description, lang) !== pick(product.tagline, lang) && (
+            <>
+              <h2 className="eyebrow mt-8">{dict.products.description}</h2>
+              <p className="mt-3 leading-relaxed text-navy/75">{pick(product.description, lang)}</p>
+            </>
+          )}
 
           <p className="eyebrow mt-8">{dict.products.askAbout}</p>
           <ContactButtons dict={dict.contact} product={product.name} url={url} className="mt-3" />
@@ -73,15 +89,22 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
 
       {product.specs && product.specs.length > 0 && (
         <section className="mx-auto max-w-6xl px-5 py-8">
-          <h2 className="font-serif text-2xl text-navy">{dict.products.specs}</h2>
-          <dl className="mt-4 divide-y divide-line rounded-lg border border-line bg-white">
-            {product.specs.map((s) => (
-              <div key={pick(s.label, lang)} className="grid grid-cols-2 gap-4 px-5 py-3 text-sm">
-                <dt className="text-navy/60">{pick(s.label, lang)}</dt>
-                <dd className="text-navy">{s.value}</dd>
+          <h2 className="font-serif text-3xl text-navy">{dict.products.specs}</h2>
+          <div className="mt-6 gap-10 md:columns-2">
+            {groupSpecs(product.specs, lang).map(([group, rows]) => (
+              <div key={group || "specs"} className="mb-10 break-inside-avoid">
+                {group && <h3 className="eyebrow mb-3">{group}</h3>}
+                <dl className="divide-y divide-line border-y border-line">
+                  {rows.map((s) => (
+                    <div key={pick(s.label, lang)} className="grid grid-cols-2 gap-4 py-3 text-sm">
+                      <dt className="text-navy/60">{pick(s.label, lang)}</dt>
+                      <dd className="text-navy">{s.value}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             ))}
-          </dl>
+          </div>
         </section>
       )}
 

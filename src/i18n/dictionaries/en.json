@@ -98,6 +98,13 @@
       "blurb": "Equipment, care and finishing touches for your pool."
     }
   },
+  "collections": {
+    "hot-tubs": "Hot tubs",
+    "swim-spas": "Swim spas",
+    "cold-plunge": "Cold plunge",
+    "professional-spas": "Professional spas",
+    "accessories": "Spa accessories"
+  },
   "products": {
     "title": "Products",
     "intro": "Browse our range. Every product can be discussed with us for advice and a personal offer.",
