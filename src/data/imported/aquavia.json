@@ -1178,5 +1178,86 @@
         "height": 1080
       }
     ]
+  },
+  {
+    "slug": "tiled-280",
+    "name": "Hot tub Tiled 280",
+    "collection": "hot-tubs",
+    "description": "Built-in mosaic spa Tiled 280 for 7 people, perfect for creating a spacious and elegant relaxation area. Integrated circular design and shared wellness experience.",
+    "specs": [
+      {
+        "group": "General specifications",
+        "label": "Spa dimensions (cm)",
+        "value": "Ø 280"
+      },
+      {
+        "group": "General specifications",
+        "label": "Number of Spa places (sitting/lying down)",
+        "value": "7 (7 / -)"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa water volume (litres)",
+        "value": "1.780"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa weight (empty - full)",
+        "value": "500 Kg / 2.280 Kg"
+      },
+      {
+        "group": "General specifications",
+        "label": "Low Amp required power (W) / (A) at 230 V",
+        "value": "9.450 W / 15,3 A"
+      },
+      {
+        "group": "General specifications",
+        "label": "Spa Voltage",
+        "value": "400 V III"
+      },
+      {
+        "group": "Equipment",
+        "label": "Number of Spa jets",
+        "value": "16"
+      },
+      {
+        "group": "Equipment",
+        "label": "Spa with air injectors",
+        "value": "10"
+      },
+      {
+        "group": "Equipment",
+        "label": "Stainless Steel Jets/Nozzles",
+        "value": "Yes"
+      },
+      {
+        "group": "Equipment",
+        "label": "Overflowing Spa",
+        "value": "Yes"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Spa Helmet Colors",
+        "value": "Aster, Bahamas, Camel, Fusain, Noisetier, Pierre, Zinnia"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Type of hull finish",
+        "value": "Mosaic"
+      },
+      {
+        "group": "Finishes & options",
+        "label": "Chromotherapy LED Spotlight",
+        "value": "Optional"
+      }
+    ],
+    "sourceUrl": "https://aquaviaspa.com/en/mosaic-hot-tub/tiled-280",
+    "images": [
+      {
+        "src": "/products/aquavia/tiled-280/1.webp",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
   }
 ]

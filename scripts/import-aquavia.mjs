@@ -58,6 +58,9 @@ const LINES = {
   "spa-mosaico": "mosaic-line",
 };
 
+// Fetched first, so the most important products are ready soonest (English slugs).
+const PRIORITY = ["spa-touch-pro", "spa-feel", "spa-essence", "spa-touch-5-pro", "spa-cube-ergo"];
+
 const args = process.argv.slice(2);
 const limit = args.includes("--limit") ? Number(args[args.indexOf("--limit") + 1]) : Infinity;
 const offline = args.includes("--offline");
@@ -234,10 +237,11 @@ async function main() {
   const urls = [...xml.matchAll(/<loc><!\[CDATA\[([^\]]+)\]\]><\/loc>/g)]
     .map((m) => m[1])
     .filter((u) => SECTIONS[new URL(u).pathname.split("/")[2]])
+    .map((u) => [u, PRIORITY.indexOf(u.split("/").pop())])
+    .sort(([, a], [, b]) => (a < 0 ? 99 : a) - (b < 0 ? 99 : b)) // priority first, rest in sitemap order
+    .map(([u]) => u)
     .slice(0, limit);
 
-  const lineOf = await fetchLines(xml);
-  console.log(`${lineOf.size} products mapped to ${Object.keys(LINES).length} collections`);
   console.log(`${urls.length} products to import`);
   const products = [];
   for (const [n, url] of urls.entries()) {
@@ -247,8 +251,6 @@ async function main() {
       const html = await cached(url, `${slug}.html`);
       if (!html) continue;
       const p = parseProduct(html, url, SECTIONS[section]);
-      // Spas get their Aquavia line; professional spas and accessories keep their section.
-      if (p.collection === "hot-tubs" || p.collection === "swim-spas") p.collection = lineOf.get(slug) ?? p.collection;
       if (slug === "cold-plunge") p.collection = "cold-plunge";
       const images = [];
       for (const [i, src] of p.sourceImages.entries()) {
@@ -269,6 +271,15 @@ async function main() {
     await fs.mkdir(path.dirname(OUT), { recursive: true });
     await fs.writeFile(OUT, JSON.stringify(products, null, 2) + "\n");
   }
+
+  // Last: sort spas into Aquavia's collections (Exclusive Line, Aurora Line, ...).
+  // Professional spas and accessories keep their own section.
+  const lineOf = await fetchLines(xml);
+  for (const p of products) {
+    if (p.collection === "hot-tubs" || p.collection === "swim-spas") p.collection = lineOf.get(p.slug) ?? p.collection;
+  }
+  await fs.writeFile(OUT, JSON.stringify(products, null, 2) + "\n");
+  console.log(`${lineOf.size} products mapped to ${Object.keys(LINES).length} collections`);
   console.log(`Done: ${products.length} products written to ${path.relative(ROOT, OUT)}`);
 }
 
