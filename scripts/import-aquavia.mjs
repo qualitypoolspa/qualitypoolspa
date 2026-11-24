@@ -42,6 +42,22 @@ const SECTIONS = {
   accessories: "accessories",
 };
 
+// Aquavia's collections ("lines"), as listed on /content/todas-las-colecciones.
+// Their page path -> our collection key (names live in dict.collections).
+const LINES = {
+  "exclusive-line": "exclusive-line",
+  "premium-line": "premium-line",
+  "spas-jacuzzis-aurora-line": "aurora-line",
+  "aqualife-line": "aqualife-line",
+  "city-line": "city-line",
+  "built-in-line": "built-in-line",
+  "cold-plunge-line": "cold-plunge",
+  swimspa: "swim-spas",
+  "infinity-line": "infinity-line",
+  "spa-inox": "steel-line",
+  "spa-mosaico": "mosaic-line",
+};
+
 const args = process.argv.slice(2);
 const limit = args.includes("--limit") ? Number(args[args.indexOf("--limit") + 1]) : Infinity;
 const offline = args.includes("--offline");
@@ -91,6 +107,7 @@ const GENERIC = new Set(["hot", "tub", "tubs", "spa", "spas", "jacuzzi", "seats"
 function parseProduct(html, url, collection) {
   const $ = cheerio.load(html);
   const slug = new URL(url).pathname.split("/").filter(Boolean).pop();
+  const id = ($("body").attr("class") || "").match(/product-id-(\d+)/)?.[1];
 
   let ld = {};
   $('script[type="application/ld+json"]').each((_, el) => {
@@ -161,7 +178,7 @@ function parseProduct(html, url, collection) {
   const size = (u) => Number((u.match(/-(\d{3,4})\.\w+$/) || [])[1] || 0);
   gallery.sort((a, b) => size(b) - size(a)).forEach(add);
 
-  return { slug, name, collection, description, specs, sourceImages: images.slice(0, MAX_IMAGES), sourceUrl: url };
+  return { id, slug, name, collection, description, specs, sourceImages: images.slice(0, MAX_IMAGES), sourceUrl: url };
 }
 
 async function downloadImage(src, slug, i) {
@@ -179,6 +196,39 @@ async function downloadImage(src, slug, i) {
   return { src: `/products/aquavia/${slug}/${i + 1}.webp`, width: meta.width, height: meta.height };
 }
 
+// Map sitemap entries "product URL -> main image id". The image id is shared
+// between languages, which lets us pair Spanish and English product URLs.
+function urlToImageId(xml) {
+  const map = new Map();
+  for (const block of xml.split("<url>").slice(1)) {
+    const loc = block.match(/<loc><!\[CDATA\[([^\]]+)\]\]><\/loc>/)?.[1];
+    const img = block.match(/<image:loc><!\[CDATA\[[^\]]*?\/(\d+)-[a-z_]+\/[^\]]+\]\]>/)?.[1];
+    if (loc && img) map.set(loc.split("#")[0], img);
+  }
+  return map;
+}
+
+/** Returns Map(English product slug -> collection key) from Aquavia's collection pages. */
+async function fetchLines(enXml) {
+  const esXml = await cached(`${BASE}/es/sitemap/product/1.xml`, "sitemap-es.xml");
+  const esToImg = urlToImageId(esXml || "");
+  const imgToEnSlug = new Map([...urlToImageId(enXml)].map(([u, img]) => [img, u.split("/").pop()]));
+
+  const lineOf = new Map();
+  for (const [pathName, key] of Object.entries(LINES)) {
+    const html = await cached(`${BASE}/${pathName}`, `lines/${pathName}-1.html`);
+    if (!html) continue;
+    const $ = cheerio.load(html);
+    $("a[href]").each((_, a) => {
+      const esUrl = $(a).attr("href").split("#")[0].split("?")[0];
+      const img = esToImg.get(esUrl);
+      const enSlug = img && imgToEnSlug.get(img);
+      if (enSlug && !lineOf.has(enSlug)) lineOf.set(enSlug, key);
+    });
+  }
+  return lineOf;
+}
+
 async function main() {
   const xml = await cached(SITEMAP, "sitemap.xml");
   const urls = [...xml.matchAll(/<loc><!\[CDATA\[([^\]]+)\]\]><\/loc>/g)]
@@ -186,6 +236,8 @@ async function main() {
     .filter((u) => SECTIONS[new URL(u).pathname.split("/")[2]])
     .slice(0, limit);
 
+  const lineOf = await fetchLines(xml);
+  console.log(`${lineOf.size} products mapped to ${Object.keys(LINES).length} collections`);
   console.log(`${urls.length} products to import`);
   const products = [];
   for (const [n, url] of urls.entries()) {
@@ -195,6 +247,8 @@ async function main() {
       const html = await cached(url, `${slug}.html`);
       if (!html) continue;
       const p = parseProduct(html, url, SECTIONS[section]);
+      // Spas get their Aquavia line; professional spas and accessories keep their section.
+      if (p.collection === "hot-tubs" || p.collection === "swim-spas") p.collection = lineOf.get(slug) ?? p.collection;
       if (slug === "cold-plunge") p.collection = "cold-plunge";
       const images = [];
       for (const [i, src] of p.sourceImages.entries()) {

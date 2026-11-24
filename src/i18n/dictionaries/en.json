@@ -99,9 +99,19 @@
     }
   },
   "collections": {
-    "hot-tubs": "Hot tubs",
+    "selection": "Our selection",
+    "exclusive-line": "Exclusive Line",
+    "premium-line": "Premium Line",
+    "aurora-line": "Aurora Line",
+    "aqualife-line": "Aqualife Line",
+    "city-line": "City Line",
+    "built-in-line": "Built-in Line",
+    "cold-plunge": "Cold Plunge",
     "swim-spas": "Swim spas",
-    "cold-plunge": "Cold plunge",
+    "infinity-line": "Infinity Line",
+    "steel-line": "Steel Line",
+    "mosaic-line": "Mosaic Line",
+    "hot-tubs": "More hot tubs",
     "professional-spas": "Professional spas",
     "accessories": "Spa accessories"
   },
@@ -116,7 +126,8 @@
     "downloads": "Downloads",
     "askAbout": "Ask about this product",
     "sample": "Sample product",
-    "related": "More in this category"
+    "related": "More in this category",
+    "selectionIntro": "Hand-picked by our team: the models we recommend most often."
   },
   "contact": {
     "title": "Contact us",

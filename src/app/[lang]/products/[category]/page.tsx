@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ContactButtons } from "@/components/ContactButtons";
 import { ProductCard } from "@/components/ProductCard";
 import { categories, getCategory } from "@/data/categories";
-import { productsIn } from "@/data/products";
+import { productsIn, selectionIn } from "@/data/products";
 import { hasLocale, href, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -31,6 +31,9 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/produc
   const byKey = new Map<string, typeof items>();
   for (const p of items) byKey.set(p.collection ?? "other", [...(byKey.get(p.collection ?? "other") ?? []), p]);
   const groups = [...byKey].sort(([a], [b]) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
+  // The client's hand-picked models go first (they also stay in their own collection).
+  const selection = selectionIn(cat.slug);
+  if (selection.length) groups.unshift(["selection", selection]);
   const collectionName = (key: string) =>
     (dict.collections as Record<string, string>)[key] ?? dict.categories[cat.slug].name;
 
@@ -61,7 +64,9 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/produc
             <div className="space-y-20">
               {groups.map(([key, list]) => (
                 <div key={key} id={key} className="scroll-mt-28">
-                  {groups.length > 1 && <h2 className="mb-8 font-serif text-3xl text-navy">{collectionName(key)}</h2>}
+                  {groups.length > 1 && <h2 className="font-serif text-3xl text-navy">{collectionName(key)}</h2>}
+                  {key === "selection" && <p className="mt-2 text-sm text-navy/60">{dict.products.selectionIntro}</p>}
+                  <div className="mb-8" />
                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {list.map((p) => (
                       <ProductCard key={p.slug} product={p} lang={lang} dict={dict} />

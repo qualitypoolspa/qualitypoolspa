@@ -74,12 +74,19 @@ const manualProducts: Product[] = [
   },
 ];
 
-// Products shown on the home page, in order (falls back to the first products with photos).
-const featuredSlugs = ["hot-tub-kora", "swimspa-sky", "velvet-aurora-spa-5-seats-hydrotherapy-efficiency"];
+// The client's hand-picked models: shown first ("Our selection") and on the home page.
+export const selectionSlugs = ["spa-touch-pro", "spa-feel", "spa-essence", "spa-touch-5-pro", "spa-cube-ergo"];
+const featuredSlugs = selectionSlugs;
 
 const all = [...manualProducts, ...aquaviaProducts];
 
 export const products: Product[] = all.map((p) => ({ ...p, featured: featuredSlugs.includes(p.slug) }));
+
+/** The client's selection within a category, in the order listed above. */
+export const selectionIn = (category: CategorySlug) =>
+  selectionSlugs
+    .map((s) => products.find((p) => p.slug === s && p.category === category))
+    .filter((p): p is Product => !!p);
 
 export const featuredProducts = (n = 3) => {
   const picked = featuredSlugs.map((s) => products.find((p) => p.slug === s)).filter((p): p is Product => !!p);
