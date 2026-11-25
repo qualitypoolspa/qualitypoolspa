@@ -7,7 +7,8 @@ import type { ProductImage } from "@/data/products";
 import { PRODUCTS_TAG } from "@/lib/catalog";
 import { PRODUCT_BUCKET, SUPABASE_URL } from "@/lib/supabase/config";
 import { createClient } from "@/lib/supabase/server";
-import type { SpecRow } from "@/lib/product-row";
+import { productLocales } from "@/i18n/product-locales";
+import { TRANSLATION_COLS, type SpecRow } from "@/lib/product-row";
 
 /**
  * Every admin write goes through here, never straight from the browser, so the
@@ -128,12 +129,18 @@ function parseSpecs(raw: string): SpecRow[] | null {
     return null;
   }
   if (!Array.isArray(data)) return null;
+  const str = (v: unknown) => String(v ?? "").trim();
   return data
-    .map((s) => ({
-      group: String(s?.group ?? "").trim(),
-      label: String(s?.label ?? "").trim(),
-      value: String(s?.value ?? "").trim(),
-    }))
+    .map((s) => {
+      const row: SpecRow = { group: str(s?.group), label: str(s?.label), value: str(s?.value) };
+      // Translations of the row; blank ones are left out (the site shows the English).
+      for (const l of productLocales)
+        for (const k of ["group", "label", "value"] as const) {
+          const t = str(s?.[`${k}_${l}`]);
+          if (t) row[`${k}_${l}`] = t;
+        }
+      return row;
+    })
     .filter((s) => s.label || s.value);
 }
 
@@ -241,6 +248,8 @@ export async function saveProduct(fd: FormData): Promise<ActionResult> {
         is_visible: fd.get("is_visible") === "on",
         is_featured: fd.get("is_featured") === "on",
         is_selection: fd.get("is_selection") === "on",
+        // Only sent once migration 0002 has added the columns (see the editor).
+        ...Object.fromEntries(TRANSLATION_COLS.filter((c) => fd.has(c)).map((c) => [c, text(fd, c) || null])),
       })
       .eq("id", id(fd));
     if (error) return duplicateSlug(error.message);

@@ -20,7 +20,8 @@
     "campaigns": "Campaigns",
     "terms": "Terms of purchase",
     "contactUs": "Contact us",
-    "viewAll": "View all"
+    "viewAll": "View all",
+    "language": "Language"
   },
   "hero": {
     "eyebrow": "Pools, spas and wellness · Costa del Sol & Mallorca",
@@ -204,7 +205,9 @@
     "contact": "Contact",
     "rights": "All rights reserved.",
     "guides": "Guides",
-    "locations": "Where we work"
+    "locations": "Where we work",
+    "statementEm": "Wellness from the Swedish West Coast",
+    "statementRest": ", for homes by the Mediterranean."
   },
   "notFound": {
     "title": "Page not found",

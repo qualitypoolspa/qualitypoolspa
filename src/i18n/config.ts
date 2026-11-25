@@ -4,7 +4,7 @@ export type Locale = (typeof allLocales)[number];
 
 // Languages that are live. To launch a language: add its dictionary in
 // ./dictionaries.ts + ./dictionaries/<lang>.json, then add it here.
-export const locales: readonly Locale[] = ["en"];
+export const locales: readonly Locale[] = ["en", "es", "sv"];
 export const defaultLocale: Locale = "en";
 
 export const localeNames: Record<Locale, string> = {

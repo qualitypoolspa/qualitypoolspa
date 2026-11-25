@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { deleteProduct, saveProduct } from "@/app/admin/actions";
 import type { ProductImage } from "@/data/products";
+import { productLocales, type ProductLocale } from "@/i18n/product-locales";
 import type { ProductRow, SpecRow } from "@/lib/product-row";
 import { createClient } from "@/lib/supabase/client";
 import { PRODUCT_BUCKET } from "@/lib/supabase/config";
@@ -13,7 +14,14 @@ type Props = {
   categories: { slug: string; name: string }[];
   collectionNames: Record<string, string>;
   collectionsByCategory: Record<string, string[]>;
+  /** False until migration 0002 has added the translation columns. */
+  hasTranslations: boolean;
 };
+
+type Lang = "en" | ProductLocale;
+const LANG_NAMES: Record<Lang, string> = { en: "English", es: "Español", sv: "Svenska" };
+type TextKey = `${"tagline" | "description"}_${ProductLocale}`;
+const TEXT_KEYS = productLocales.flatMap((l) => [`tagline_${l}`, `description_${l}`] as TextKey[]);
 
 type Form = {
   name: string;
@@ -29,7 +37,7 @@ type Form = {
   is_visible: boolean;
   is_featured: boolean;
   is_selection: boolean;
-};
+} & Record<TextKey, string>;
 
 const fromRow = (p: ProductRow): Form => ({
   name: p.name,
@@ -45,6 +53,7 @@ const fromRow = (p: ProductRow): Form => ({
   is_visible: p.is_visible,
   is_featured: p.is_featured,
   is_selection: p.is_selection,
+  ...(Object.fromEntries(TEXT_KEYS.map((k) => [k, p[k] ?? ""])) as Record<TextKey, string>),
 });
 
 /** Moves item i of a list by `by` places (-1 = up/left, 1 = down/right). */
@@ -56,8 +65,10 @@ function move<T>(list: T[], i: number, by: number): T[] {
   return next;
 }
 
-export default function ProductEditor({ product, categories, collectionNames, collectionsByCategory }: Props) {
+export default function ProductEditor({ product, categories, collectionNames, collectionsByCategory, hasTranslations }: Props) {
   const [saved, setSaved] = useState(() => fromRow(product));
+  // Which language the texts and specifications are shown in for editing.
+  const [lang, setLang] = useState<Lang>("en");
   const [form, setForm] = useState(saved);
   const save = useAction();
   const remove = useAction();
@@ -89,6 +100,8 @@ export default function ProductEditor({ product, categories, collectionNames, co
     if (form.is_visible) fd.set("is_visible", "on");
     if (form.is_featured) fd.set("is_featured", "on");
     if (form.is_selection) fd.set("is_selection", "on");
+    // Left out entirely before migration 0002, so saving still works then.
+    if (hasTranslations) for (const key of TEXT_KEYS) fd.set(key, form[key]);
     fd.set("specs", JSON.stringify(form.specs));
     fd.set("images", JSON.stringify(form.images));
     const sent = form;
@@ -199,16 +212,44 @@ export default function ProductEditor({ product, categories, collectionNames, co
             onChange={(e) => set("slug", e.target.value.toLowerCase().replace(/\s+/g, "-"))}
           />
         </Field>
-        <div className="md:col-span-2">
-          <Field label="Short description" id="tagline" hint="One sentence. Shown on product cards and under the name.">
-            <textarea id="tagline" className="adm-input" rows={2} value={form.tagline} onChange={(e) => set("tagline", e.target.value)} />
-          </Field>
+      </section>
+
+      {/* ---------- Texts, per language ---------- */}
+      <section className="adm-card mt-6 space-y-4 p-5">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-base text-navy">Texts</h2>
+          {hasTranslations && <LangTabs lang={lang} onChange={setLang} />}
         </div>
-        <div className="md:col-span-2">
-          <Field label="Description" id="description" hint="The main text on the product page.">
-            <textarea id="description" className="adm-input" rows={8} value={form.description} onChange={(e) => set("description", e.target.value)} />
-          </Field>
-        </div>
+        {!hasTranslations && <TranslationsMissing />}
+        {lang === "en" ? (
+          <>
+            <Field label="Short description" id="tagline" hint="One sentence. Shown on product cards and under the name.">
+              <textarea id="tagline" className="adm-input" rows={2} value={form.tagline} onChange={(e) => set("tagline", e.target.value)} />
+            </Field>
+            <Field label="Description" id="description" hint="The main text on the product page.">
+              <textarea id="description" className="adm-input" rows={8} value={form.description} onChange={(e) => set("description", e.target.value)} />
+            </Field>
+          </>
+        ) : (
+          <>
+            <Translated
+              label={`Short description (${LANG_NAMES[lang]})`}
+              id={`tagline_${lang}`}
+              rows={2}
+              english={form.tagline}
+              value={form[`tagline_${lang}`]}
+              onChange={(v) => set(`tagline_${lang}`, v)}
+            />
+            <Translated
+              label={`Description (${LANG_NAMES[lang]})`}
+              id={`description_${lang}`}
+              rows={8}
+              english={form.description}
+              value={form[`description_${lang}`]}
+              onChange={(v) => set(`description_${lang}`, v)}
+            />
+          </>
+        )}
       </section>
 
       <Photos
@@ -218,7 +259,12 @@ export default function ProductEditor({ product, categories, collectionNames, co
         // Uploads finish one by one, so each is added to the latest list.
         onAdd={(img) => setForm((f) => ({ ...f, images: [...f.images, img] }))}
       />
-      <Specs specs={form.specs} onChange={(specs) => set("specs", specs)} />
+      <Specs
+        specs={form.specs}
+        onChange={(specs) => set("specs", specs)}
+        lang={lang}
+        tabs={hasTranslations && <LangTabs lang={lang} onChange={setLang} />}
+      />
 
       {/* ---------- Save bar ---------- */}
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-white/95 backdrop-blur">
@@ -368,16 +414,24 @@ function Photos({ productId, images, onChange, onAdd }: PhotosProps) {
 
 // ----------------------------------------------------------------- specs --
 
-function Specs({ specs, onChange }: { specs: SpecRow[]; onChange: (specs: SpecRow[]) => void }) {
-  const update = (i: number, key: keyof SpecRow, value: string) => onChange(specs.map((s, j) => (j === i ? { ...s, [key]: value } : s)));
-  const groups = [...new Set(specs.map((s) => s.group).filter(Boolean))];
+function Specs({ specs, onChange, lang, tabs }: { specs: SpecRow[]; onChange: (specs: SpecRow[]) => void; lang: Lang; tabs: React.ReactNode }) {
+  // In English the row's own fields; in another language its translation keys.
+  const key = (k: "group" | "label" | "value") => (lang === "en" ? k : (`${k}_${lang}` as const));
+  const update = (i: number, k: "group" | "label" | "value", value: string) =>
+    onChange(specs.map((s, j) => (j === i ? { ...s, [key(k)]: value } : s)));
+  const groups = [...new Set(specs.map((s) => s[key("group")]).filter(Boolean))];
+  const translating = lang !== "en";
 
   return (
     <section className="adm-card mt-6 p-5">
-      <h2 className="text-base text-navy">Specifications</h2>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-base text-navy">Specifications</h2>
+        {tabs}
+      </div>
       <p className="adm-hint">
-        Rows with the same group are shown together under that heading, e.g. &ldquo;General&rdquo;. Empty rows are
-        left out when you save.
+        {translating
+          ? `The ${LANG_NAMES[lang]} text for each row, with the English above it. Leave a box empty to show the English. Numbers and model codes rarely need translating.`
+          : "Rows with the same group are shown together under that heading, e.g. \u201cGeneral\u201d. Empty rows are left out when you save."}
       </p>
       <datalist id="spec-groups">
         {groups.map((g) => <option key={g} value={g} />)}
@@ -390,9 +444,14 @@ function Specs({ specs, onChange }: { specs: SpecRow[]; onChange: (specs: SpecRo
           </div>
           {specs.map((s, i) => (
             <div key={i} className="grid grid-cols-2 gap-2 border-b border-line pb-2 md:grid-cols-[9rem_1fr_1.4fr_auto] md:border-0 md:pb-0">
-              <input className="adm-input text-sm" list="spec-groups" placeholder="Group" aria-label={`Row ${i + 1} group`} value={s.group} onChange={(e) => update(i, "group", e.target.value)} />
-              <input className="adm-input text-sm" placeholder="Label, e.g. Weight" aria-label={`Row ${i + 1} label`} value={s.label} onChange={(e) => update(i, "label", e.target.value)} />
-              <input className="adm-input col-span-2 text-sm md:col-span-1" placeholder="Value, e.g. 261 kg" aria-label={`Row ${i + 1} value`} value={s.value} onChange={(e) => update(i, "value", e.target.value)} />
+              {translating && (
+                <p className="col-span-2 truncate text-xs text-navy/50 md:col-span-4" title={`${s.group} · ${s.label} · ${s.value}`}>
+                  EN: {[s.group, s.label, s.value].filter(Boolean).join(" · ")}
+                </p>
+              )}
+              <input className="adm-input text-sm" list="spec-groups" placeholder={translating ? s.group : "Group"} aria-label={`Row ${i + 1} group`} value={s[key("group")] ?? ""} onChange={(e) => update(i, "group", e.target.value)} />
+              <input className="adm-input text-sm" placeholder={translating ? s.label : "Label, e.g. Weight"} aria-label={`Row ${i + 1} label`} value={s[key("label")] ?? ""} onChange={(e) => update(i, "label", e.target.value)} />
+              <input className="adm-input col-span-2 text-sm md:col-span-1" placeholder={translating ? s.value : "Value, e.g. 261 kg"} aria-label={`Row ${i + 1} value`} value={s[key("value")] ?? ""} onChange={(e) => update(i, "value", e.target.value)} />
               <div className="col-span-2 flex gap-1 md:col-span-1">
                 <button type="button" className="adm-btn adm-btn--sm" disabled={i === 0} onClick={() => onChange(move(specs, i, -1))} aria-label={`Move row ${i + 1} up`}>↑</button>
                 <button type="button" className="adm-btn adm-btn--sm" disabled={i === specs.length - 1} onClick={() => onChange(move(specs, i, 1))} aria-label={`Move row ${i + 1} down`}>↓</button>
@@ -402,13 +461,60 @@ function Specs({ specs, onChange }: { specs: SpecRow[]; onChange: (specs: SpecRo
           ))}
         </div>
       )}
-      <button
-        type="button"
-        className="adm-btn mt-4"
-        onClick={() => onChange([...specs, { group: specs.at(-1)?.group ?? "", label: "", value: "" }])}
-      >
-        + Add row
-      </button>
+      {!translating && (
+        <button
+          type="button"
+          className="adm-btn mt-4"
+          onClick={() => onChange([...specs, { group: specs.at(-1)?.group ?? "", label: "", value: "" }])}
+        >
+          + Add row
+        </button>
+      )}
     </section>
+  );
+}
+
+// -------------------------------------------------------------- languages --
+
+function LangTabs({ lang, onChange }: { lang: Lang; onChange: (lang: Lang) => void }) {
+  return (
+    <div role="tablist" aria-label="Language" className="inline-flex overflow-hidden rounded-md border border-line text-sm">
+      {(["en", ...productLocales] as Lang[]).map((l) => (
+        <button
+          key={l}
+          type="button"
+          role="tab"
+          aria-selected={lang === l}
+          onClick={() => onChange(l)}
+          className={`px-3 py-1.5 font-semibold ${lang === l ? "bg-navy text-white" : "bg-white text-navy/70 hover:text-navy"}`}
+        >
+          {LANG_NAMES[l]}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** A translation box with the English it translates shown above it. */
+function Translated({ label, id, rows, english, value, onChange }: { label: string; id: string; rows: number; english: string; value: string; onChange: (v: string) => void }) {
+  return (
+    <div>
+      <label className="adm-label" htmlFor={id}>{label}</label>
+      <p className="mb-2 whitespace-pre-line rounded-md bg-sand/60 px-3 py-2 text-sm text-navy/70">
+        <span className="font-semibold">English: </span>
+        {english || "(empty)"}
+      </p>
+      <textarea id={id} className="adm-input" rows={rows} value={value} onChange={(e) => onChange(e.target.value)} />
+      <p className="adm-hint">{value.trim() ? "" : "Empty: the site shows the English text."}</p>
+    </div>
+  );
+}
+
+function TranslationsMissing() {
+  return (
+    <p className="adm-warn">
+      Spanish and Swedish texts can be edited once <code>supabase/migrations/0002_translations.sql</code> has been run
+      (see SETUP.md). Until then the site shows these products in English in every language.
+    </p>
   );
 }

@@ -5,7 +5,7 @@ import NotAdminWarning from "@/components/admin/NotAdminWarning";
 import ProductEditor from "@/components/admin/ProductEditor";
 import { adminNames } from "@/lib/admin-names";
 import { loadAdminPage } from "@/lib/admin-session";
-import { PRODUCT_COLS, type ProductRow } from "@/lib/product-row";
+import { PRODUCT_COLS, PRODUCT_COLS_BASE, type ProductRow } from "@/lib/product-row";
 
 export const metadata: Metadata = { title: "Edit product" };
 
@@ -17,12 +17,15 @@ export default async function EditProductPage({ params }: PageProps<"/admin/prod
 
   const [{ user, isAdmin, data }, names] = await Promise.all([
     loadAdminPage(async (supabase) => {
-      const [product, all] = await Promise.all([
-        supabase.from("products").select(PRODUCT_COLS).eq("id", id).maybeSingle(),
+      const one = (cols: string) => supabase.from("products").select(cols).eq("id", id).maybeSingle();
+      const [full, all] = await Promise.all([
+        one(PRODUCT_COLS),
         // For the collection menu: which collections each category already uses.
         supabase.from("products").select("category, collection").not("collection", "is", null),
       ]);
-      return { product: product.data as ProductRow | null, used: (all.data ?? []) as { category: string; collection: string }[] };
+      // Before migration 0002 the translation columns don't exist: load without them.
+      const product = full.error ? await one(PRODUCT_COLS_BASE) : full;
+      return { product: product.data as unknown as ProductRow | null, hasTranslations: !full.error, used: (all.data ?? []) as { category: string; collection: string }[] };
     }),
     adminNames(),
   ]);
@@ -50,6 +53,7 @@ export default async function EditProductPage({ params }: PageProps<"/admin/prod
         categories={names.categories}
         collectionNames={names.collections}
         collectionsByCategory={collectionsByCategory}
+        hasTranslations={data.hasTranslations}
       />
     </>
   );

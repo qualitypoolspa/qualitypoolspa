@@ -4,7 +4,7 @@ import { categories, type CategorySlug } from "@/data/categories";
 import { bundledProducts, featuredSlugs, selectionSlugs, type Product } from "@/data/products";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createPublicClient } from "@/lib/supabase/public";
-import { PRODUCT_COLS, rowToProduct, type ProductRow } from "@/lib/product-row";
+import { PRODUCT_COLS, PRODUCT_COLS_BASE, rowToProduct, type ProductRow } from "@/lib/product-row";
 
 /** Cache tag for the catalogue; the admin panel expires it on every save. */
 export const PRODUCTS_TAG = "products";
@@ -18,17 +18,17 @@ const knownCategory = new Set<string>(categories.map((c) => c.slug));
  */
 const loadLive = unstable_cache(
   async (): Promise<Product[] | null> => {
-    const { data, error } = await createPublicClient()
-      .from("products")
-      .select(PRODUCT_COLS)
-      .eq("is_visible", true)
-      .order("sort_order")
-      .order("name");
+    const query = (cols: string) =>
+      createPublicClient().from("products").select(cols).eq("is_visible", true).order("sort_order").order("name");
+    let { data, error } = await query(PRODUCT_COLS);
+    // The translation columns arrive with migration 0002. Until it's run, read
+    // without them: the site then shows English product texts, not a stale copy.
+    if (error) ({ data, error } = await query(PRODUCT_COLS_BASE));
     if (error) {
       console.error("Could not load products from Supabase, showing the bundled catalogue:", error.message);
       return null;
     }
-    return (data as ProductRow[]).filter((r) => knownCategory.has(r.category)).map(rowToProduct);
+    return (data as unknown as ProductRow[]).filter((r) => knownCategory.has(r.category)).map(rowToProduct);
   },
   ["products-live"],
   { tags: [PRODUCTS_TAG], revalidate: 3600 },

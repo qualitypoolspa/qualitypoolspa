@@ -16,7 +16,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           <div className="md:col-span-7">
             <Image src="/brand/logo.png" alt={dict.meta.title} width={781} height={123} className="h-8 w-auto brightness-0 invert" />
             <p className="mt-8 max-w-xl font-serif text-4xl leading-[1.05] text-white/90 md:text-5xl">
-              <em>Wellness from the Swedish West Coast</em>, for homes by the Mediterranean.
+              <em>{dict.footer.statementEm}</em>{dict.footer.statementRest}
             </p>
           </div>
           <div className="md:col-span-4 md:col-start-9 md:self-end">

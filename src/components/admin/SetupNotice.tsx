@@ -11,8 +11,8 @@ export default function SetupNotice() {
       <ol className="list-decimal space-y-1 pl-5">
         <li>Create a project on supabase.com</li>
         <li>
-          Run <code>supabase/migrations/0001_products.sql</code> and then <code>supabase/seed.sql</code> in the SQL
-          editor
+          Run <code>supabase/migrations/0001_products.sql</code>, <code>0002_translations.sql</code> and then{" "}
+          <code>supabase/seed.sql</code> in the SQL editor
         </li>
         <li>
           Add <code>NEXT_PUBLIC_SUPABASE_URL</code> and <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> (in{" "}

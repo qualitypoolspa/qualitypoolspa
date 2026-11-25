@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "title": "Quality Pool & Spa",
+    "description": "Pooler, spabad, bastur och wellnessprodukter med personlig rådgivning och lokal installation på Costa del Sol och Mallorca."
+  },
+  "nav": {
+    "products": "Produkter",
+    "gallery": "Galleri",
+    "services": "Tjänster",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "getQuote": "Få en offert",
+    "menu": "Meny",
+    "allProducts": "Alla produkter",
+    "pool": "Pool",
+    "spas": "Spabad",
+    "poolCovers": "Poolskydd",
+    "poolAccessories": "Pooltillbehör",
+    "sauna": "Bastu",
+    "campaigns": "Kampanjer",
+    "terms": "Köpvillkor",
+    "contactUs": "Kontakta oss",
+    "viewAll": "Visa alla",
+    "language": "Språk"
+  },
+  "hero": {
+    "eyebrow": "Pool, spa och wellness · Costa del Sol & Mallorca",
+    "line1": "Skandinavisk kvalitet",
+    "line2": "för livet vid Medelhavet.",
+    "body": "Vi väljer ut, levererar och installerar pooler, spabad, poolskydd och bastur för hem i Marbella, längs Costa del Sol och på Mallorca.",
+    "ctaProducts": "Utforska kollektionen",
+    "ctaBuilder": "Designa din egen pool"
+  },
+  "trust": {
+    "one": {
+      "title": "Rådgivning från start till mål",
+      "text": "Vi hjälper dig att välja rätt lösning."
+    },
+    "two": {
+      "title": "För Costa del Sol & Mallorca",
+      "text": "Lokal närvaro med personlig service."
+    },
+    "three": {
+      "title": "Kvalitetsprodukter från Europa",
+      "text": "Pool, spa och wellness från leverantörer vi litar på."
+    }
+  },
+  "home": {
+    "brandsLabel": "Märken vi levererar",
+    "introTitle": "Ett team, från första idén till första doppet.",
+    "introText": "Berätta hur du vill leva med din pool eller ditt spabad. Vi rekommenderar det som passar ditt hem, sköter leverans och installation med lokala partner och finns kvar för dig efteråt.",
+    "introLink": "Så arbetar vi",
+    "collectionEyebrow": "Kollektionen",
+    "collectionTitle": "Allt för livet vid vattnet",
+    "models": "{n} modeller",
+    "explore": "Utforska",
+    "moreTitle": "Också i vårt sortiment",
+    "selectedEyebrow": "Utvalt",
+    "selectedTitle": "Modeller vi rekommenderar",
+    "viewAll": "Visa alla produkter",
+    "prev": "Föregående",
+    "next": "Nästa",
+    "storyEyebrow": "Vår historia",
+    "storyTitle": "Från svenska västkusten till Medelhavet",
+    "storyText": "Våra rötter finns på svenska västkusten, där kvalitet och material som håller är en självklarhet. Samma omsorg tar vi med oss till hem på Costa del Sol och Mallorca: ärliga råd, noga utvalda produkter och en installation som görs ordentligt.",
+    "steps": [
+      "Rådgivning och hembesök",
+      "Leverans till dörren",
+      "Professionell installation",
+      "Eftervård och service"
+    ],
+    "builderEyebrow": "Thermopool",
+    "builderTitle": "Designa din egen pool",
+    "builderText": "Välj storlek, djup, trappa, färg och tillval. Skicka oss din design så återkommer vi med råd och ett personligt erbjudande.",
+    "builderCta": "Börja designa",
+    "ctaTitle": "Låt oss prata om ditt projekt",
+    "ctaText": "Skicka ett meddelande eller ring. Vi svarar oftast inom en arbetsdag.",
+    "areas": "Vi arbetar i"
+  },
+  "categories": {
+    "pool-covers": {
+      "name": "Poolskydd",
+      "blurb": "Automatiska lamellskydd och solskydd som håller poolen ren, varm och säker."
+    },
+    "spas": {
+      "name": "Spabad",
+      "blurb": "Bubbelpooler och simspa för avkoppling, träning och tid med familjen."
+    },
+    "saunas-hammam": {
+      "name": "Bastur",
+      "blurb": "Inomhusbastur för vardagligt välmående hemma."
+    },
+    "ep-pools": {
+      "name": "EP-pooler",
+      "blurb": "Lätta, isolerade pooler för terrasser och trädgårdar."
+    },
+    "fibreglass-pools": {
+      "name": "Glasfiberpooler",
+      "blurb": "Färdiga glasfiberpooler i många former och storlekar, snabba att installera."
+    },
+    "thermopool": {
+      "name": "Thermopool",
+      "blurb": "Designa din egen isolerade pool i fyra storlekar och skicka oss din förfrågan."
+    },
+    "heat-pumps": {
+      "name": "Värmepumpar",
+      "blurb": "Tysta, effektiva värmepumpar som förlänger badsäsongen, från kompakta invertermodeller till system för stora pooler."
+    },
+    "pool-robots": {
+      "name": "Poolrobotar",
+      "blurb": "Robotar som håller botten, väggar och vattenlinje skinande rena, med appstyrning på toppmodellerna."
+    },
+    "lighting": {
+      "name": "Poolbelysning",
+      "blurb": "LED-belysning för pooler och spabad, i vitt, varmvitt eller färg, som skapar stämning när mörkret faller."
+    },
+    "pool-accessories": {
+      "name": "Stegar & duschar",
+      "blurb": "Stegar och ledstänger i rostfritt stål och soldrivna duschar som fullbordar poolen med stil."
+    },
+    "pool-renovation-liners": {
+      "name": "Liners & renovering",
+      "blurb": "Måttanpassade liners och renovering som ger en befintlig pool nytt liv."
+    }
+  },
+  "collections": {
+    "selection": "Vårt urval",
+    "exclusive-line": "Exclusive Line",
+    "premium-line": "Premium Line",
+    "aurora-line": "Aurora Line",
+    "aqualife-line": "Aqualife Line",
+    "city-line": "City Line",
+    "built-in-line": "Built-in Line",
+    "cold-plunge": "Cold Plunge",
+    "swim-spas": "Simspa",
+    "infinity-line": "Infinity Line",
+    "steel-line": "Steel Line",
+    "mosaic-line": "Mosaic Line",
+    "hot-tubs": "Fler bubbelpooler",
+    "professional-spas": "Professionella spabad",
+    "accessories": "Spatillbehör",
+    "slatted-covers": "Lamellskydd",
+    "solar-covers": "Bubbelskydd",
+    "inverter-heat-pumps": "Inverter-värmepumpar",
+    "on-off-heat-pumps": "Klassiska värmepumpar",
+    "large-pool-heat-pumps": "För stora pooler",
+    "ladders": "Stegar & ledstänger",
+    "showers": "Solduschar",
+    "liners": "Liners",
+    "up-to-5m": "Upp till 5 m",
+    "5-7m": "5 till 7 m",
+    "7-9m": "7 till 9 m",
+    "over-9m": "Över 9 m"
+  },
+  "products": {
+    "title": "Produkter",
+    "intro": "Bläddra i vårt sortiment. Alla produkter kan du diskutera med oss för råd och ett personligt erbjudande.",
+    "inCategory": "produkter i den här kategorin",
+    "empty": "Vi håller på att lägga till produkter i den här kategorin. Kontakta oss så hjälper vi dig gärna direkt.",
+    "backToProducts": "Alla produkter",
+    "specs": "Specifikationer",
+    "description": "Beskrivning",
+    "downloads": "Nedladdningar",
+    "askAbout": "Fråga om den här produkten",
+    "sample": "Exempelprodukt",
+    "related": "Mer i den här kategorin",
+    "selectionIntro": "Handplockade av vårt team: de modeller vi oftast rekommenderar.",
+    "bySize": "Efter storlek",
+    "collectionsTitle": "Kollektioner",
+    "allSizes": "Alla storlekar",
+    "forPeople": "För {n} personer",
+    "forPeopleShort": "{n} personer",
+    "allSpas": "Alla spabad",
+    "showing": "{count} spabad för {n} personer"
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "intro": "Berätta om ditt projekt. Vi svarar oftast inom en arbetsdag.",
+    "email": "Mejla oss",
+    "whatsapp": "Chatta på WhatsApp",
+    "phone": "Ring oss",
+    "areas": "Vi arbetar i",
+    "emailSubject": "Förfrågan från webbplatsen",
+    "emailBody": "Hej, jag vill gärna veta mer om era produkter.",
+    "whatsappText": "Hej! Jag vill gärna veta mer om era produkter.",
+    "productSubject": "Förfrågan om",
+    "productBody": "Hej, jag är intresserad av produkten nedan och vill gärna ha mer information:",
+    "productWhatsapp": "Hej! Jag är intresserad av",
+    "consultation": "Boka en privat konsultation",
+    "consultationSubject": "Förfrågan om privat konsultation",
+    "consultationBody": "Hej, jag vill boka en privat konsultation om ett projekt. Önskad plats och tid:",
+    "consultationWhatsapp": "Hej! Jag vill boka en privat konsultation om ett projekt.",
+    "campaignSubject": "Förfrågan om kampanjen",
+    "campaignWhatsapp": "Hej! Jag vill gärna veta mer om kampanjen:"
+  },
+  "about": {
+    "title": "Om oss",
+    "text1": "Quality Pool & Spa förverkligar pooler, spabad, bastur och wellnessprodukter på Costa del Sol och Mallorca, med rötterna på svenska västkusten.",
+    "text2": "Vi väljer produkter från europeiska leverantörer vi litar på, och vi hjälper dig från första idén via planering och leverans till installation.",
+    "text3": "Vårt mål är enkelt: kvalitetsprodukter, ärliga råd och ett resultat du får glädje av i många år."
+  },
+  "footer": {
+    "blurb": "Pooler, spabad, bastur och wellnessprodukter med personlig rådgivning och lokal installation.",
+    "explore": "Utforska",
+    "contact": "Kontakt",
+    "rights": "Alla rättigheter förbehållna.",
+    "guides": "Guider",
+    "locations": "Där vi arbetar",
+    "statementEm": "Wellness från svenska västkusten",
+    "statementRest": ", för hem vid Medelhavet."
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "text": "Sidan du letar efter finns inte.",
+    "back": "Tillbaka till startsidan"
+  },
+  "gallery": {
+    "title": "Galleri",
+    "intro": "En inblick i pooler, spabad, bastur och poolskydd som vi har levererat och installerat.",
+    "all": "Alla",
+    "close": "Stäng",
+    "prev": "Föregående",
+    "next": "Nästa",
+    "sample": "Exempelbild",
+    "ctaTitle": "Vill du ha något liknande?",
+    "ctaText": "Berätta om ditt projekt så hjälper vi dig att hitta rätt lösning."
+  },
+  "services": {
+    "title": "Tjänster",
+    "intro": "Från första samtalet till första doppet tar vi hand om varje steg, så att du bara behöver njuta av resultatet.",
+    "stepLabel": "Steg",
+    "steps": [
+      {
+        "title": "Privat konsultation",
+        "text": "Vi lyssnar på hur du vill leva med din pool, ditt spabad eller din bastu, och besöker din fastighet när det behövs."
+      },
+      {
+        "title": "Design och planering",
+        "text": "Vi rekommenderar rätt produkter och hjälper till med placering, åtkomst, el och markarbete."
+      },
+      {
+        "title": "Leverans",
+        "text": "Varsam leverans och samordning ända fram till dörren, även för stora och tunga produkter."
+      },
+      {
+        "title": "Installation",
+        "text": "Professionell installation med lokala partner, testad och överlämnad klar att använda."
+      },
+      {
+        "title": "Eftervård",
+        "text": "Råd om skötsel och underhåll, och en kontakt du kan nå när du behöver hjälp."
+      }
+    ],
+    "ctaTitle": "Börja med ett samtal",
+    "ctaText": "Berätta om din fastighet och vad du har i tankarna. Helt utan förpliktelser."
+  },
+  "guides": {
+    "title": "Guider",
+    "intro": "Raka råd som hjälper dig att välja rätt. Utkast, som ska gås igenom med kunden.",
+    "read": "Läs guiden",
+    "seeProducts": "Se produkterna",
+    "ctaTitle": "Osäker på vad som passar ditt hem?",
+    "ctaText": "Vi pratar gärna igenom det med dig.",
+    "items": {
+      "pool-covers": {
+        "title": "Så väljer du poolskydd",
+        "intro": "Ett bra poolskydd håller poolen renare, varmare och säkrare, och minskar arbetet med skötseln.",
+        "sections": [
+          {
+            "h": "Varför täcka poolen",
+            "p": "Ett poolskydd minskar avdunstning och värmeförlust, håller löv och smuts borta och ökar säkerheten, särskilt med barn eller husdjur. Under en säsong kan det märkbart sänka driftkostnaderna."
+          },
+          {
+            "h": "Vanliga typer",
+            "p": "Automatiska poolskydd öppnas och stängs med en knapptryckning och kan sitta ovanför eller under vattnet. Solskydd fångar värme från solen. Säkerhetsskydd är byggda för att bära vikt. Var och en ger en egen balans mellan bekvämlighet, budget och utseende."
+          },
+          {
+            "h": "Att tänka på",
+            "p": "Poolens form och storlek, hur du använder den under året, hur viktiga bekvämlighet och utseende är, och om skyddet ska vara dolt när det är öppet. Det avgör vilken typ som passar."
+          },
+          {
+            "h": "Installation",
+            "p": "Vissa poolskydd passar befintliga pooler och andra är enklast att planera in vid nybyggnation. Vi kan ge råd när vi känner till din pool och tomt."
+          }
+        ]
+      },
+      "spas": {
+        "title": "Så väljer du spabad",
+        "intro": "Ett spabad är till för avkoppling, återhämtning och tid tillsammans. Rätt val beror på utrymme, användning och miljö.",
+        "sections": [
+          {
+            "h": "Bubbelpool eller simspa",
+            "p": "En bubbelpool är till för avkoppling och umgänge. Ett simspa har dessutom en motström att simma mot och passar både träning och nöje, men kräver mer utrymme."
+          },
+          {
+            "h": "Storlek och platser",
+            "p": "Tänk på hur många som ska använda det samtidigt och om du föredrar att sitta, ligga eller båda."
+          },
+          {
+            "h": "Inomhus eller utomhus",
+            "p": "Spabad utomhus behöver ett stabilt underlag och en rimlig åtkomst. Inomhus krävs ett bärkraftigt golv, ventilation och fuktkontroll."
+          },
+          {
+            "h": "El och markarbete",
+            "p": "Spabad behöver en lämplig elanslutning och ett plant underlag. Vi hjälper dig att planera båda före leverans."
+          },
+          {
+            "h": "Skötsel",
+            "p": "Moderna spabad gör vattenvården enkel. Vi förklarar rutinerna och kan ordna service om du föredrar det."
+          }
+        ]
+      },
+      "saunas-hammam": {
+        "title": "Så väljer du bastu eller hammam",
+        "intro": "Värme hemma är ett av de enklaste sätten att höja välbefinnandet. Det bästa valet beror på hur och var du ska använda den.",
+        "sections": [
+          {
+            "h": "Typer",
+            "p": "Traditionella bastur ger klassisk torr värme. Infraröda kabiner värmer kroppen direkt vid lägre lufttemperatur. En hammam är ett ångbad med hög luftfuktighet. Tunnbastur är ett populärt val utomhus."
+          },
+          {
+            "h": "Inomhus eller utomhus",
+            "p": "Utomhusbastur är lättare att placera och ser fina ut i en trädgård. Inomhusbastur kan användas året runt och kräver god ventilation och fuktskydd."
+          },
+          {
+            "h": "Uppvärmning",
+            "p": "Elaggregat är snabba och enkla. Vedeldade aggregat ger en klassisk upplevelse där reglerna tillåter det."
+          },
+          {
+            "h": "Utrymme och komfort",
+            "p": "Välj storlek efter hur många som ska använda den, och tänk på lavarnas höjd och utrymme för ombyte."
+          }
+        ]
+      }
+    }
+  },
+  "locations": {
+    "title": "Där vi arbetar",
+    "intro": "Lokal rådgivning, leverans och installation på hela Costa del Sol och Mallorca.",
+    "ctaTitle": "Berätta om din fastighet",
+    "ctaText": "Vi hjälper dig att hitta rätt pool, spabad eller bastu och ordnar allt från leverans till installation.",
+    "items": {
+      "marbella": {
+        "name": "Marbella",
+        "title": "Pooler, spabad och bastur i Marbella",
+        "intro": "Livet utomhus är en del av vardagen i Marbella. Vi hjälper husägare att välja, få levererat och installera poolskydd, spabad och bastur som passar deras hem.",
+        "text": "Från villor i bergen till lägenheter med terrass anpassar vi produkten efter utrymmet och tar hand om detaljerna."
+      },
+      "costa-del-sol": {
+        "name": "Costa del Sol",
+        "title": "Pooler, spabad och bastur på Costa del Sol",
+        "intro": "Med långa, varma säsonger används en väl vald pool, ett spabad eller en bastu en stor del av året. Vi hjälper hem och projekt längs hela kusten.",
+        "text": "Vi erbjuder personlig rådgivning och arbetar med lokala installatörer vi litar på, så att du har ett och samma team från första idé till färdigt resultat."
+      },
+      "mallorca": {
+        "name": "Mallorca",
+        "title": "Pooler, spabad och bastur på Mallorca",
+        "intro": "Vi erbjuder samma personliga service på Mallorca, för både privata hem och fincas.",
+        "text": "Berätta om din fastighet så rekommenderar vi det som passar och tar hand om leverans och installation."
+      }
+    }
+  },
+  "builder": {
+    "intro": "Välj storlek och detaljerna nedan och skicka oss din förfrågan. Vi återkommer med råd och ett personligt erbjudande. Helt utan förpliktelser.",
+    "steps": {
+      "size": "Storlek",
+      "depth": "Djup",
+      "stairs": "Trappa",
+      "finish": "Linerfärg",
+      "extras": "Tillval",
+      "project": "Ditt projekt",
+      "contact": "Dina uppgifter"
+    },
+    "extrasHint": "Välj så många du vill.",
+    "location": "Plats",
+    "timeframe": "När",
+    "notes": "Något mer vi bör veta?",
+    "notesPlaceholder": "Åtkomst till trädgården, lutning, befintlig pool, önskemål…",
+    "name": "Namn",
+    "email": "E-post",
+    "phone": "Telefon",
+    "required": "Fyll i ditt namn och en e-postadress eller ett telefonnummer.",
+    "summary": "Din pool",
+    "noneSelected": "Inget valt",
+    "send": "Skicka förfrågan via e-post",
+    "sendWhatsapp": "Skicka via WhatsApp",
+    "sendNote": "Öppnar din e-post eller WhatsApp med dina val ifyllda, redo att skicka till oss.",
+    "subject": "Förfrågan om Thermopool",
+    "greeting": "Hej, jag vill gärna ha ett erbjudande på en Thermopool med dessa val:",
+    "drawing": "Vy ovanifrån (ej skalenlig)"
+  },
+  "campaigns": {
+    "title": "Kampanjer & paket",
+    "intro": "Aktuella erbjudanden och paketpriser på pooler, spabad och poolskydd. Fråga oss om detaljerna och en personlig offert.",
+    "includes": "Ingår",
+    "validUntil": "Gäller till och med {date}",
+    "ask": "Fråga om erbjudandet",
+    "sample": "Exempel",
+    "empty": "Just nu finns inga kampanjer. Fråga oss om paketpriser för ditt projekt.",
+    "bar": "Planerar du en pool eller ett spabad?",
+    "barLink": "Fråga oss om våra aktuella kampanjer"
+  },
+  "terms": {
+    "title": "Köpvillkor",
+    "updated": "Senast uppdaterad {date}",
+    "draft": "Utkast: villkoren håller på att granskas och fastställs inom kort."
+  }
+}
