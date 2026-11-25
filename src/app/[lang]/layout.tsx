@@ -21,6 +21,11 @@ const body = Manrope({ subsets: ["latin", "cyrillic"], variable: "--font-body" }
 
 export const generateStaticParams = () => locales.map((lang) => ({ lang }));
 
+// Rebuild public pages at least hourly. Saves in /admin refresh them at once;
+// this covers a page built while the database couldn't be read (it then shows
+// the bundled catalogue) so it doesn't stay that way.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};

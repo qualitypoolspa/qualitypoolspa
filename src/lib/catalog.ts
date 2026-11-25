@@ -14,10 +14,10 @@ const knownCategory = new Set<string>(categories.map((c) => c.slug));
 /**
  * The live catalogue from Supabase: visible products in the client's order.
  * Cached across requests and refreshed whenever the client saves in /admin
- * (and hourly as a safety net). Returns null if the database can't be read.
+ * (and hourly as a safety net). Throws if the database can't be read.
  */
 const loadLive = unstable_cache(
-  async (): Promise<Product[] | null> => {
+  async (): Promise<Product[]> => {
     const query = (cols: string) =>
       createPublicClient().from("products").select(cols).eq("is_visible", true).order("sort_order").order("name");
     let { data, error } = await query(PRODUCT_COLS);
@@ -25,8 +25,9 @@ const loadLive = unstable_cache(
     // without them: the site then shows English product texts, not a stale copy.
     if (error) ({ data, error } = await query(PRODUCT_COLS_BASE));
     if (error) {
-      console.error("Could not load products from Supabase, showing the bundled catalogue:", error.message);
-      return null;
+      // Thrown, not returned: a failed read must not be cached, or the site
+      // would keep showing the bundled copy for an hour after it's fixed.
+      throw new Error(error.message);
     }
     return (data as unknown as ProductRow[]).filter((r) => knownCategory.has(r.category)).map(rowToProduct);
   },
@@ -74,8 +75,7 @@ function makeCatalog(products: Product[], isLive: boolean) {
 export const getCatalog = cache(async (): Promise<Catalog> => {
   if (isSupabaseConfigured) {
     try {
-      const live = await loadLive();
-      if (live) return makeCatalog(live, true);
+      return makeCatalog(await loadLive(), true);
     } catch (err) {
       console.error("Could not load products from Supabase, showing the bundled catalogue:", err);
     }
