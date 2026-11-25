@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { ContactButtons } from "@/components/ContactButtons";
-import { site } from "@/config/site";
+import { mapsUrl, site } from "@/config/site";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -35,6 +35,33 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
             </div>
           ))}
         </dl>
+
+        <h2 data-reveal="up" className="eyebrow mt-20">{contact.offices}</h2>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          {site.offices.map((o, i) => (
+            <address
+              key={o.name}
+              data-reveal="up"
+              style={{ "--d": `${i * 90}ms` } as React.CSSProperties}
+              className="border border-line p-8 not-italic md:p-10"
+            >
+              <p className="font-serif text-3xl text-navy">{o.name}</p>
+              <p className="mt-4 leading-relaxed text-navy/70">
+                {o.address.map((line) => (
+                  <span key={line} className="block">{line}</span>
+                ))}
+              </p>
+              <a
+                href={mapsUrl(o.address)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-line mt-6 inline-block text-[12px] font-semibold uppercase tracking-[0.18em] text-teal"
+              >
+                {contact.directions} ↗
+              </a>
+            </address>
+          ))}
+        </div>
       </section>
     </>
   );

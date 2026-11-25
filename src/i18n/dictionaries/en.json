@@ -191,7 +191,9 @@
     "consultationBody": "Hello, I would like to book a private consultation about a project. Preferred location and timing:",
     "consultationWhatsapp": "Hello! I would like to book a private consultation about a project.",
     "campaignSubject": "Enquiry about the campaign",
-    "campaignWhatsapp": "Hello! I would like to know more about the campaign:"
+    "campaignWhatsapp": "Hello! I would like to know more about the campaign:",
+    "offices": "Our offices",
+    "directions": "Get directions"
   },
   "about": {
     "title": "About us",
