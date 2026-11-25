@@ -107,6 +107,15 @@ create policy "products admin write"
   to authenticated
   using (public.is_admin()) with check (public.is_admin());
 
+-- Table access for the website's roles. Newer Supabase projects don't grant
+-- this automatically for tables made in the SQL editor ("permission denied for
+-- table products"). The policies above still decide which rows each role sees
+-- and changes.
+grant usage on schema public to anon, authenticated;
+grant select on public.products to anon, authenticated;
+grant insert, update, delete on public.products to authenticated;
+grant select on public.admin_users to authenticated;
+
 -- -------------------------------------------------------------- bucket --
 -- Photos uploaded in the admin panel. Public bucket: these are photos on a
 -- public web page. If this insert fails with a permissions error, create the
