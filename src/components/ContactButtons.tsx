@@ -9,6 +9,8 @@ type Props = {
   url?: string;
   /** "consultation" prefills a private-consultation request. */
   mode?: "default" | "consultation";
+  /** Light buttons for dark sections. */
+  dark?: boolean;
   className?: string;
 };
 
@@ -42,14 +44,14 @@ export function whatsappHref(
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
 }
 
-export function ContactButtons({ dict, product, url, mode = "default", className = "" }: Props) {
+export function ContactButtons({ dict, product, url, mode = "default", dark = false, className = "" }: Props) {
   return (
     <div className={`flex flex-wrap gap-3 ${className}`}>
-      <a className="btn btn-primary" href={emailHref(dict, product, url, mode)}>
-        {mode === "consultation" ? dict.consultation : dict.email}
+      <a className={`btn ${dark ? "btn-light" : "btn-primary"}`} href={emailHref(dict, product, url, mode)}>
+        {mode === "consultation" ? dict.consultation : dict.email} <span className="arrow">→</span>
       </a>
       <a
-        className="btn btn-whatsapp"
+        className={`btn ${dark ? "btn-ghost" : "btn-whatsapp"}`}
         href={whatsappHref(dict, product, url, mode)}
         target="_blank"
         rel="noopener noreferrer"

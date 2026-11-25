@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PageHero } from "@/components/PageHero";
 import { guideSlugs } from "@/data/content";
 import { hasLocale, href } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -18,25 +19,23 @@ export default async function GuidesPage({ params }: PageProps<"/[lang]/guides">
   const { guides } = await getDictionary(lang);
 
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20">
-      <h1 className="font-serif text-5xl text-navy md:text-7xl">{guides.title}</h1>
-      <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy/70">{guides.intro}</p>
-      <ul className="mt-14 grid gap-6 md:grid-cols-3">
-        {guideSlugs.map((slug) => (
-          <li key={slug}>
-            <Link
-              href={href(lang, `/guides/${slug}`)}
-              className="group block h-full border border-line bg-white p-8 transition hover:shadow-xl"
-            >
-              <h2 className="font-serif text-2xl text-navy group-hover:text-teal">{guides.items[slug].title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-navy/70">{guides.items[slug].intro}</p>
-              <span className="mt-6 inline-block border-b border-navy/40 pb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-navy">
-                {guides.read} →
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <PageHero title={guides.title} intro={guides.intro} />
+      <section className="mx-auto max-w-[90rem] px-5 pb-28 md:px-8">
+        <ul className="border-t border-line">
+          {guideSlugs.map((slug, i) => (
+            <li key={slug} data-reveal="up" style={{ "--d": `${i * 80}ms` } as React.CSSProperties} className="border-b border-line">
+              <Link href={href(lang, `/guides/${slug}`)} className="group grid gap-3 py-10 md:grid-cols-12 md:gap-8">
+                <h2 className="font-serif text-4xl text-navy transition-transform duration-500 group-hover:translate-x-2 md:col-span-6 md:text-5xl">
+                  {guides.items[slug].title}
+                </h2>
+                <p className="leading-relaxed text-navy/65 md:col-span-5">{guides.items[slug].intro}</p>
+                <span aria-hidden="true" className="hidden justify-self-end text-2xl text-navy md:col-span-1 md:block">→</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }

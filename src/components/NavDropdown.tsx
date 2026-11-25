@@ -39,10 +39,10 @@ export function NavDropdown({ item, viewAllLabel }: { item: NavItem; viewAllLabe
         aria-expanded={open}
         aria-haspopup="true"
         onClick={() => setOpenOn(open ? null : pathname)}
-        className={`flex items-center gap-1.5 whitespace-nowrap uppercase tracking-[0.12em] hover:text-teal ${open ? "text-teal" : ""}`}
+        className={`flex items-center gap-1.5 whitespace-nowrap uppercase tracking-[0.14em] ${open ? "opacity-70" : "hover:opacity-70"}`}
       >
         {item.name}
-        <span aria-hidden="true" className={`text-[8px] transition ${open ? "rotate-180" : ""}`}>▼</span>
+        <svg aria-hidden="true" viewBox="0 0 10 6" className={`h-1.5 w-2.5 transition duration-300 ${open ? "rotate-180" : ""}`}><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.3" /></svg>
       </button>
 
       <div
@@ -51,7 +51,7 @@ export function NavDropdown({ item, viewAllLabel }: { item: NavItem; viewAllLabe
         }`}
       >
         <div
-          className={`rounded-lg border border-line bg-[#faf8f3] p-7 text-[13px] font-normal normal-case tracking-normal shadow-xl ${
+          className={`border border-line bg-paper p-8 text-[13.5px] font-normal normal-case tracking-normal text-navy shadow-[0_30px_60px_-20px_rgba(16,25,29,0.25)] ${
             wide ? "grid w-[34rem] grid-cols-[1fr_1.4fr] gap-8" : "w-64"
           }`}
         >
@@ -61,7 +61,7 @@ export function NavDropdown({ item, viewAllLabel }: { item: NavItem; viewAllLabe
               <ul className={`space-y-2 text-navy/80 ${col.links.length > 8 ? "columns-2 gap-6 [&>li]:break-inside-avoid" : ""}`}>
                 {col.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} onClick={close} className="hover:text-teal">
+                    <Link href={l.href} onClick={close} className="link-line hover:text-navy">
                       {l.name}
                     </Link>
                   </li>

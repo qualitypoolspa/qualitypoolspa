@@ -53,7 +53,7 @@ export function GalleryGrid({ items, filters, labels }: Props) {
       <Image src={t.image} alt={t.title} width={t.width} height={t.height} sizes={sizes} className="h-full w-full object-cover" />
     ) : (
       <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${t.tone}`} aria-hidden="true">
-        <span className="px-4 text-center font-serif text-lg italic text-white/70">{t.title}</span>
+        <span className="px-4 text-center font-serif text-2xl italic text-white/70">{t.title}</span>
       </div>
     );
 
@@ -70,10 +70,8 @@ export function GalleryGrid({ items, filters, labels }: Props) {
               setActive(f.slug);
               setOpen(null);
             }}
-            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
-              active === f.slug
-                ? "border-teal bg-teal text-white"
-                : "border-line bg-white text-navy hover:border-teal"
+            className={`border px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.14em] transition duration-300 ${
+              active === f.slug ? "border-navy bg-navy text-paper" : "border-line text-navy hover:border-navy"
             }`}
           >
             {f.name}
@@ -81,13 +79,13 @@ export function GalleryGrid({ items, filters, labels }: Props) {
         ))}
       </div>
 
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {shown.map((t, i) => (
           <li key={t.id}>
             <button
               type="button"
               onClick={() => setOpen(i)}
-              className="group relative block aspect-[4/3] w-full overflow-hidden rounded-lg text-left"
+              className="group relative block aspect-[4/3] w-full overflow-hidden text-left"
               aria-label={t.title}
             >
               {visual(t, "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw")}
@@ -96,7 +94,7 @@ export function GalleryGrid({ items, filters, labels }: Props) {
                 {t.location && <span className="block text-xs text-white/75">{t.location}</span>}
               </span>
               {t.sample && (
-                <span className="absolute left-3 top-3 rounded bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-navy">
+                <span className="absolute left-3 top-3 bg-paper px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-navy">
                   {labels.sample}
                 </span>
               )}
@@ -114,7 +112,7 @@ export function GalleryGrid({ items, filters, labels }: Props) {
           onClick={() => setOpen(null)}
         >
           <div className="relative w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">{visual(current, "100vw")}</div>
+            <div className="aspect-[4/3] w-full overflow-hidden">{visual(current, "100vw")}</div>
             <p className="mt-3 text-center text-sm text-white">
               {current.title}
               {current.location && <span className="text-white/60"> · {current.location}</span>}

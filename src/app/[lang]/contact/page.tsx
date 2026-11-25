@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { PageHero } from "@/components/PageHero";
 import { ContactButtons } from "@/components/ContactButtons";
 import { site } from "@/config/site";
 import { hasLocale } from "@/i18n/config";
@@ -17,25 +18,24 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
   const { contact } = await getDictionary(lang);
 
   return (
-    <section className="mx-auto max-w-3xl px-5 py-14">
-      <h1 className="font-serif text-5xl text-navy">{contact.title}</h1>
-      <p className="mt-4 text-lg text-navy/70">{contact.intro}</p>
-      <ContactButtons dict={contact} className="mt-8" />
-
-      <dl className="mt-10 divide-y divide-line rounded-lg border border-line bg-white text-sm">
-        <div className="grid grid-cols-3 gap-4 px-5 py-4">
-          <dt className="text-navy/60">{contact.phone}</dt>
-          <dd className="col-span-2"><a className="text-teal" href={`tel:+${site.whatsapp}`}>{site.phoneDisplay}</a></dd>
-        </div>
-        <div className="grid grid-cols-3 gap-4 px-5 py-4">
-          <dt className="text-navy/60">{contact.email}</dt>
-          <dd className="col-span-2"><a className="text-teal" href={`mailto:${site.email}`}>{site.email}</a></dd>
-        </div>
-        <div className="grid grid-cols-3 gap-4 px-5 py-4">
-          <dt className="text-navy/60">{contact.areas}</dt>
-          <dd className="col-span-2">{site.locations.join(", ")}</dd>
-        </div>
-      </dl>
-    </section>
+    <>
+      <PageHero title={contact.title} intro={contact.intro}>
+        <ContactButtons dict={contact} className="fade-in mt-10" />
+      </PageHero>
+      <section className="mx-auto max-w-[90rem] px-5 pb-28 md:px-8">
+        <dl className="grid border-t border-line md:grid-cols-3">
+          {[
+            [contact.phone, <a key="p" className="link-line" href={`tel:+${site.whatsapp}`}>{site.phoneDisplay}</a>],
+            [contact.email, <a key="e" className="link-line break-all" href={`mailto:${site.email}`}>{site.email}</a>],
+            [contact.areas, site.locations.join(", ")],
+          ].map(([label, value], i) => (
+            <div key={i} data-reveal="up" style={{ "--d": `${i * 90}ms` } as React.CSSProperties} className="border-b border-line py-10 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0">
+              <dt className="eyebrow">{label}</dt>
+              <dd className="mt-4 font-serif text-3xl text-navy">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </>
   );
 }

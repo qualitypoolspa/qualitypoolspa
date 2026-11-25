@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { PageHero } from "@/components/PageHero";
 import { ContactButtons } from "@/components/ContactButtons";
 import { GalleryGrid, type GalleryTile } from "@/components/GalleryGrid";
 import { categories, getCategory } from "@/data/categories";
@@ -38,10 +39,9 @@ export default async function GalleryPage({ params }: PageProps<"/[lang]/gallery
 
   return (
     <>
-      <section className="mx-auto max-w-6xl px-5 py-14">
-        <h1 className="font-serif text-5xl text-navy">{dict.gallery.title}</h1>
-        <p className="mt-4 max-w-xl text-navy/70">{dict.gallery.intro}</p>
-        <div className="mt-10">
+      <PageHero title={dict.gallery.title} intro={dict.gallery.intro} />
+      <section className="mx-auto max-w-[90rem] px-5 pb-28 md:px-8">
+        <div>
           <GalleryGrid
             items={tiles}
             filters={filters}
@@ -56,11 +56,13 @@ export default async function GalleryPage({ params }: PageProps<"/[lang]/gallery
         </div>
       </section>
 
-      <section className="bg-sand">
-        <div className="mx-auto max-w-6xl px-5 py-14">
-          <h2 className="font-serif text-3xl text-navy">{dict.gallery.ctaTitle}</h2>
-          <p className="mt-3 max-w-lg text-sm leading-relaxed text-navy/70">{dict.gallery.ctaText}</p>
-          <ContactButtons dict={dict.contact} className="mt-6" />
+      <section className="bg-ink text-white">
+        <div className="mx-auto grid max-w-[90rem] gap-10 px-5 py-24 md:grid-cols-12 md:px-8 md:py-28">
+          <h2 data-reveal="up" className="font-serif text-5xl leading-[1] md:col-span-7 md:text-6xl">{dict.gallery.ctaTitle}</h2>
+          <div data-reveal="up" className="md:col-span-4 md:col-start-9">
+            <p className="leading-relaxed text-white/70">{dict.gallery.ctaText}</p>
+            <ContactButtons dict={dict.contact} className="mt-8" dark />
+          </div>
         </div>
       </section>
     </>

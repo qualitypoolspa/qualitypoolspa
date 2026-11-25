@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PageHero } from "@/components/PageHero";
 import { CategoryTiles } from "@/components/CategoryGrid";
 import { categories, menuGroups } from "@/data/categories";
 import { hasLocale, href } from "@/i18n/config";
@@ -25,26 +26,27 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
   };
 
   return (
-    <section className="mx-auto max-w-6xl px-5 py-14">
-      <h1 className="font-serif text-5xl text-navy md:text-6xl">{dict.products.title}</h1>
-      <p className="mt-4 max-w-xl text-navy/70">{dict.products.intro}</p>
+    <>
+    <PageHero title={dict.products.title} intro={dict.products.intro} />
+    <section className="mx-auto max-w-[90rem] px-5 pb-28 md:px-8">
 
-      <nav className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-b border-line pb-6 text-sm">
+      <nav className="flex flex-wrap gap-x-8 gap-y-2 border-y border-line py-5 text-[12px] font-semibold uppercase tracking-[0.16em]">
         {menuGroups.map((g) => (
-          <Link key={g} href={href(lang, `/products#${g}`)} className="text-navy/70 hover:text-teal">
+          <Link key={g} href={href(lang, `/products#${g}`)} className="link-line text-navy/70 hover:text-navy">
             {groupName[g]}
           </Link>
         ))}
       </nav>
 
-      <div className="mt-12 space-y-16">
+      <div className="mt-16 space-y-24">
         {menuGroups.map((g) => (
           <div key={g} id={g} className="scroll-mt-28">
-            <h2 className="mb-6 font-serif text-3xl text-navy">{groupName[g]}</h2>
+            <h2 data-reveal="up" className="mb-8 font-serif text-5xl text-navy">{groupName[g]}</h2>
             <CategoryTiles slugs={categories.filter((c) => c.group === g).map((c) => c.slug)} lang={lang} dict={dict} />
           </div>
         ))}
       </div>
     </section>
+    </>
   );
 }

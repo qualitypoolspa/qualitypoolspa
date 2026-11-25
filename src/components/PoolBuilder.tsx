@@ -9,8 +9,8 @@ import type { Dictionary } from "@/i18n/dictionaries";
 type Props = { lang: Locale; t: Dictionary["builder"] };
 
 const pill = (active: boolean) =>
-  `rounded-lg border px-4 py-3 text-left transition ${
-    active ? "border-navy bg-navy text-white" : "border-line bg-white text-navy hover:border-teal"
+  `border px-4 py-4 text-left transition duration-300 ${
+    active ? "border-navy bg-navy text-paper" : "border-line text-navy hover:border-navy"
   }`;
 
 function Choice({ list, value, onChange, lang }: { list: Option[]; value: string; onChange: (id: string) => void; lang: Locale }) {
@@ -29,8 +29,8 @@ function Choice({ list, value, onChange, lang }: { list: Option[]; value: string
 function Step({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
   return (
     <section className="border-t border-line pt-8">
-      <h2 className="flex items-baseline gap-3 font-serif text-2xl text-navy">
-        <span className="font-serif text-lg text-brass">{String(n).padStart(2, "0")}</span>
+      <h2 className="flex items-baseline gap-4 font-serif text-3xl text-navy">
+        <span className="font-serif text-xl italic text-brass">{String(n).padStart(2, "0")}</span>
         {title}
       </h2>
       <div className="mt-5">{children}</div>
@@ -89,7 +89,7 @@ export function PoolBuilder({ lang, t }: Props) {
     window.open(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message())}`, "_blank", "noopener");
   };
 
-  const field = "w-full rounded-lg border border-line bg-white px-4 py-3 text-sm text-navy outline-none focus:border-teal";
+  const field = "w-full border-b border-navy/25 bg-transparent px-0 py-3 text-[15px] text-navy outline-none transition focus:border-navy";
 
   // Simple top view: pool scaled to the largest size, stairs drawn at one end.
   const scale = 300 / 10;
@@ -118,11 +118,11 @@ export function PoolBuilder({ lang, t }: Props) {
                 type="button"
                 aria-pressed={finish === f.id}
                 onClick={() => setFinish(f.id)}
-                className={`flex items-center gap-3 rounded-full border py-2 pl-2 pr-4 text-sm transition ${
-                  finish === f.id ? "border-navy ring-1 ring-navy" : "border-line bg-white hover:border-teal"
+                className={`flex items-center gap-3 border py-2 pl-2 pr-4 text-sm transition duration-300 ${
+                  finish === f.id ? "border-navy" : "border-line hover:border-navy"
                 }`}
               >
-                <span className="h-7 w-7 rounded-full border border-black/10" style={{ background: f.hex }} />
+                <span className="h-7 w-7 border border-black/10" style={{ background: f.hex }} />
                 {pick(f.label, lang)}
               </button>
             ))}
@@ -134,7 +134,7 @@ export function PoolBuilder({ lang, t }: Props) {
             {extras.map((o) => {
               const on = chosen.includes(o.id);
               return (
-                <label key={o.id} className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 text-sm transition ${on ? "border-navy bg-white" : "border-line bg-white hover:border-teal"}`}>
+                <label key={o.id} className={`flex cursor-pointer items-center gap-3 border px-4 py-4 text-sm transition duration-300 ${on ? "border-navy" : "border-line hover:border-navy"}`}>
                   <input
                     type="checkbox"
                     checked={on}
@@ -149,19 +149,19 @@ export function PoolBuilder({ lang, t }: Props) {
         </Step>
         <Step n={6} title={t.steps.project}>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="text-sm text-navy/70">
+            <label className="text-[11px] uppercase tracking-[0.16em] text-navy/55">
               {t.location}
               <select value={location} onChange={(e) => setLocation(e.target.value)} className={`${field} mt-1`}>
                 {locations.map((o) => <option key={o.id} value={o.id}>{pick(o.label, lang)}</option>)}
               </select>
             </label>
-            <label className="text-sm text-navy/70">
+            <label className="text-[11px] uppercase tracking-[0.16em] text-navy/55">
               {t.timeframe}
               <select value={timeframe} onChange={(e) => setTimeframe(e.target.value)} className={`${field} mt-1`}>
                 {timeframes.map((o) => <option key={o.id} value={o.id}>{pick(o.label, lang)}</option>)}
               </select>
             </label>
-            <label className="text-sm text-navy/70 sm:col-span-2">
+            <label className="text-[11px] uppercase tracking-[0.16em] text-navy/55 sm:col-span-2">
               {t.notes}
               <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} placeholder={t.notesPlaceholder} className={`${field} mt-1`} />
             </label>
@@ -170,7 +170,7 @@ export function PoolBuilder({ lang, t }: Props) {
         <Step n={7} title={t.steps.contact}>
           <div className="grid gap-4 sm:grid-cols-3">
             {(["name", "email", "phone"] as const).map((k) => (
-              <label key={k} className="text-sm text-navy/70">
+              <label key={k} className="text-[11px] uppercase tracking-[0.16em] text-navy/55">
                 {t[k]}
                 <input
                   type={k === "email" ? "email" : k === "phone" ? "tel" : "text"}
@@ -187,15 +187,15 @@ export function PoolBuilder({ lang, t }: Props) {
 
       {/* Summary: sticky on desktop */}
       <aside className="lg:sticky lg:top-28 lg:self-start">
-        <div className="rounded-lg border border-line bg-white p-6">
-          <p className="eyebrow">{t.summary}</p>
-          <p className="mt-2 font-serif text-3xl text-navy">Thermopool {label(sizes, size)}</p>
+        <div className="bg-ink p-7 text-white">
+          <p className="eyebrow !text-[#c2a477]">{t.summary}</p>
+          <p className="mt-2 font-serif text-4xl">Thermopool {label(sizes, size)}</p>
 
           <figure className="mt-5">
             <svg viewBox="0 0 320 170" className="w-full" role="img" aria-label={t.drawing}>
-              <rect x="0" y="0" width="320" height="170" rx="8" fill="#efe9df" />
+              <rect x="0" y="0" width="320" height="170" fill="rgba(255,255,255,0.04)" />
               <g transform={`translate(${(320 - w) / 2} ${(170 - h) / 2})`}>
-                <rect width={w} height={h} rx="3" fill={fin.hex} stroke="#0b1f2a" strokeOpacity="0.25" />
+                <rect width={w} height={h} rx="3" fill={fin.hex} stroke="#c2a477" strokeOpacity="0.8" />
                 <rect width={w} height={h} rx="3" fill="url(#water)" />
                 {stair === "corner" && <path d={`M0 0 h${h * 0.45} L0 ${h * 0.45} Z`} fill="#fff" opacity="0.75" />}
                 {stair === "full-width" && <rect width={h * 0.28} height={h} fill="#fff" opacity="0.75" />}
@@ -208,24 +208,24 @@ export function PoolBuilder({ lang, t }: Props) {
                 </linearGradient>
               </defs>
             </svg>
-            <figcaption className="mt-1 text-center text-[11px] text-navy/45">{t.drawing}</figcaption>
+            <figcaption className="mt-1 text-center text-[11px] text-white/40">{t.drawing}</figcaption>
           </figure>
 
-          <dl className="mt-5 divide-y divide-line text-sm">
+          <dl className="mt-5 divide-y divide-white/10 text-sm">
             {summary.map(([k, v]) => (
               <div key={k} className="grid grid-cols-[6.5rem_1fr] gap-3 py-2">
-                <dt className="text-navy/55">{k}</dt>
-                <dd className="text-navy">{v}</dd>
+                <dt className="text-white/50">{k}</dt>
+                <dd className="text-white">{v}</dd>
               </div>
             ))}
           </dl>
 
-          {error && <p role="alert" className="mt-4 text-sm text-red-700">{t.required}</p>}
+          {error && <p role="alert" className="mt-4 text-sm text-[#f0b4a0]">{t.required}</p>}
           <div className="mt-5 grid gap-3">
-            <button type="button" onClick={sendEmail} className="btn btn-primary w-full">{t.send}</button>
-            <button type="button" onClick={sendWhatsapp} className="btn btn-whatsapp w-full">{t.sendWhatsapp}</button>
+            <button type="button" onClick={sendEmail} className="btn btn-light w-full">{t.send} <span className="arrow">→</span></button>
+            <button type="button" onClick={sendWhatsapp} className="btn btn-ghost w-full">{t.sendWhatsapp}</button>
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-navy/50">{t.sendNote}</p>
+          <p className="mt-3 text-xs leading-relaxed text-white/45">{t.sendNote}</p>
         </div>
       </aside>
     </div>

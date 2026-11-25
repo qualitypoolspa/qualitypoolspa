@@ -23,14 +23,12 @@
     "viewAll": "View all"
   },
   "hero": {
-    "eyebrow": "Pools · Spas · Wellness",
-    "title1": "Your pool.",
-    "title2": "Your oasis.",
-    "body": "Discover pool covers, spas, saunas and wellness products for life by the Mediterranean. From first idea to finished installation in Marbella, Costa del Sol and Mallorca.",
-    "ctaProducts": "Explore products",
-    "ctaAdvice": "Get personal advice",
-    "badge": "Made for outdoor living.",
-    "badgeSub": "Design, quality and adaptation."
+    "eyebrow": "Pools, spas and wellness · Costa del Sol & Mallorca",
+    "line1": "Scandinavian quality",
+    "line2": "for Mediterranean living.",
+    "body": "We choose, deliver and install pools, spas, covers and saunas for homes in Marbella, along the Costa del Sol and on Mallorca.",
+    "ctaProducts": "Explore the collection",
+    "ctaBuilder": "Design your own pool"
   },
   "trust": {
     "one": {
@@ -47,32 +45,36 @@
     }
   },
   "home": {
-    "assortmentEyebrow": "Our assortment",
-    "assortmentTitle": "What are you",
-    "assortmentTitleAccent": "looking for?",
-    "assortmentText": "Choose a category to explore our selection or ask us for advice.",
+    "brandsLabel": "Brands we supply",
+    "introTitle": "One team, from the first idea to the first swim.",
+    "introText": "Tell us how you want to live with your pool or spa. We recommend what fits your home, take care of delivery and installation with local partners, and stay on hand afterwards.",
+    "introLink": "How we work",
+    "collectionEyebrow": "The collection",
+    "collectionTitle": "Everything for life by the water",
+    "models": "{n} models",
     "explore": "Explore",
-    "notSure": "Not sure which solution suits you?",
-    "talkToUs": "Talk to us",
-    "bandEyebrow": "Our experience",
-    "bandTitle": "From the first thought to the",
-    "bandTitleAccent": "first dip.",
-    "bandText": "We help you with the idea, planning, delivery and installation. Whether you dream of a new spa, a sauna or a way to cover and protect your pool.",
-    "bandBullets": [
-      "Advice tailored to your project",
-      "Pool covers, spas and saunas under one roof",
-      "Local presence in Marbella and Mallorca"
-    ],
-    "bandCta": "Tell us about your project",
-    "bandCard": "More than just a pool",
-    "bandCardSub": "A wellness solution",
-    "featuredEyebrow": "Featured",
-    "featuredTitle": "Popular products",
+    "moreTitle": "Also in our range",
+    "selectedEyebrow": "Selected",
+    "selectedTitle": "Models we recommend",
     "viewAll": "View all products",
-    "ctaEyebrow": "Contact us",
-    "ctaTitle": "Your next project starts",
-    "ctaTitleAccent": "here.",
-    "ctaText": "Tell us what you are looking for and we will help you further, from the first question to the finished result."
+    "prev": "Previous",
+    "next": "Next",
+    "storyEyebrow": "Our story",
+    "storyTitle": "From the Swedish West Coast to the Mediterranean",
+    "storyText": "Our roots are on the Swedish West Coast, where quality and materials that last are taken for granted. We bring the same care to homes on the Costa del Sol and Mallorca: honest advice, carefully chosen products and installation done properly.",
+    "steps": [
+      "Advice and a home visit",
+      "Delivery to your door",
+      "Professional installation",
+      "Aftercare and service"
+    ],
+    "builderEyebrow": "Thermopool",
+    "builderTitle": "Design your own pool",
+    "builderText": "Choose the size, depth, stairs, colour and extras. Send us your design and we come back with advice and a personal offer.",
+    "builderCta": "Start designing",
+    "ctaTitle": "Let's talk about your project",
+    "ctaText": "Send us a message or call. We usually reply within one working day.",
+    "areas": "We work in"
   },
   "categories": {
     "pool-covers": {

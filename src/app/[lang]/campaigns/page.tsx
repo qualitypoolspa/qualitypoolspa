@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { PageHero } from "@/components/PageHero";
 import { ContactButtons } from "@/components/ContactButtons";
 import { site } from "@/config/site";
 import { activeCampaigns } from "@/data/campaigns";
@@ -23,33 +24,28 @@ export default async function CampaignsPage({ params }: PageProps<"/[lang]/campa
 
   return (
     <>
-      <section className="hero-water text-white">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <p className="eyebrow !text-[#c9a96b]">{dict.nav.campaigns}</p>
-          <h1 className="mt-4 font-serif text-5xl md:text-7xl">{t.title}</h1>
-          <p className="mt-5 max-w-xl text-lg text-white/80">{t.intro}</p>
-        </div>
-      </section>
+      <PageHero eyebrow={dict.nav.campaigns} title={t.title} intro={t.intro} />
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-[90rem] px-5 pb-28 md:px-8">
         {list.length ? (
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
             {list.map((c) => {
               const title = pick(c.title, lang);
               return (
-                <article key={c.slug} className="overflow-hidden bg-white">
+                <article key={c.slug} data-reveal="up">
                   {c.image && (
-                    <div className="relative aspect-[16/10] bg-sand">
+                    <div data-reveal="img" className="relative aspect-[16/10] overflow-hidden bg-sand"><div className="absolute inset-0"><div className="absolute inset-0">
                       <Image src={c.image} alt="" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+                      </div></div>
                       {c.sample && (
-                        <span className="absolute left-3 top-3 rounded bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-navy">
+                        <span className="absolute left-3 top-3 bg-paper px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-navy">
                           {t.sample}
                         </span>
                       )}
                     </div>
                   )}
-                  <div className="p-7">
-                    <h2 className="font-serif text-3xl text-navy">{title}</h2>
+                  <div className="pt-7">
+                    <h2 className="font-serif text-4xl text-navy md:text-5xl">{title}</h2>
                     {c.validUntil && (
                       <p className="mt-1 text-xs uppercase tracking-[0.16em] text-brass">
                         {t.validUntil.replace("{date}", new Date(c.validUntil).toLocaleDateString(lang, { day: "numeric", month: "long", year: "numeric" }))}
