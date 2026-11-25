@@ -1,4 +1,5 @@
 import { pick, type Locale, type Localized } from "@/i18n/config";
+import { translateProduct } from "@/i18n/product-text";
 import type { CategorySlug } from "./categories";
 import { aquaviaProducts } from "./suppliers/aquavia";
 import { astralpoolProducts } from "./suppliers/astralpool";
@@ -27,7 +28,7 @@ export type Product = {
   brand?: string;
   tagline: Localized;
   description: Localized;
-  specs?: { group?: Localized; label: Localized; value: string }[];
+  specs?: { group?: Localized; label: Localized; value: Localized }[];
   /** Photos under /public. Empty = placeholder art. */
   images?: ProductImage[];
   downloads?: { label: Localized; url: string }[];
@@ -39,6 +40,15 @@ export type Product = {
   sample?: boolean;
 };
 
+/**
+ * A product as the supplier files write it: English only, with plain-text spec
+ * values. The translations are added from src/i18n/product-text/ (see
+ * translateProduct), so the supplier files and their import scripts stay simple.
+ */
+export type SupplierProduct = Omit<Product, "specs"> & {
+  specs?: { group?: Localized; label: Localized; value: string }[];
+};
+
 // The bundled catalogue: hand-written products plus the supplier imports.
 //
 // Since the admin panel arrived, the live catalogue is the `products` table in
@@ -48,7 +58,7 @@ export type Product = {
 // Edits made here do NOT reach the live site once the database is in use:
 // make them in /admin instead.
 // TODO(client): saunas (Harvia) are added once the dealer material arrives.
-const manualProducts: Product[] = [
+const manualProducts: SupplierProduct[] = [
 ];
 
 // The client's hand-picked spas: shown first on the spa page ("Our selection").
@@ -63,7 +73,11 @@ export const bundledProducts: Product[] = [
   ...fluidraRangeProducts,
   ...aquaviaProducts,
   ...fibreglassProducts,
-].map((p) => ({ ...p, featured: featuredSlugs.includes(p.slug), selection: selectionSlugs.includes(p.slug) }));
+].map((p) => ({
+  ...translateProduct(p),
+  featured: featuredSlugs.includes(p.slug),
+  selection: selectionSlugs.includes(p.slug),
+}));
 
 /** The light version of a product used by product cards (also in client components). */
 export type ProductCardData = {

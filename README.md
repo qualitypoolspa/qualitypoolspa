@@ -15,9 +15,10 @@ npm run build
   `src/data/products.ts` + `src/data/suppliers/` are the bundled catalogue: the starting content
   (`npm run products:seed` → `supabase/seed.sql`) and the fallback when Supabase isn't set up.
 - `src/data/gallery.ts`: gallery photos (add the image to `public/gallery/` and an entry here).
-- `src/i18n/`: languages. Live: English. Planned: es, sv, fr, de, ru.
+- `src/i18n/`: languages. Live: English, Spanish, Swedish. Planned: fr, de, ru. Product translations: see SETUP.md, "For developers".
   To add a language: copy `dictionaries/en.json`, translate, register it in
-  `dictionaries.ts`, add it to `locales` in `config.ts`, and add translations to products' `Localized` fields.
+  `dictionaries.ts`, add it to `locales` in `config.ts` and to `productLocales` in
+  `product-locales.ts`, add its phrase list in `product-text/`, and add a migration for its product columns.
 - `public/brand/logo.png`: logo.
 
 ## Photos (drop in, no code changes needed)

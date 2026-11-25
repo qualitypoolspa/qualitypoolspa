@@ -21,5 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...categories.map((c) => `/products/${c.slug}`),
     ...products.map((p) => `/products/${p.category}/${p.slug}`),
   ];
-  return locales.flatMap((l) => paths.map((p) => ({ url: `${site.url}/${l}${p}` })));
+  // Each page lists its other language versions, so search engines show the right one.
+  const languages = (p: string) => Object.fromEntries(locales.map((l) => [l, `${site.url}/${l}${p}`]));
+  return locales.flatMap((l) => paths.map((p) => ({ url: `${site.url}/${l}${p}`, alternates: { languages: languages(p) } })));
 }

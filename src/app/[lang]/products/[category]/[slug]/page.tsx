@@ -105,7 +105,7 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
                   {rows.map((s) => (
                     <div key={pick(s.label, lang)} className="grid grid-cols-2 gap-4 py-3 text-sm">
                       <dt className="text-navy/60">{pick(s.label, lang)}</dt>
-                      <dd className="text-navy">{s.value}</dd>
+                      <dd className="text-navy">{pick(s.value, lang)}</dd>
                     </div>
                   ))}
                 </dl>

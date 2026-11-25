@@ -6,27 +6,27 @@ export const heroSlides: { image: string; product: { category: string; slug: str
   {
     image: "/products/aquavia/spa-cube/4.webp",
     product: { category: "spas", slug: "spa-cube", name: "Cube" },
-    line: { en: "Exclusive Line, terrace at dusk" },
+    line: { en: "Exclusive Line, terrace at dusk", es: "Exclusive Line, terraza al atardecer", sv: "Exclusive Line, terrass i skymningen" },
   },
   {
     image: "/products/aquavia/spa-home/3.webp",
     product: { category: "spas", slug: "spa-home", name: "Home" },
-    line: { en: "Exclusive Line, villa terrace" },
+    line: { en: "Exclusive Line, villa terrace", es: "Exclusive Line, terraza de villa", sv: "Exclusive Line, villaterrass" },
   },
   {
     image: "/products/aquavia/spa-oasis-40/4.webp",
     product: { category: "spas", slug: "spa-oasis-40", name: "Oasis 40" },
-    line: { en: "Built-in, facing the sea" },
+    line: { en: "Built-in, facing the sea", es: "Empotrado, frente al mar", sv: "Infällt, med utsikt mot havet" },
   },
   {
     image: "/products/aquavia/hot-tub-kora/3.webp",
     product: { category: "spas", slug: "hot-tub-kora", name: "Kora" },
-    line: { en: "Signature Line, garden pavilion" },
+    line: { en: "Signature Line, garden pavilion", es: "Signature Line, pabellón de jardín", sv: "Signature Line, trädgårdspaviljong" },
   },
   {
     image: "/products/aquavia/spa-touch/4.webp",
     product: { category: "spas", slug: "spa-touch", name: "Touch" },
-    line: { en: "Compact spa, Mediterranean garden" },
+    line: { en: "Compact spa, Mediterranean garden", es: "Spa compacto, jardín mediterráneo", sv: "Kompakt spabad, medelhavsträdgård" },
   },
 ];
 

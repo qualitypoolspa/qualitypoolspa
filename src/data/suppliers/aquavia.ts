@@ -1,6 +1,6 @@
 // Adapter for products imported from aquaviaspa.com by scripts/import-aquavia.mjs.
-// Re-run the script to refresh; this file maps its output onto our Product shape.
-import type { Product } from "../products";
+// Re-run the script to refresh; this file maps its output onto our SupplierProduct shape.
+import type { SupplierProduct } from "../products";
 import raw from "../imported/aquavia.json";
 
 type Imported = {
@@ -32,7 +32,7 @@ const tidy = (s: string) =>
 
 const firstSentence = (s: string) => (s.match(/^.*?[.!?](\s|$)/)?.[0] ?? s).trim();
 
-export const aquaviaProducts: Product[] = (raw as Imported[])
+export const aquaviaProducts: SupplierProduct[] = (raw as Imported[])
   .filter((p) => p.name)
   .map((p) => {
     const description = tidy(p.description);
@@ -49,5 +49,5 @@ export const aquaviaProducts: Product[] = (raw as Imported[])
       description: { en: description },
       specs: p.specs.map((s) => ({ group: { en: s.group }, label: { en: s.label }, value: s.value })),
       images,
-    } satisfies Product;
+    } satisfies SupplierProduct;
   });

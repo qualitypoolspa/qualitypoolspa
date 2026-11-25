@@ -2,7 +2,7 @@
 // pool robots, lighting, ladders, showers and liners. Specs translated from Swedish.
 // Photos: Zodiac's official pages for the robots; the catalogue itself for the rest.
 // TODO(client): ask Fluidra for a dealer media pack; several catalogue photos are small.
-import type { Product, ProductImage } from "../products";
+import type { SupplierProduct, ProductImage } from "../products";
 
 const photos = (path: string, list: [number, number, boolean][]): ProductImage[] =>
   list.map(([width, height, contain], i) => ({ src: `/products/${path}/${i + 1}.webp`, width, height, contain }));
@@ -22,7 +22,7 @@ const voyagerCommon = [
   g("Technical", "Robot weight", "8 kg"),
 ];
 
-export const fluidraRangeProducts: Product[] = [
+export const fluidraRangeProducts: SupplierProduct[] = [
   // ---------- Pool robots (Zodiac Voyager) ----------
   {
     slug: "voyager-re-4600-iq",

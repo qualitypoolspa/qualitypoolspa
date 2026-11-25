@@ -24,14 +24,24 @@ Supabase dashboard → **SQL Editor → New query**. Paste in and run each file,
 
 1. `supabase/migrations/0001_products.sql`: the products table, the photo
    bucket and the admin allowlist, all with security rules.
-2. `supabase/seed.sql`: the current catalogue, all 173 products with their
-   texts, specs and photos.
+2. `supabase/migrations/0002_translations.sql`: the Spanish and Swedish
+   columns for product texts.
+3. `supabase/seed.sql`: the current catalogue, all 173 products with their
+   texts, specs and photos, in English, Spanish and Swedish.
 
 Under **Table Editor** you should now see `products` with 173 rows.
 
-The migration is safe to re-run. `seed.sql` is **not**: it stops with an error
-if the table already has products, so pasting it a second time can't
+The migrations are safe to re-run. `seed.sql` is **not**: it stops with an
+error if the table already has products, so pasting it a second time can't
 overwrite the client's edits.
+
+**Already set up before the translations arrived?** Run only
+`0002_translations.sql`. It adds the Spanish and Swedish columns and fills
+them in for every product whose English text is still the original. Products
+the client has rewritten keep blank translations (the site shows their
+English until the client writes the translations in `/admin`), and nothing
+already translated is overwritten. Until it's run, the site works but shows
+product texts in English on the Spanish and Swedish pages.
 
 Supabase may warn that the query "creates tables without enabling Row Level
 Security". That's a false alarm: the file turns RLS on itself. Choose **Run
@@ -109,14 +119,20 @@ description, check the product page shows it, then change it back.
   page shows six, ticked ones first); **Our selection** (shown first on the
   category page).
 - **Details**: name, brand, category, collection (the group it's listed under,
-  e.g. "Premium Line"), number of people (spas only, for the size filter),
-  web address, short description (on product cards) and description.
+  e.g. "Premium Line"), number of people (spas only, for the size filter) and
+  web address.
+- **Texts**: the short description (on product cards) and the description.
+  The **English / Español / Svenska** tabs switch language; each translation
+  box shows the English above it. An empty translation shows the English text
+  on that language's page, so a new product can go live in English first.
 - **Photos**: upload straight from a phone or computer. Photos are resized
   automatically and portraits won't come out sideways. The first photo is the
   cover; **Make cover** and the arrows reorder them. **Show whole product on
   white** suits studio shots on a white background.
 - **Specifications**: rows of group / label / value. Rows with the same group
-  are shown together under that heading.
+  are shown together under that heading. The same language tabs show each
+  row's translation, with the English above it. Rows are added and removed in
+  the English tab.
 - **Save changes** at the bottom. Every save shows **Saved ✓** and is live on
   the site immediately. Leaving the page with unsaved changes asks first.
 - **Delete product** removes it for good, including uploaded photos.
@@ -131,8 +147,21 @@ description, check the product page shows it, then change it back.
   site**. Make them in `/admin` instead. To rebuild the starting content from
   the code (e.g. after a new supplier import, for a fresh project), run
   `npm run products:seed` and use the regenerated `supabase/seed.sql`.
-- Product texts are stored in English only. When another language goes live,
-  the table will need columns (or a JSON field) for the translations.
+- The site is in English (`/en`), Spanish (`/es`) and Swedish (`/sv`). Site
+  texts live in `src/i18n/dictionaries/<lang>.json` (and `src/content/terms.ts`,
+  `src/data/*.ts` for the few `Localized` texts). Product texts: English in
+  `tagline` / `description`, translations in `*_es` / `*_sv` twin columns and
+  `*_es` / `*_sv` keys on each spec row. Blank = show the English.
+- The starting product translations are phrase lists,
+  `src/i18n/product-text/<lang>.json` (English text → translation), used by
+  the bundled catalogue and by `npm run products:seed`, which writes both
+  `seed.sql` and `0002_translations.sql`.
+- The translations were written by Claude, not a professional translator.
+  Have a native speaker read the Spanish (especially the terms of purchase)
+  and the Swedish before relying on them.
+- A visitor who opens an address without a language (e.g. `/products`) is sent
+  to the language they picked before (a `lang` cookie set by the switcher),
+  else their browser's language if the site has it, else English.
 - Categories and collection names still live in code
   (`src/data/categories.ts`, `src/i18n/dictionaries/en.json`), because they
   drive the menu and page layout. The panel offers the collections a category
