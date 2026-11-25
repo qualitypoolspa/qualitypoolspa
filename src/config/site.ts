@@ -16,8 +16,23 @@ export const site = {
   locations: ["Marbella", "Costa del Sol", "Mallorca"],
   /** Offices, shown on the contact page and in the footer. Names and addresses aren't translated. */
   offices: [
-    { name: "Costa del Sol / Estepona", address: ["Av. Puerta del Mar, 59", "29680 Estepona, Málaga"] },
-    { name: "Palma de Mallorca", address: ["Carrer d'Anselm Turmeda, 9, Nord", "07010 Palma, Illes Balears"] },
+    {
+      name: "Costa del Sol / Estepona",
+      address: ["Av. Puerta del Mar, 59", "29680 Estepona, Málaga"],
+      // The same address in parts, for search engines (src/lib/seo.ts).
+      street: "Av. Puerta del Mar, 59",
+      postalCode: "29680",
+      locality: "Estepona",
+      region: "Málaga",
+    },
+    {
+      name: "Palma de Mallorca",
+      address: ["Carrer d'Anselm Turmeda, 9, Nord", "07010 Palma, Illes Balears"],
+      street: "Carrer d'Anselm Turmeda, 9, Nord",
+      postalCode: "07010",
+      locality: "Palma",
+      region: "Illes Balears",
+    },
   ],
 } as const;
 

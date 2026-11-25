@@ -11,6 +11,7 @@ import { toCard } from "@/data/products";
 import { hasLocale, href, locales, pick, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getCatalog } from "@/lib/catalog";
+import { pageMetadata } from "@/lib/seo";
 
 type Spec = NonNullable<Product["specs"]>[number];
 
@@ -36,7 +37,14 @@ export async function generateMetadata({
   const { lang, category, slug } = await params;
   const product = (await getCatalog()).getProduct(category, slug);
   if (!hasLocale(lang) || !product) return {};
-  return { title: product.name, description: pick(product.tagline, lang) };
+  const photo = product.images?.[0];
+  return pageMetadata({
+    lang,
+    path: `/products/${product.category}/${product.slug}`,
+    title: product.name,
+    description: pick(product.tagline, lang),
+    image: photo ? { url: photo.src, width: photo.width, height: photo.height } : undefined,
+  });
 }
 
 export default async function ProductPage({ params }: PageProps<"/[lang]/products/[category]/[slug]">) {

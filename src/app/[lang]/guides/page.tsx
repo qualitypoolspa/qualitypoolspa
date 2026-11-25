@@ -5,12 +5,13 @@ import { PageHero } from "@/components/PageHero";
 import { guideSlugs } from "@/data/content";
 import { hasLocale, href } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/guides">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const { guides } = await getDictionary(lang);
-  return { title: guides.title, description: guides.intro };
+  return pageMetadata({ lang, path: "/guides", title: guides.title, description: guides.intro });
 }
 
 export default async function GuidesPage({ params }: PageProps<"/[lang]/guides">) {

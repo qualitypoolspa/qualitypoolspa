@@ -8,6 +8,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { site } from "@/config/site";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import "./globals.css";
 
 // Display: an elegant, high-contrast serif. Body: a clean, modern sans. Both cover Cyrillic for Russian.
@@ -34,7 +35,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     metadataBase: new URL(site.url),
     title: { default: dict.meta.title, template: `%s | ${dict.meta.title}` },
     description: dict.meta.description,
-    openGraph: { title: dict.meta.title, description: dict.meta.description, type: "website" },
+    // Fallback for pages without their own (see src/lib/seo.ts, which every page uses).
+    openGraph: { title: dict.meta.title, description: dict.meta.description, type: "website", images: [DEFAULT_OG_IMAGE] },
   };
 }
 

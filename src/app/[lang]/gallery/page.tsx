@@ -7,12 +7,13 @@ import { categories, getCategory } from "@/data/categories";
 import { gallery } from "@/data/gallery";
 import { hasLocale, pick } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/gallery">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const { gallery: g } = await getDictionary(lang);
-  return { title: g.title, description: g.intro };
+  return pageMetadata({ lang, path: "/gallery", title: g.title, description: g.intro });
 }
 
 export default async function GalleryPage({ params }: PageProps<"/[lang]/gallery">) {
