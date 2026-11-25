@@ -78,15 +78,19 @@ for (const p of bundledProducts) {
     add(s.value.en, s.value);
   }
 }
-const pairs = [...phrases].flatMap(([en, tr]) => Object.entries(tr).map(([lang, text]) => ({ lang, en, text })));
+// { es: { english: spanish, ... }, sv: { ... } }: a lookup the SQL reads by key.
+const lookup: Record<string, Record<string, string>> = Object.fromEntries(productLocales.map((l) => [l, {}]));
+for (const [en, tr] of phrases) for (const [l, text] of Object.entries(tr)) lookup[l][en] = text;
+const pairCount = Object.values(lookup).reduce((n, m) => n + Object.keys(m).length, 0);
+
 const setCols = productLocales.flatMap((l) =>
   (["tagline", "description"] as const).map(
-    (c) => `  ${c}_${l} = coalesce(nullif(p.${c}_${l}, ''), (select t.text from tr t where t.lang = '${l}' and t.en = p.${c}))`,
+    (c) => `  ${c}_${l} = coalesce(nullif(p.${c}_${l}, ''), m.tr->'${l}'->>p.${c})`,
   ),
 );
 const specKeys = productLocales.flatMap((l) =>
   (["group", "label", "value"] as const).map(
-    (k) => `'${k}_${l}', coalesce(nullif(e->>'${k}_${l}', ''), (select t.text from tr t where t.lang = '${l}' and t.en = e->>'${k}'))`,
+    (k) => `'${k}_${l}', coalesce(nullif(e->>'${k}_${l}', ''), m.tr->'${l}'->>(e->>'${k}'))`,
   ),
 );
 
@@ -105,24 +109,18 @@ const migration = `-- Aquavia: Spanish and Swedish product texts. Schema AND dat
 alter table public.products
 ${productLocales.flatMap((l) => [`  add column if not exists tagline_${l} text`, `  add column if not exists description_${l} text`]).join(",\n")};
 
-drop table if exists pg_temp.tr;
-create temporary table tr as
-select * from jsonb_to_recordset(${quote(pairs)}::jsonb) as x(lang text, en text, text text);
-
-create index on tr (lang, en);
-
+-- One statement, with the translations inline: no temporary table, which the
+-- Supabase SQL editor doesn't keep between statements.
+with m as (select ${quote(lookup)}::jsonb as tr)
 update public.products p set
-${setCols.join(",\n")};
-
-update public.products p set specs = coalesce((
-  select jsonb_agg(e || jsonb_strip_nulls(jsonb_build_object(
-    ${specKeys.join(",\n    ")}
-  )) order by i)
-  from jsonb_array_elements(p.specs) with ordinality as s(e, i)
-), '[]'::jsonb)
-where jsonb_array_length(p.specs) > 0;
-
-drop table tr;
+${setCols.join(",\n")},
+  specs = case when jsonb_array_length(p.specs) = 0 then p.specs else (
+    select jsonb_agg(e || jsonb_strip_nulls(jsonb_build_object(
+      ${specKeys.join(",\n      ")}
+    )) order by i)
+    from jsonb_array_elements(p.specs) with ordinality as s(e, i)
+  ) end
+from m;
 
 select
   count(*) filter (where description_es is not null) as translated_es,
@@ -132,4 +130,4 @@ from public.products;
 `;
 writeFileSync(new URL("../supabase/migrations/0002_translations.sql", import.meta.url), migration);
 
-console.log(`Wrote supabase/seed.sql (${rows.length} products) and 0002_translations.sql (${pairs.length} phrases).`);
+console.log(`Wrote supabase/seed.sql (${rows.length} products) and 0002_translations.sql (${pairCount} phrases).`);
