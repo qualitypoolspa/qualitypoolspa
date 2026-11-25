@@ -191,7 +191,9 @@
     "consultationBody": "Hola, me gustaría reservar una consulta privada sobre un proyecto. Lugar y fecha preferidos:",
     "consultationWhatsapp": "¡Hola! Me gustaría reservar una consulta privada sobre un proyecto.",
     "campaignSubject": "Consulta sobre la oferta",
-    "campaignWhatsapp": "¡Hola! Me gustaría saber más sobre la oferta:"
+    "campaignWhatsapp": "¡Hola! Me gustaría saber más sobre la oferta:",
+    "offices": "Nuestras oficinas",
+    "directions": "Cómo llegar"
   },
   "about": {
     "title": "Sobre nosotros",

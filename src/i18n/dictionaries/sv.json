@@ -191,7 +191,9 @@
     "consultationBody": "Hej, jag vill boka en privat konsultation om ett projekt. Önskad plats och tid:",
     "consultationWhatsapp": "Hej! Jag vill boka en privat konsultation om ett projekt.",
     "campaignSubject": "Förfrågan om kampanjen",
-    "campaignWhatsapp": "Hej! Jag vill gärna veta mer om kampanjen:"
+    "campaignWhatsapp": "Hej! Jag vill gärna veta mer om kampanjen:",
+    "offices": "Våra kontor",
+    "directions": "Vägbeskrivning"
   },
   "about": {
     "title": "Om oss",

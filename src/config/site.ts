@@ -8,4 +8,13 @@ export const site = {
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? "34951173806",
   phoneDisplay: process.env.NEXT_PUBLIC_PHONE ?? "+34 951 17 38 06",
   locations: ["Marbella", "Costa del Sol", "Mallorca"],
+  /** Offices, shown on the contact page and in the footer. Names and addresses aren't translated. */
+  offices: [
+    { name: "Costa del Sol / Estepona", address: ["Av. Puerta del Mar, 59", "29680 Estepona, Málaga"] },
+    { name: "Palma de Mallorca", address: ["Carrer d'Anselm Turmeda, 9, Nord", "07010 Palma, Illes Balears"] },
+  ],
 } as const;
+
+/** Google Maps directions to an office. */
+export const mapsUrl = (address: readonly string[]) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.join(", "))}`;
