@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HeaderFrame } from "./HeaderFrame";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+import { LanguageMenu } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { NavDropdown } from "./NavDropdown";
 import { productNav } from "@/data/menu";
@@ -54,7 +54,7 @@ export async function Header({ lang, dict }: { lang: Locale; dict: Dictionary })
               {l.name}
             </Link>
           ))}
-          <LanguageSwitcher lang={lang} label={dict.nav.language} />
+          <LanguageMenu lang={lang} label={dict.nav.language} />
           <Link
             href={contact.href}
             className="border border-current px-5 py-2.5 transition-colors duration-300 hover:bg-navy hover:text-paper group-data-[overlay=true]/header:hover:bg-white group-data-[overlay=true]/header:hover:text-navy"

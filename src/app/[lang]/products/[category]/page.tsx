@@ -11,6 +11,7 @@ import { toCard } from "@/data/products";
 import { hasLocale, href, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getCatalog } from "@/lib/catalog";
+import { pageMetadata } from "@/lib/seo";
 
 export const generateStaticParams = () =>
   locales.flatMap((lang) => categories.map((c) => ({ lang, category: c.slug })));
@@ -20,7 +21,13 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/products/[
   const cat = getCategory(category);
   if (!hasLocale(lang) || !cat) return {};
   const dict = await getDictionary(lang);
-  return { title: dict.categories[cat.slug].name, description: dict.categories[cat.slug].blurb };
+  return pageMetadata({
+    lang,
+    path: `/products/${cat.slug}`,
+    title: dict.categories[cat.slug].name,
+    description: dict.categories[cat.slug].blurb,
+    image: categoryImages[cat.slug] ? { url: categoryImages[cat.slug] } : undefined,
+  });
 }
 
 export default async function CategoryPage({ params }: PageProps<"/[lang]/products/[category]">) {

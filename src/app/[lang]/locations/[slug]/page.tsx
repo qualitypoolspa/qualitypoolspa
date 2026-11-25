@@ -7,6 +7,7 @@ import { categories } from "@/data/categories";
 import { locationSlugs, type LocationSlug } from "@/data/content";
 import { hasLocale, href, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 const locationImages: Record<string, string> = {
   marbella: "/products/aquavia/spa-cube/4.webp",
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/locations/
   const { lang, slug } = await params;
   if (!hasLocale(lang) || !isLocation(slug)) return {};
   const l = (await getDictionary(lang)).locations.items[slug];
-  return { title: l.title, description: l.intro };
+  return pageMetadata({ lang, path: `/locations/${slug}`, title: l.title, description: l.intro });
 }
 
 export default async function LocationPage({ params }: PageProps<"/[lang]/locations/[slug]">) {

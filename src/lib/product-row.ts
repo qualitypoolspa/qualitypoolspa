@@ -1,14 +1,14 @@
 import type { CategorySlug } from "@/data/categories";
 import type { Product, ProductImage } from "@/data/products";
 import type { Localized } from "@/i18n/config";
-import { productLocales, type ProductLocale } from "@/i18n/product-locales";
+import { localeMigrations, productLocales, type ProductLocale } from "@/i18n/product-locales";
 
 /**
- * A row of the `products` table (supabase/migrations/0001_products.sql and
- * 0002_translations.sql).
+ * A row of the `products` table (supabase/migrations/0001_products.sql,
+ * 0002_translations.sql and 0003_more_languages.sql).
  *
- * English is the main text; Spanish and Swedish sit in `*_es` / `*_sv` twin
- * columns (the Fat Mama pattern). Blank means "not translated" and the site
+ * English is the main text; translations sit in `*_es`, `*_sv`, `*_de`, `*_fr`
+ * and `*_ru` twin columns (the Fat Mama pattern). Blank means "not translated" and the site
  * shows the English. Specs and photos are JSON lists so a product can be
  * edited and saved in one go; each spec row carries its own translations.
  */
@@ -41,10 +41,21 @@ export type ProductRow = {
 export const PRODUCT_COLS_BASE =
   "id, slug, category, collection, name, brand, tagline, description, seats, specs, images, is_visible, is_featured, is_selection, sort_order";
 
-/** The translation columns, added by migration 0002. */
-export const TRANSLATION_COLS = productLocales.flatMap((l) => [`tagline_${l}`, `description_${l}`]);
+/** A language's translation columns (added by migrations 0002 and 0003). */
+export const translationCols = (locales: readonly ProductLocale[]) =>
+  locales.flatMap((l) => [`tagline_${l}`, `description_${l}`]);
 
-export const PRODUCT_COLS = `${PRODUCT_COLS_BASE}, ${TRANSLATION_COLS.join(", ")}`;
+export const TRANSLATION_COLS = translationCols(productLocales);
+
+/**
+ * What to select, newest schema first. A database that hasn't had the latest
+ * migration run errors on the missing columns; the reader then tries the
+ * next set, so the site keeps the translations it does have.
+ */
+export const COLUMN_SETS: { locales: ProductLocale[]; cols: string }[] = localeMigrations
+  .map((_, i) => localeMigrations.slice(0, localeMigrations.length - i).flatMap((m) => m.locales))
+  .concat([[]])
+  .map((locales) => ({ locales, cols: [PRODUCT_COLS_BASE, ...translationCols(locales)].join(", ") }));
 
 const list = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
 

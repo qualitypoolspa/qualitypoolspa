@@ -4,11 +4,15 @@ import { PageHero } from "@/components/PageHero";
 import { isDraft, lastUpdated, terms } from "@/content/terms";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/terms">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  return { title: (await getDictionary(lang)).terms.title, robots: isDraft ? { index: false } : undefined };
+  return {
+    ...pageMetadata({ lang, path: "/terms", title: (await getDictionary(lang)).terms.title }),
+    robots: isDraft ? { index: false } : undefined,
+  };
 }
 
 export default async function TermsPage({ params }: PageProps<"/[lang]/terms">) {

@@ -7,12 +7,13 @@ import { site } from "@/config/site";
 import { activeCampaigns } from "@/data/campaigns";
 import { hasLocale, pick } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/campaigns">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const { campaigns } = await getDictionary(lang);
-  return { title: campaigns.title, description: campaigns.intro };
+  return pageMetadata({ lang, path: "/campaigns", title: campaigns.title, description: campaigns.intro });
 }
 
 export default async function CampaignsPage({ params }: PageProps<"/[lang]/campaigns">) {

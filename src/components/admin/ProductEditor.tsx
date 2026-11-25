@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { deleteProduct, saveProduct } from "@/app/admin/actions";
 import type { ProductImage } from "@/data/products";
-import { productLocales, type ProductLocale } from "@/i18n/product-locales";
+import { localeMigrations, productLocales, type ProductLocale } from "@/i18n/product-locales";
 import type { ProductRow, SpecRow } from "@/lib/product-row";
 import { createClient } from "@/lib/supabase/client";
 import { PRODUCT_BUCKET } from "@/lib/supabase/config";
@@ -14,12 +14,19 @@ type Props = {
   categories: { slug: string; name: string }[];
   collectionNames: Record<string, string>;
   collectionsByCategory: Record<string, string[]>;
-  /** False until migration 0002 has added the translation columns. */
-  hasTranslations: boolean;
+  /** The languages the database has columns for (see localeMigrations). */
+  translatedLocales: ProductLocale[];
 };
 
 type Lang = "en" | ProductLocale;
-const LANG_NAMES: Record<Lang, string> = { en: "English", es: "Español", sv: "Svenska" };
+const LANG_NAMES: Record<Lang, string> = {
+  en: "English",
+  es: "Español",
+  sv: "Svenska",
+  de: "Deutsch",
+  fr: "Français",
+  ru: "Русский",
+};
 type TextKey = `${"tagline" | "description"}_${ProductLocale}`;
 const TEXT_KEYS = productLocales.flatMap((l) => [`tagline_${l}`, `description_${l}`] as TextKey[]);
 
@@ -65,7 +72,7 @@ function move<T>(list: T[], i: number, by: number): T[] {
   return next;
 }
 
-export default function ProductEditor({ product, categories, collectionNames, collectionsByCategory, hasTranslations }: Props) {
+export default function ProductEditor({ product, categories, collectionNames, collectionsByCategory, translatedLocales }: Props) {
   const [saved, setSaved] = useState(() => fromRow(product));
   // Which language the texts and specifications are shown in for editing.
   const [lang, setLang] = useState<Lang>("en");
@@ -101,7 +108,8 @@ export default function ProductEditor({ product, categories, collectionNames, co
     if (form.is_featured) fd.set("is_featured", "on");
     if (form.is_selection) fd.set("is_selection", "on");
     // Left out entirely before migration 0002, so saving still works then.
-    if (hasTranslations) for (const key of TEXT_KEYS) fd.set(key, form[key]);
+    // Only languages the database has columns for, so saving works before a migration is run.
+    for (const l of translatedLocales) for (const key of [`tagline_${l}`, `description_${l}`] as TextKey[]) fd.set(key, form[key]);
     fd.set("specs", JSON.stringify(form.specs));
     fd.set("images", JSON.stringify(form.images));
     const sent = form;
@@ -218,9 +226,9 @@ export default function ProductEditor({ product, categories, collectionNames, co
       <section className="adm-card mt-6 space-y-4 p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="text-base text-navy">Texts</h2>
-          {hasTranslations && <LangTabs lang={lang} onChange={setLang} />}
+          {translatedLocales.length > 0 && <LangTabs lang={lang} locales={translatedLocales} onChange={setLang} />}
         </div>
-        {!hasTranslations && <TranslationsMissing />}
+        <TranslationsMissing available={translatedLocales} />
         {lang === "en" ? (
           <>
             <Field label="Short description" id="tagline" hint="One sentence. Shown on product cards and under the name.">
@@ -263,7 +271,7 @@ export default function ProductEditor({ product, categories, collectionNames, co
         specs={form.specs}
         onChange={(specs) => set("specs", specs)}
         lang={lang}
-        tabs={hasTranslations && <LangTabs lang={lang} onChange={setLang} />}
+        tabs={translatedLocales.length > 0 && <LangTabs lang={lang} locales={translatedLocales} onChange={setLang} />}
       />
 
       {/* ---------- Save bar ---------- */}
@@ -476,10 +484,10 @@ function Specs({ specs, onChange, lang, tabs }: { specs: SpecRow[]; onChange: (s
 
 // -------------------------------------------------------------- languages --
 
-function LangTabs({ lang, onChange }: { lang: Lang; onChange: (lang: Lang) => void }) {
+function LangTabs({ lang, locales, onChange }: { lang: Lang; locales: ProductLocale[]; onChange: (lang: Lang) => void }) {
   return (
-    <div role="tablist" aria-label="Language" className="inline-flex overflow-hidden rounded-md border border-line text-sm">
-      {(["en", ...productLocales] as Lang[]).map((l) => (
+    <div role="tablist" aria-label="Language" className="inline-flex flex-wrap overflow-hidden rounded-md border border-line text-sm">
+      {(["en", ...locales] as Lang[]).map((l) => (
         <button
           key={l}
           type="button"
@@ -510,11 +518,22 @@ function Translated({ label, id, rows, english, value, onChange }: { label: stri
   );
 }
 
-function TranslationsMissing() {
+/** Names the migration(s) still to run when some languages can't be edited yet. */
+function TranslationsMissing({ available }: { available: ProductLocale[] }) {
+  const missing = localeMigrations.filter((m) => m.locales.some((l) => !available.includes(l)));
+  if (!missing.length) return null;
+  const names = missing.flatMap((m) => m.locales).map((l) => LANG_NAMES[l]).join(", ");
   return (
     <p className="adm-warn">
-      Spanish and Swedish texts can be edited once <code>supabase/migrations/0002_translations.sql</code> has been run
-      (see SETUP.md). Until then the site shows these products in English in every language.
+      Texts in {names} can be edited once{" "}
+      {missing.map((m, i) => (
+        <span key={m.file}>
+          {i > 0 && " and "}
+          <code>supabase/migrations/{m.file}</code>
+        </span>
+      ))}{" "}
+      {missing.length > 1 ? "have" : "has"} been run (see SETUP.md). Until then the site shows these products in English in
+      those languages.
     </p>
   );
 }

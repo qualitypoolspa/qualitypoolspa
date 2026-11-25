@@ -1,0 +1,410 @@
+{
+  "meta": {
+    "title": "Quality Pool & Spa",
+    "description": "Piscines, spas, saunas et produits de bien-être avec conseils personnalisés et installation locale sur la Costa del Sol et à Majorque."
+  },
+  "nav": {
+    "products": "Produits",
+    "gallery": "Galerie",
+    "services": "Services",
+    "about": "À propos",
+    "contact": "Contact",
+    "getQuote": "Demander un devis",
+    "menu": "Menu",
+    "allProducts": "Tous les produits",
+    "pool": "Piscine",
+    "spas": "Spas",
+    "poolCovers": "Couvertures",
+    "poolAccessories": "Accessoires",
+    "sauna": "Sauna",
+    "campaigns": "Offres",
+    "terms": "Conditions de vente",
+    "contactUs": "Contact",
+    "viewAll": "Tout voir",
+    "language": "Langue"
+  },
+  "hero": {
+    "eyebrow": "Piscines, spas et bien-être · Costa del Sol & Majorque",
+    "line1": "La qualité scandinave",
+    "line2": "pour la vie méditerranéenne.",
+    "body": "Nous sélectionnons, livrons et installons piscines, spas, couvertures et saunas pour les maisons de Marbella, de toute la Costa del Sol et de Majorque.",
+    "ctaProducts": "Découvrir la collection",
+    "ctaBuilder": "Concevoir votre piscine"
+  },
+  "trust": {
+    "one": {
+      "title": "Des conseils du début à la fin",
+      "text": "Nous vous aidons à choisir la bonne solution."
+    },
+    "two": {
+      "title": "Costa del Sol & Majorque",
+      "text": "Une présence locale et un service personnalisé."
+    },
+    "three": {
+      "title": "Des produits européens de qualité",
+      "text": "Piscines, spas et bien-être de fournisseurs de confiance."
+    }
+  },
+  "home": {
+    "brandsLabel": "Les marques que nous proposons",
+    "introTitle": "Une seule équipe, de la première idée à la première baignade.",
+    "introText": "Dites-nous comment vous souhaitez profiter de votre piscine ou de votre spa. Nous vous recommandons ce qui convient à votre maison, nous occupons de la livraison et de l’installation avec des partenaires locaux, et restons à vos côtés ensuite.",
+    "introLink": "Notre façon de travailler",
+    "collectionEyebrow": "La collection",
+    "collectionTitle": "Tout pour vivre au bord de l’eau",
+    "models": "{n} modèles",
+    "explore": "Découvrir",
+    "moreTitle": "Également dans notre gamme",
+    "selectedEyebrow": "Sélection",
+    "selectedTitle": "Les modèles que nous recommandons",
+    "viewAll": "Voir tous les produits",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "storyEyebrow": "Notre histoire",
+    "storyTitle": "De la côte ouest suédoise à la Méditerranée",
+    "storyText": "Nos racines se trouvent sur la côte ouest de la Suède, où la qualité et les matériaux durables vont de soi. Nous apportons le même soin aux maisons de la Costa del Sol et de Majorque : des conseils honnêtes, des produits soigneusement choisis et une installation bien faite.",
+    "steps": [
+      "Conseils et visite à domicile",
+      "Livraison à votre porte",
+      "Installation professionnelle",
+      "Suivi et service après-vente"
+    ],
+    "builderEyebrow": "Thermopool",
+    "builderTitle": "Concevez votre propre piscine",
+    "builderText": "Choisissez la taille, la profondeur, l’escalier, la couleur et les options. Envoyez-nous votre projet et nous reviendrons vers vous avec des conseils et une offre personnalisée.",
+    "builderCta": "Commencer",
+    "ctaTitle": "Parlons de votre projet",
+    "ctaText": "Écrivez-nous ou appelez-nous. Nous répondons généralement sous un jour ouvré.",
+    "areas": "Nous intervenons à"
+  },
+  "categories": {
+    "pool-covers": {
+      "name": "Couvertures de piscine",
+      "blurb": "Volets roulants automatiques et bâches solaires qui gardent votre piscine propre, chaude et sûre."
+    },
+    "spas": {
+      "name": "Spas",
+      "blurb": "Jacuzzis et spas de nage pour se détendre, s’entraîner et partager des moments en famille."
+    },
+    "saunas-hammam": {
+      "name": "Saunas",
+      "blurb": "Saunas d’intérieur pour un bien-être quotidien à la maison."
+    },
+    "ep-pools": {
+      "name": "Piscines EP",
+      "blurb": "Piscines légères et isolées pour terrasses et jardins."
+    },
+    "fibreglass-pools": {
+      "name": "Piscines coque",
+      "blurb": "Piscines coque en fibre de verre prêtes à poser, dans de nombreuses formes et tailles, rapides à installer."
+    },
+    "thermopool": {
+      "name": "Thermopool",
+      "blurb": "Concevez votre propre piscine isolée en quatre tailles et envoyez-nous votre demande."
+    },
+    "heat-pumps": {
+      "name": "Pompes à chaleur",
+      "blurb": "Des pompes à chaleur silencieuses et efficaces qui prolongent la saison de baignade, des modèles inverter compacts aux systèmes pour grandes piscines."
+    },
+    "pool-robots": {
+      "name": "Robots de piscine",
+      "blurb": "Des robots qui gardent le fond, les parois et la ligne d’eau impeccables, avec pilotage par application sur les modèles haut de gamme."
+    },
+    "lighting": {
+      "name": "Éclairage de piscine",
+      "blurb": "Projecteurs LED pour piscines et spas, en blanc, blanc chaud ou couleur, pour créer l’ambiance à la nuit tombée."
+    },
+    "pool-accessories": {
+      "name": "Échelles & douches",
+      "blurb": "Échelles et mains courantes en inox et douches solaires pour parfaire votre piscine avec style."
+    },
+    "pool-renovation-liners": {
+      "name": "Liners & rénovation",
+      "blurb": "Liners sur mesure et rénovation pour donner une nouvelle vie à une piscine existante."
+    }
+  },
+  "collections": {
+    "selection": "Notre sélection",
+    "exclusive-line": "Exclusive Line",
+    "premium-line": "Premium Line",
+    "aurora-line": "Aurora Line",
+    "aqualife-line": "Aqualife Line",
+    "city-line": "City Line",
+    "built-in-line": "Built-in Line",
+    "cold-plunge": "Cold Plunge",
+    "swim-spas": "Spas de nage",
+    "infinity-line": "Infinity Line",
+    "steel-line": "Steel Line",
+    "mosaic-line": "Mosaic Line",
+    "hot-tubs": "Autres jacuzzis",
+    "professional-spas": "Spas professionnels",
+    "accessories": "Accessoires de spa",
+    "slatted-covers": "Volets à lames",
+    "solar-covers": "Bâches à bulles",
+    "inverter-heat-pumps": "Pompes à chaleur inverter",
+    "on-off-heat-pumps": "Pompes à chaleur classiques",
+    "large-pool-heat-pumps": "Pour grandes piscines",
+    "ladders": "Échelles & mains courantes",
+    "showers": "Douches solaires",
+    "liners": "Liners",
+    "up-to-5m": "Jusqu’à 5 m",
+    "5-7m": "De 5 à 7 m",
+    "7-9m": "De 7 à 9 m",
+    "over-9m": "Plus de 9 m"
+  },
+  "products": {
+    "title": "Produits",
+    "intro": "Parcourez notre gamme. Chaque produit peut être discuté avec nous pour des conseils et une offre personnalisée.",
+    "inCategory": "produits dans cette catégorie",
+    "empty": "Nous ajoutons des produits à cette catégorie. Contactez-nous, nous vous aiderons volontiers dès maintenant.",
+    "backToProducts": "Tous les produits",
+    "specs": "Caractéristiques techniques",
+    "description": "Description",
+    "downloads": "Téléchargements",
+    "askAbout": "Se renseigner sur ce produit",
+    "sample": "Produit d’exemple",
+    "related": "Dans la même catégorie",
+    "selectionIntro": "Choisis par notre équipe : les modèles que nous recommandons le plus souvent.",
+    "bySize": "Par taille",
+    "collectionsTitle": "Collections",
+    "allSizes": "Toutes les tailles",
+    "forPeople": "Pour {n} personnes",
+    "forPeopleShort": "{n} personnes",
+    "allSpas": "Tous les spas",
+    "showing": "{count} spas pour {n} personnes"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Parlez-nous de votre projet. Nous répondons généralement sous un jour ouvré.",
+    "email": "Nous écrire",
+    "whatsapp": "Discuter sur WhatsApp",
+    "phone": "Nous appeler",
+    "areas": "Nous intervenons à",
+    "emailSubject": "Demande depuis le site web",
+    "emailBody": "Bonjour, je souhaiterais en savoir plus sur vos produits.",
+    "whatsappText": "Bonjour ! Je souhaiterais en savoir plus sur vos produits.",
+    "productSubject": "Demande concernant",
+    "productBody": "Bonjour, le produit ci-dessous m’intéresse et je souhaiterais plus d’informations :",
+    "productWhatsapp": "Bonjour ! Je suis intéressé(e) par",
+    "consultation": "Réserver une consultation privée",
+    "consultationSubject": "Demande de consultation privée",
+    "consultationBody": "Bonjour, je souhaiterais réserver une consultation privée pour un projet. Lieu et date souhaités :",
+    "consultationWhatsapp": "Bonjour ! Je souhaiterais réserver une consultation privée pour un projet.",
+    "campaignSubject": "Demande concernant l’offre",
+    "campaignWhatsapp": "Bonjour ! Je souhaiterais en savoir plus sur l’offre :",
+    "offices": "Nos bureaux",
+    "directions": "Itinéraire"
+  },
+  "about": {
+    "title": "À propos",
+    "text1": "Quality Pool & Spa donne vie à des piscines, spas, saunas et produits de bien-être sur la Costa del Sol et à Majorque, avec des racines sur la côte ouest de la Suède.",
+    "text2": "Nous sélectionnons des produits auprès de fournisseurs européens de confiance et vous accompagnons de la première idée à l’installation, en passant par la planification et la livraison.",
+    "text3": "Notre objectif est simple : des produits de qualité, des conseils honnêtes et un résultat dont vous profiterez pendant de nombreuses années."
+  },
+  "footer": {
+    "blurb": "Piscines, spas, saunas et produits de bien-être avec conseils personnalisés et installation locale.",
+    "explore": "Découvrir",
+    "contact": "Contact",
+    "rights": "Tous droits réservés.",
+    "guides": "Guides",
+    "locations": "Où nous intervenons",
+    "statementEm": "Le bien-être de la côte ouest suédoise",
+    "statementRest": ", pour les maisons au bord de la Méditerranée."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "La page que vous recherchez n’existe pas.",
+    "back": "Retour à l’accueil"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "intro": "Un aperçu des piscines, spas, saunas et couvertures que nous avons livrés et installés.",
+    "all": "Tout",
+    "close": "Fermer",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "sample": "Image d’exemple",
+    "ctaTitle": "Envie de quelque chose de semblable ?",
+    "ctaText": "Parlez-nous de votre projet et nous vous aiderons à trouver la bonne solution."
+  },
+  "services": {
+    "title": "Services",
+    "intro": "De la première conversation à la première baignade, nous nous occupons de chaque étape pour que vous n’ayez plus qu’à profiter du résultat.",
+    "stepLabel": "Étape",
+    "steps": [
+      {
+        "title": "Consultation privée",
+        "text": "Nous écoutons comment vous souhaitez profiter de votre piscine, de votre spa ou de votre sauna, et visitons votre propriété lorsque c’est utile."
+      },
+      {
+        "title": "Conception et planification",
+        "text": "Nous recommandons les bons produits et vous aidons pour l’emplacement, l’accès, l’alimentation électrique et les travaux préparatoires."
+      },
+      {
+        "title": "Livraison",
+        "text": "Une livraison soignée et coordonnée jusqu’à votre porte, y compris pour les articles grands et lourds."
+      },
+      {
+        "title": "Installation",
+        "text": "Une installation professionnelle avec des partenaires locaux, testée et remise prête à l’emploi."
+      },
+      {
+        "title": "Suivi",
+        "text": "Des conseils d’entretien et de maintenance, et un interlocuteur joignable quand vous avez besoin d’aide."
+      }
+    ],
+    "ctaTitle": "Commencez par une conversation",
+    "ctaText": "Parlez-nous de votre propriété et de ce que vous envisagez. Sans engagement."
+  },
+  "guides": {
+    "title": "Guides",
+    "intro": "Des conseils simples pour vous aider à bien choisir.",
+    "read": "Lire le guide",
+    "seeProducts": "Voir les produits",
+    "ctaTitle": "Vous ne savez pas ce qui convient à votre maison ?",
+    "ctaText": "Nous en parlerons volontiers avec vous.",
+    "items": {
+      "pool-covers": {
+        "title": "Comment choisir une couverture de piscine",
+        "intro": "Une bonne couverture garde votre piscine plus propre, plus chaude et plus sûre, et réduit l’entretien.",
+        "sections": [
+          {
+            "h": "Pourquoi couvrir votre piscine",
+            "p": "Une couverture réduit l’évaporation et les pertes de chaleur, empêche les feuilles et la saleté d’entrer et renforce la sécurité, surtout avec des enfants ou des animaux. Sur une saison, elle peut réduire sensiblement les coûts de fonctionnement."
+          },
+          {
+            "h": "Les types courants",
+            "p": "Les couvertures automatiques s’ouvrent et se ferment d’une simple pression sur un bouton et peuvent être placées au-dessus ou sous l’eau. Les bâches solaires captent la chaleur du soleil. Les couvertures de sécurité sont conçues pour supporter un poids. Chacune offre un équilibre différent entre confort, budget et esthétique."
+          },
+          {
+            "h": "Ce qu’il faut prendre en compte",
+            "p": "La forme et la taille de votre piscine, la façon dont vous l’utilisez au fil de l’année, l’importance que vous accordez au confort et à l’esthétique, et si la couverture doit être dissimulée lorsqu’elle est ouverte. C’est ce qui détermine le type adapté."
+          },
+          {
+            "h": "Installation",
+            "p": "Certaines couvertures conviennent aux piscines existantes, d’autres se prévoient plus facilement lors d’une construction neuve. Nous pourrons vous conseiller dès que nous connaîtrons votre piscine et votre terrain."
+          }
+        ]
+      },
+      "spas": {
+        "title": "Comment choisir un spa",
+        "intro": "Un spa sert à se détendre, à récupérer et à partager du temps ensemble. Le bon choix dépend de l’espace, de l’usage et de l’environnement.",
+        "sections": [
+          {
+            "h": "Jacuzzi ou spa de nage",
+            "p": "Un jacuzzi est fait pour se détendre et se retrouver. Un spa de nage ajoute un courant contre lequel nager et convient aussi bien à l’entraînement qu’aux loisirs, mais demande plus de place."
+          },
+          {
+            "h": "Taille et places",
+            "p": "Pensez au nombre de personnes qui l’utiliseront en même temps et si vous préférez être assis, allongé ou les deux."
+          },
+          {
+            "h": "Intérieur ou extérieur",
+            "p": "Les spas d’extérieur ont besoin d’une base solide et d’un accès pratique. À l’intérieur, il faut un sol porteur, une ventilation et un contrôle de l’humidité."
+          },
+          {
+            "h": "Électricité et travaux préparatoires",
+            "p": "Les spas nécessitent une alimentation électrique adaptée et une base de niveau. Nous vous aidons à prévoir les deux avant la livraison."
+          },
+          {
+            "h": "Entretien",
+            "p": "Les spas modernes simplifient le traitement de l’eau. Nous vous expliquons la routine et pouvons organiser l’entretien si vous le souhaitez."
+          }
+        ]
+      },
+      "saunas-hammam": {
+        "title": "Comment choisir un sauna ou un hammam",
+        "intro": "La chaleur à la maison est l’un des moyens les plus simples de gagner en bien-être. La meilleure option dépend de la façon et de l’endroit où vous l’utiliserez.",
+        "sections": [
+          {
+            "h": "Les types",
+            "p": "Les saunas traditionnels offrent une chaleur sèche classique. Les cabines infrarouges réchauffent directement le corps à une température d’air plus basse. Un hammam est un bain de vapeur très humide. Les saunas tonneau sont une option appréciée en extérieur."
+          },
+          {
+            "h": "Intérieur ou extérieur",
+            "p": "Les saunas d’extérieur sont plus faciles à placer et font de l’effet dans un jardin. Ceux d’intérieur s’utilisent toute l’année et demandent une bonne ventilation et une protection contre l’humidité."
+          },
+          {
+            "h": "Chauffage",
+            "p": "Les poêles électriques sont rapides et simples. Les poêles à bois offrent une expérience classique là où la réglementation le permet."
+          },
+          {
+            "h": "Espace et confort",
+            "p": "Choisissez la taille selon le nombre de personnes, et pensez à la hauteur des banquettes et à l’espace pour se changer."
+          }
+        ]
+      }
+    }
+  },
+  "locations": {
+    "title": "Où nous intervenons",
+    "intro": "Conseils, livraison et installation locaux sur toute la Costa del Sol et à Majorque.",
+    "ctaTitle": "Parlez-nous de votre propriété",
+    "ctaText": "Nous vous aidons à trouver la piscine, le spa ou le sauna qui vous convient, et organisons tout, de la livraison à l’installation.",
+    "items": {
+      "marbella": {
+        "name": "Marbella",
+        "title": "Piscines, spas et saunas à Marbella",
+        "intro": "La vie en plein air fait partie du quotidien à Marbella. Nous aidons les propriétaires à choisir, recevoir et installer des couvertures de piscine, des spas et des saunas adaptés à leur maison.",
+        "text": "Des villas sur les collines aux appartements avec terrasse, nous adaptons le produit à l’espace et nous occupons des détails."
+      },
+      "costa-del-sol": {
+        "name": "Costa del Sol",
+        "title": "Piscines, spas et saunas sur la Costa del Sol",
+        "intro": "Avec des saisons longues et chaudes, une piscine, un spa ou un sauna bien choisis servent une grande partie de l’année. Nous accompagnons maisons et projets tout le long de la côte.",
+        "text": "Nous offrons des conseils personnalisés et travaillons avec des installateurs locaux de confiance, pour que vous ayez une seule équipe de la première idée à la fin du chantier."
+      },
+      "mallorca": {
+        "name": "Majorque",
+        "title": "Piscines, spas et saunas à Majorque",
+        "intro": "Nous offrons le même service personnalisé à Majorque, pour les maisons particulières comme pour les fincas.",
+        "text": "Parlez-nous de votre propriété, nous vous recommanderons ce qui convient et nous occuperons de la livraison et de l’installation."
+      }
+    }
+  },
+  "builder": {
+    "intro": "Choisissez une taille et les détails ci-dessous, puis envoyez-nous votre demande. Nous reviendrons vers vous avec des conseils et une offre personnalisée. Sans engagement.",
+    "steps": {
+      "size": "Taille",
+      "depth": "Profondeur",
+      "stairs": "Escalier",
+      "finish": "Couleur du liner",
+      "extras": "Options",
+      "project": "Votre projet",
+      "contact": "Vos coordonnées"
+    },
+    "extrasHint": "Choisissez-en autant que vous voulez.",
+    "location": "Lieu",
+    "timeframe": "Quand",
+    "notes": "Autre chose à nous signaler ?",
+    "notesPlaceholder": "Accès au jardin, pente, piscine existante, souhaits…",
+    "name": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "required": "Indiquez votre nom et une adresse e-mail ou un numéro de téléphone.",
+    "summary": "Votre piscine",
+    "noneSelected": "Aucune sélection",
+    "send": "Envoyer la demande par e-mail",
+    "sendWhatsapp": "Envoyer via WhatsApp",
+    "sendNote": "Ouvre votre messagerie ou WhatsApp avec vos choix déjà remplis, prêt à nous être envoyé.",
+    "subject": "Demande Thermopool",
+    "greeting": "Bonjour, je souhaiterais une offre pour une Thermopool avec ces choix :",
+    "drawing": "Vue de dessus (pas à l’échelle)"
+  },
+  "campaigns": {
+    "title": "Offres & packs",
+    "intro": "Offres du moment et packs pour piscines, spas et couvertures. Demandez-nous les détails et un devis personnalisé.",
+    "includes": "Inclus",
+    "validUntil": "Valable jusqu’au {date}",
+    "ask": "Se renseigner sur cette offre",
+    "sample": "Exemple",
+    "empty": "Aucune offre en ce moment. Demandez-nous des packs pour votre projet.",
+    "bar": "Vous préparez une piscine ou un spa ?",
+    "barLink": "Découvrez nos offres du moment"
+  },
+  "terms": {
+    "title": "Conditions de vente",
+    "updated": "Dernière mise à jour : {date}",
+    "draft": "Projet : ces conditions sont en cours de révision et seront finalisées prochainement."
+  }
+}

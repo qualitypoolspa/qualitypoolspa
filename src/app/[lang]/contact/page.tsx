@@ -5,20 +5,24 @@ import { ContactButtons } from "@/components/ContactButtons";
 import { mapsUrl, site } from "@/config/site";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { businessJsonLd, jsonLdHtml, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/contact">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  return { title: (await getDictionary(lang)).contact.title };
+  const { contact } = await getDictionary(lang);
+  return pageMetadata({ lang, path: "/contact", title: contact.title, description: contact.intro });
 }
 
 export default async function ContactPage({ params }: PageProps<"/[lang]/contact">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { contact } = await getDictionary(lang);
+  const { contact, meta } = await getDictionary(lang);
 
   return (
     <>
+      {/* The business, for search engines (src/lib/seo.ts). */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(businessJsonLd(lang, meta.description)) }} />
       <PageHero title={contact.title} intro={contact.intro}>
         <ContactButtons dict={contact} className="fade-in mt-10" />
       </PageHero>
