@@ -34,19 +34,19 @@ export function MobileMenu({ menuLabel, viewAllLabel, products, pages, contact }
         type="button"
         aria-expanded={open}
         onClick={() => setOpenOn(open ? null : pathname)}
-        className="rounded-md border border-line px-3 py-2 text-sm font-medium text-navy"
+        className="border border-current px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em]"
       >
         {open ? "✕" : menuLabel}
       </button>
 
       {open && (
-        <div className="absolute inset-x-0 top-full z-50 h-[calc(100dvh-5rem)] overflow-y-auto border-t border-line bg-[#faf8f3] px-5 pb-16 pt-2">
+        <div className="absolute inset-x-0 top-full z-50 h-[calc(100dvh-5rem)] overflow-y-auto border-t border-line bg-paper px-5 pb-16 pt-2 text-navy">
           <ul className="divide-y divide-line border-b border-line">
             {products.map((item) => (
               <li key={item.key}>
                 {item.columns.length ? (
                   <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between py-4 font-serif text-xl text-navy">
+                    <summary className="flex cursor-pointer list-none items-center justify-between py-4 font-serif text-3xl text-navy">
                       {item.name}
                       <span aria-hidden="true" className="text-xs transition group-open:rotate-180">▼</span>
                     </summary>
@@ -69,7 +69,7 @@ export function MobileMenu({ menuLabel, viewAllLabel, products, pages, contact }
                     </div>
                   </details>
                 ) : (
-                  <Link href={item.href} onClick={close} className="block py-4 font-serif text-xl text-navy">
+                  <Link href={item.href} onClick={close} className="block py-4 font-serif text-3xl text-navy">
                     {item.name}
                   </Link>
                 )}
@@ -77,7 +77,7 @@ export function MobileMenu({ menuLabel, viewAllLabel, products, pages, contact }
             ))}
             {pages.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} onClick={close} className="block py-4 font-serif text-xl text-navy">
+                <Link href={l.href} onClick={close} className="block py-4 font-serif text-3xl text-navy">
                   {l.name}
                 </Link>
               </li>

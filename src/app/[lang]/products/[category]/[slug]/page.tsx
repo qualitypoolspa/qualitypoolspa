@@ -46,7 +46,7 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
 
   return (
     <>
-      <div className="mx-auto max-w-6xl px-5 pt-8 text-sm text-navy/60">
+      <div className="mx-auto max-w-[90rem] px-5 md:px-8 pt-8 text-sm text-navy/60">
         <Link href={href(lang, "/products")} className="hover:text-teal">{dict.products.title}</Link>
         {" / "}
         <Link href={href(lang, `/products/${cat.slug}`)} className="hover:text-teal">
@@ -72,7 +72,9 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
           {product.brand && (
             <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">{product.brand}</p>
           )}
-          <h1 className="mt-2 font-serif text-4xl text-navy md:text-5xl">{product.name}</h1>
+          <h1 className="mt-3 font-serif text-5xl leading-[0.98] text-navy md:text-7xl">
+            <span className="line-mask"><span>{product.name}</span></span>
+          </h1>
           <p className="mt-4 text-lg text-navy/80">{pick(product.tagline, lang)}</p>
 
           {pick(product.description, lang) !== pick(product.tagline, lang) && (
@@ -88,11 +90,11 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
       </section>
 
       {product.specs && product.specs.length > 0 && (
-        <section className="mx-auto max-w-6xl px-5 py-8">
-          <h2 className="font-serif text-3xl text-navy">{dict.products.specs}</h2>
+        <section className="mx-auto max-w-[90rem] px-5 md:px-8 py-8">
+          <h2 data-reveal="up" className="font-serif text-4xl text-navy md:text-5xl">{dict.products.specs}</h2>
           <div className="mt-6 gap-10 md:columns-2">
             {groupSpecs(product.specs, lang).map(([group, rows]) => (
-              <div key={group || "specs"} className="mb-10 break-inside-avoid">
+              <div key={group || "specs"} data-reveal="up" className="mb-10 break-inside-avoid">
                 {group && <h3 className="eyebrow mb-3">{group}</h3>}
                 <dl className="divide-y divide-line border-y border-line">
                   {rows.map((s) => (
@@ -109,7 +111,7 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
       )}
 
       {product.downloads && product.downloads.length > 0 && (
-        <section className="mx-auto max-w-6xl px-5 py-8">
+        <section className="mx-auto max-w-[90rem] px-5 md:px-8 py-8">
           <h2 className="font-serif text-2xl text-navy">{dict.products.downloads}</h2>
           <ul className="mt-4 space-y-2 text-sm">
             {product.downloads.map((d) => (
@@ -124,8 +126,8 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
       )}
 
       {related.length > 0 && (
-        <section className="mx-auto max-w-6xl px-5 py-12">
-          <h2 className="font-serif text-2xl text-navy">{dict.products.related}</h2>
+        <section className="mx-auto max-w-[90rem] px-5 md:px-8 py-12">
+          <h2 data-reveal="up" className="font-serif text-4xl text-navy">{dict.products.related}</h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <ProductCard key={p.slug} product={toCard(p, lang)} lang={lang} sampleLabel={dict.products.sample} />

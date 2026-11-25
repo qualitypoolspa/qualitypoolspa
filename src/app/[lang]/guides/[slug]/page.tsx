@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PageHero } from "@/components/PageHero";
 import { ContactButtons } from "@/components/ContactButtons";
 import { guideSlugs, type GuideSlug } from "@/data/content";
 import { hasLocale, href, locales } from "@/i18n/config";
@@ -26,28 +27,28 @@ export default async function GuidePage({ params }: PageProps<"/[lang]/guides/[s
 
   return (
     <>
-      <article className="mx-auto max-w-3xl px-5 py-20">
-        <Link href={href(lang, "/guides")} className="text-sm text-navy/60 hover:text-teal">← {dict.guides.title}</Link>
-        <h1 className="mt-6 font-serif text-4xl leading-tight text-navy md:text-6xl">{g.title}</h1>
-        <p className="mt-6 text-lg leading-relaxed text-navy/70">{g.intro}</p>
-        <div className="mt-12 space-y-10">
+      <PageHero eyebrow={dict.guides.title} title={g.title} intro={g.intro} />
+      <article className="mx-auto max-w-[90rem] px-5 pb-28 md:px-8">
+        <div className="border-t border-line">
           {g.sections.map((s) => (
-            <section key={s.h}>
-              <h2 className="font-serif text-2xl text-navy">{s.h}</h2>
-              <p className="mt-3 leading-relaxed text-navy/75">{s.p}</p>
+            <section key={s.h} data-reveal="up" className="grid gap-4 border-b border-line py-10 md:grid-cols-12 md:gap-10">
+              <h2 className="font-serif text-3xl text-navy md:col-span-4">{s.h}</h2>
+              <p className="max-w-2xl leading-relaxed text-navy/75 md:col-span-7 md:col-start-6">{s.p}</p>
             </section>
           ))}
         </div>
         <Link href={href(lang, `/products/${slug}`)} className="btn btn-primary mt-14">
-          {dict.guides.seeProducts}
+          {dict.guides.seeProducts} <span className="arrow">→</span>
         </Link>
       </article>
 
-      <section className="bg-sand">
-        <div className="mx-auto max-w-3xl px-5 py-16">
-          <h2 className="font-serif text-3xl text-navy">{dict.guides.ctaTitle}</h2>
-          <p className="mt-3 text-sm text-navy/70">{dict.guides.ctaText}</p>
-          <ContactButtons dict={dict.contact} mode="consultation" className="mt-6" />
+      <section className="bg-ink text-white">
+        <div className="mx-auto grid max-w-[90rem] gap-10 px-5 py-24 md:grid-cols-12 md:px-8 md:py-28">
+          <h2 data-reveal="up" className="font-serif text-5xl leading-[1] md:col-span-7 md:text-6xl">{dict.guides.ctaTitle}</h2>
+          <div data-reveal="up" className="md:col-span-4 md:col-start-9">
+            <p className="leading-relaxed text-white/70">{dict.guides.ctaText}</p>
+            <ContactButtons dict={dict.contact} mode="consultation" className="mt-8" dark />
+          </div>
         </div>
       </section>
     </>

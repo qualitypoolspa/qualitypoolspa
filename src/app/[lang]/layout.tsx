@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Fraunces, Inter } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { CampaignBar } from "@/components/CampaignBar";
+import { RevealObserver } from "@/components/RevealObserver";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { site } from "@/config/site";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-inter" });
-const fraunces = Fraunces({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-fraunces" });
+// Display: an elegant, high-contrast serif. Body: a clean, modern sans. Both cover Cyrillic for Russian.
+const display = Cormorant_Garamond({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+});
+const body = Manrope({ subsets: ["latin", "cyrillic"], variable: "--font-body" });
 
 export const generateStaticParams = () => locales.map((lang) => ({ lang }));
 
@@ -33,9 +39,13 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${inter.variable} ${fraunces.variable} antialiased`}>
+    <html lang={lang} className={`${display.variable} ${body.variable} antialiased`} suppressHydrationWarning>
+      <head>
+        {/* Enables the scroll animations only when JavaScript runs. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="flex min-h-screen flex-col">
-        <CampaignBar lang={lang} dict={dict} />
+        <RevealObserver />
         <Header lang={lang} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer lang={lang} dict={dict} />

@@ -30,8 +30,8 @@ export function ProductGallery({ images, name }: { images: ProductImage[]; name:
               onClick={() => setActive(i)}
               aria-label={`${name} ${i + 1}`}
               aria-current={i === active}
-              className={`relative aspect-square overflow-hidden ${img.contain ? "bg-white" : "bg-sand"} ring-offset-2 transition ${
-                i === active ? "ring-2 ring-navy" : "opacity-70 hover:opacity-100"
+              className={`relative aspect-square overflow-hidden ${img.contain ? "bg-white" : "bg-sand"} transition duration-300 ${
+                i === active ? "outline outline-1 outline-offset-2 outline-navy" : "opacity-60 hover:opacity-100"
               }`}
             >
               <Image src={img.src} alt="" fill sizes="100px" className={img.contain ? "object-contain p-1" : "object-cover"} />

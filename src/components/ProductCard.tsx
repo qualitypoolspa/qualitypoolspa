@@ -26,15 +26,12 @@ export function ProductImage({
         alt={name}
         fill
         sizes={sizes}
-        className={`transition duration-700 group-hover:scale-105 ${image.contain ? "object-contain p-4" : "object-cover"}`}
+        className={`transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05] ${image.contain ? "object-contain p-6" : "object-cover"}`}
       />
     </div>
   ) : (
-    <div
-      className={`flex items-center justify-center bg-gradient-to-br ${cat?.tone ?? ""} ${className}`}
-      aria-hidden="true"
-    >
-      <span className="font-serif text-xl italic text-white/70">{name}</span>
+    <div className={`flex items-center justify-center bg-sand ${className}`} aria-hidden="true" data-category={cat?.slug}>
+      <span className="font-serif text-3xl italic text-navy/40">{name}</span>
     </div>
   );
 }
@@ -42,24 +39,21 @@ export function ProductImage({
 /** Product card. Works in server and client components (takes plain card data). */
 export function ProductCard({ product, lang, sampleLabel }: { product: ProductCardData; lang: Locale; sampleLabel: string }) {
   return (
-    <Link
-      href={href(lang, `/products/${product.category}/${product.slug}`)}
-      className="group block overflow-hidden bg-white transition hover:shadow-xl"
-    >
-      <div className="relative">
+    <Link href={href(lang, `/products/${product.category}/${product.slug}`)} className="group block">
+      <div className="relative overflow-hidden">
         <ProductImage name={product.name} category={product.category} image={product.image} className="aspect-[4/3] w-full" />
         {product.sample && (
-          <span className="absolute left-3 top-3 rounded bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-navy">
+          <span className="absolute left-3 top-3 bg-paper px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-navy">
             {sampleLabel}
           </span>
         )}
       </div>
-      <div className="p-5">
-        {product.brand && (
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brass">{product.brand}</p>
-        )}
-        <h3 className="mt-1 font-serif text-xl text-navy group-hover:text-teal">{product.name}</h3>
-        <p className="mt-1 line-clamp-2 text-sm text-navy/70">{product.tagline}</p>
+      <div className="pt-5">
+        {product.brand && <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">{product.brand}</p>}
+        <h3 className="mt-1.5 font-serif text-[1.75rem] leading-tight text-navy">
+          <span className="link-line [background-size:0%_1px] group-hover:[background-size:100%_1px]">{product.name}</span>
+        </h3>
+        <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-navy/65">{product.tagline}</p>
       </div>
     </Link>
   );

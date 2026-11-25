@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PageHero } from "@/components/PageHero";
 import { ContactButtons } from "@/components/ContactButtons";
 import { categories } from "@/data/categories";
 import { locationSlugs, type LocationSlug } from "@/data/content";
 import { hasLocale, href, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+
+const locationImages: Record<string, string> = {
+  marbella: "/products/aquavia/spa-cube/4.webp",
+  "costa-del-sol": "/products/aquavia/spa-oasis-40/4.webp",
+  mallorca: "/products/aquavia/spa-home/3.webp",
+};
 
 const isLocation = (s: string): s is LocationSlug => (locationSlugs as readonly string[]).includes(s);
 
@@ -28,17 +35,11 @@ export default async function LocationPage({ params }: PageProps<"/[lang]/locati
 
   return (
     <>
-      <section className="hero-water text-white">
-        <div className="mx-auto max-w-6xl px-5 py-24 md:py-32">
-          <p className="eyebrow !text-white/70">{dict.locations.title}</p>
-          <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-tight md:text-7xl">{l.title}</h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{l.intro}</p>
-        </div>
-      </section>
+      <PageHero eyebrow={dict.locations.title} title={l.title} intro={l.intro} image={locationImages[slug]} />
 
-      <section className="mx-auto max-w-6xl px-5 py-20">
-        <p className="max-w-2xl text-lg leading-relaxed text-navy/75">{l.text}</p>
-        <ul className="mt-10 flex flex-wrap gap-3">
+      <section className="mx-auto max-w-[90rem] px-5 py-20 md:px-8 md:py-28">
+        <p data-reveal="up" className="max-w-3xl font-serif text-4xl leading-[1.1] text-navy md:text-5xl">{l.text}</p>
+        <ul data-reveal="up" className="mt-12 flex flex-wrap gap-3">
           {main.map((c) => (
             <li key={c.slug}>
               <Link href={href(lang, `/products/${c.slug}`)} className="btn btn-outline">
@@ -49,11 +50,13 @@ export default async function LocationPage({ params }: PageProps<"/[lang]/locati
         </ul>
       </section>
 
-      <section className="bg-sand">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <h2 className="max-w-2xl font-serif text-4xl text-navy md:text-5xl">{dict.locations.ctaTitle}</h2>
-          <p className="mt-4 max-w-lg text-sm leading-relaxed text-navy/70">{dict.locations.ctaText}</p>
-          <ContactButtons dict={dict.contact} mode="consultation" className="mt-8" />
+      <section className="bg-ink text-white">
+        <div className="mx-auto grid max-w-[90rem] gap-10 px-5 py-24 md:grid-cols-12 md:px-8 md:py-28">
+          <h2 data-reveal="up" className="font-serif text-5xl leading-[1] md:col-span-7 md:text-6xl">{dict.locations.ctaTitle}</h2>
+          <div data-reveal="up" className="md:col-span-4 md:col-start-9">
+            <p className="leading-relaxed text-white/70">{dict.locations.ctaText}</p>
+            <ContactButtons dict={dict.contact} mode="consultation" className="mt-8" dark />
+          </div>
         </div>
       </section>
     </>

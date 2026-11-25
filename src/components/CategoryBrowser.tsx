@@ -43,8 +43,8 @@ export function CategoryBrowser({ groups, seats, lang, labels }: { groups: Group
   const filtered = n ? all.filter((p) => p.seats?.includes(n)) : [];
 
   const chip = (active: boolean) =>
-    `rounded-full border px-4 py-1.5 text-sm font-medium transition ${
-      active ? "border-navy bg-navy text-white" : "border-line bg-white text-navy hover:border-teal"
+    `border px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.14em] transition duration-300 ${
+      active ? "border-navy bg-navy text-paper" : "border-line text-navy hover:border-navy"
     }`;
 
   return (
@@ -67,7 +67,7 @@ export function CategoryBrowser({ groups, seats, lang, labels }: { groups: Group
           <p className="mb-8 text-sm text-navy/60">
             {labels.showing.replace("{count}", String(filtered.length)).replace("{n}", String(n))}
           </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((p) => (
               <ProductCard key={p.slug} product={p} lang={lang} sampleLabel={labels.sample} />
             ))}
@@ -78,7 +78,7 @@ export function CategoryBrowser({ groups, seats, lang, labels }: { groups: Group
           {groups.length > 1 && (
             <nav className="mb-12 flex flex-wrap gap-x-5 gap-y-2 border-b border-line pb-6 text-sm">
               {groups.map((g) => (
-                <a key={g.key} href={`#${g.key}`} className="text-navy/70 hover:text-teal">
+                <a key={g.key} href={`#${g.key}`} className="link-line text-navy/70 hover:text-navy">
                   {g.name} <span className="text-navy/35">{g.items.length}</span>
                 </a>
               ))}
@@ -87,9 +87,9 @@ export function CategoryBrowser({ groups, seats, lang, labels }: { groups: Group
           <div className="space-y-20">
             {groups.map((g) => (
               <div key={g.key} id={g.key} className="scroll-mt-28">
-                {groups.length > 1 && <h2 className="font-serif text-3xl text-navy">{g.name}</h2>}
+                {groups.length > 1 && <h2 data-reveal="up" className="font-serif text-4xl text-navy md:text-5xl">{g.name}</h2>}
                 {g.intro && <p className="mt-2 text-sm text-navy/60">{g.intro}</p>}
-                <div className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ${groups.length > 1 ? "mt-8" : ""}`}>
+                <div className={`grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 ${groups.length > 1 ? "mt-10" : ""}`}>
                   {g.items.map((p) => (
                     <ProductCard key={p.slug} product={p} lang={lang} sampleLabel={labels.sample} />
                   ))}

@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
+/* ---------- Design tokens ----------
+   Warm paper, deep ink, a single brass accent and a quiet sea tone.
+   (Class names like navy/teal/sand are kept so existing markup picks up the new palette.) */
 :root {
-  --background: #faf8f3;
-  --foreground: #0b1f2a;
+  --background: #f4f0e8;
+  --foreground: #10191d;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-navy: #0b1f2a;
-  --color-ink: #08171f;
-  --color-teal: #0f6f7a;
-  --color-teal-dark: #0a565f;
-  --color-brass: #8a6d3f;
-  --color-sand: #efe9df;
-  --color-line: #e1dacc;
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-fraunces);
+  --color-paper: #f4f0e8;
+  --color-navy: #10191d;
+  --color-ink: #0b1215;
+  --color-teal: #2f5f63;
+  --color-teal-dark: #234a4d;
+  --color-brass: #8c6d42;
+  --color-sand: #eae3d6;
+  --color-line: #d8cfbf;
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
 }
 
 html {
@@ -26,88 +32,268 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Display type: an elegant serif, set large and tight. */
+.font-serif {
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+}
+
+::selection {
+  background: #10191d;
+  color: #f4f0e8;
+}
+
+/* Small label above headings. Used sparingly. */
 .eyebrow {
-  font-size: 0.68rem;
-  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--color-brass);
 }
 
+/* ---------- Buttons: squared, quiet, with an arrow that nudges on hover ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  padding: 0.85rem 1.75rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  gap: 0.75rem;
+  border-radius: 2px;
+  padding: 1rem 1.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
-  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  transition:
+    background-color 0.35s var(--ease-out),
+    color 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out);
+}
+.btn .arrow {
+  transition: transform 0.45s var(--ease-out);
+}
+.btn:hover .arrow {
+  transform: translateX(4px);
 }
 .btn-primary {
   background: var(--color-navy);
-  color: #fff;
+  color: #f4f0e8;
 }
 .btn-primary:hover {
-  background: var(--color-teal);
+  background: var(--color-teal-dark);
 }
 .btn-light {
-  background: #fff;
+  background: #f4f0e8;
   color: var(--color-navy);
 }
 .btn-light:hover {
-  background: var(--color-sand);
+  background: #fff;
 }
 .btn-ghost {
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: #fff;
 }
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
 }
 .btn-outline {
-  border: 1px solid var(--color-line);
-  background: #fff;
+  border: 1px solid var(--color-navy);
   color: var(--color-navy);
 }
 .btn-outline:hover {
-  border-color: var(--color-teal);
+  background: var(--color-navy);
+  color: #f4f0e8;
 }
 .btn-whatsapp {
-  background: #1fa855;
-  color: #fff;
+  border: 1px solid #1f8a4c;
+  color: #1f6e40;
 }
 .btn-whatsapp:hover {
-  background: #168a44;
+  background: #1f8a4c;
+  color: #fff;
 }
 
-/* Placeholder "water" backdrop until a real hero photo is supplied */
+/* Text link with an underline that draws in on hover. */
+.link-line {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s var(--ease-out);
+  padding-bottom: 2px;
+}
+.link-line:hover,
+.link-line:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Placeholder backdrop where no photo exists yet. */
 .hero-water {
   background:
-    radial-gradient(60% 70% at 78% 30%, rgba(63, 175, 190, 0.45), transparent 70%),
-    radial-gradient(50% 60% at 15% 90%, rgba(15, 111, 122, 0.55), transparent 70%),
-    linear-gradient(160deg, #0b2a36 0%, #08171f 100%);
+    radial-gradient(70% 80% at 80% 20%, rgba(60, 110, 115, 0.35), transparent 70%),
+    linear-gradient(160deg, #142228 0%, #0b1215 100%);
 }
 
-/* Gentle scroll reveal, progressive enhancement (ignored where unsupported) */
-@supports (animation-timeline: view()) {
-  .reveal {
-    animation: reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+/* ---------- Motion ----------
+   Two scroll patterns only: text rises softly, images unveil with a wipe.
+   Hidden only when JS is running (html.js), so content never disappears without it. */
+html.js [data-reveal] {
+  transition:
+    opacity 1s var(--ease-out),
+    transform 1.1s var(--ease-out),
+    clip-path 1.3s var(--ease-in-out);
+  transition-delay: var(--d, 0ms);
+}
+html.js [data-reveal="up"]:not(.is-in) {
+  opacity: 0;
+  transform: translateY(28px);
+}
+/* Images: the observed element stays unclipped (so observers and lazy-loading see it);
+   its inner wrapper is wiped in, and the photo inside settles from a slight zoom. */
+html.js [data-reveal="img"] > * {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.3s var(--ease-in-out);
+  transition-delay: var(--d, 0ms);
+}
+html.js [data-reveal="img"]:not(.is-in) > * {
+  clip-path: inset(100% 0 0 0);
+}
+html.js [data-reveal="img"] > * > * {
+  transition: transform 1.6s var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+html.js [data-reveal="img"]:not(.is-in) > * > * {
+  transform: scale(1.12);
+}
+
+/* Hero headline: lines rise out of a mask on load. */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+.line-mask > span {
+  display: block;
+  animation: line-up 1.3s var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes line-up {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
   }
 }
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: none; }
+.fade-in {
+  animation: fade-in 1.2s var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Slow "Ken Burns" drift on the active hero photo. */
+@keyframes drift {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Brands marquee. */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Scroll cue in the hero. */
+@keyframes cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* Horizontal product rail. */
+.rail {
+  scrollbar-width: none;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  html.js [data-reveal],
+  html.js [data-reveal] > *,
+  html.js [data-reveal] > * > *,
+  .line-mask > span,
+  .fade-in,
+  .marquee {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+/* Line drawing that draws itself in when its container is revealed. */
+html.js .draw .draw-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.4s var(--ease-in-out);
+  transition-delay: var(--d, 0ms);
+}
+html.js .draw.is-in .draw-path {
+  stroke-dashoffset: 0;
 }
 @media (prefers-reduced-motion: reduce) {
-  .reveal { animation: none; }
-  html { scroll-behavior: auto; }
+  html.js .draw .draw-path {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}
+
+/* Even-height numbers in the display serif (phone numbers, sizes). */
+.font-serif {
+  font-variant-numeric: lining-nums;
 }
