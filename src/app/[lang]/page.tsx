@@ -9,9 +9,10 @@ import { Rail } from "@/components/Rail";
 import { site } from "@/config/site";
 import type { CategorySlug } from "@/data/categories";
 import { brands, heroSlides } from "@/data/home";
-import { featuredProducts, toCard } from "@/data/products";
+import { toCard } from "@/data/products";
 import { hasLocale, href, pick } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { getCatalog } from "@/lib/catalog";
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 
@@ -20,7 +21,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
   const h = dict.home;
-  const featured = featuredProducts(6);
+  const featured = (await getCatalog()).featuredProducts(6);
   const slides = heroSlides.map((s) => ({
     image: s.image,
     href: href(lang, `/products/${s.product.category}/${s.product.slug}`),

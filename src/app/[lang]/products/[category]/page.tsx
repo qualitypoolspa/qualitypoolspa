@@ -7,9 +7,10 @@ import { ContactButtons } from "@/components/ContactButtons";
 import { PoolBuilder } from "@/components/PoolBuilder";
 import { builderCategories, categories, getCategory } from "@/data/categories";
 import { categoryImages } from "@/data/home";
-import { productsIn, selectionIn, toCard } from "@/data/products";
+import { toCard } from "@/data/products";
 import { hasLocale, href, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { getCatalog } from "@/lib/catalog";
 
 export const generateStaticParams = () =>
   locales.flatMap((lang) => categories.map((c) => ({ lang, category: c.slug })));
@@ -27,7 +28,8 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/produc
   const cat = getCategory(category);
   if (!hasLocale(lang) || !cat) notFound();
   const dict = await getDictionary(lang);
-  const items = productsIn(cat.slug);
+  const catalog = await getCatalog();
+  const items = catalog.productsIn(cat.slug);
   const names = dict.collections as Record<string, string>;
 
   // Group by collection in the order defined in the dictionary; ungrouped products last.
@@ -38,7 +40,7 @@ export default async function CategoryPage({ params }: PageProps<"/[lang]/produc
     .sort(([a], [b]) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99))
     .map(([key, list]) => ({ key, name: names[key] ?? dict.categories[cat.slug].name, items: list.map((p) => toCard(p, lang)) }));
   // The client's hand-picked models go first (they also stay in their own collection).
-  const selection = selectionIn(cat.slug);
+  const selection = catalog.selectionIn(cat.slug);
   if (selection.length) {
     groups.unshift({
       key: "selection",

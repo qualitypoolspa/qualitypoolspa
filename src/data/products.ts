@@ -31,12 +31,22 @@ export type Product = {
   /** Photos under /public. Empty = placeholder art. */
   images?: ProductImage[];
   downloads?: { label: Localized; url: string }[];
+  /** Shown under "Popular products" on the home page. */
   featured?: boolean;
+  /** Part of the client's selection, shown first on its category page. */
+  selection?: boolean;
   /** Demo content: shows a "Sample product" badge. Remove when real data is added. */
   sample?: boolean;
 };
 
-// Hand-written products. Supplier imports are merged in below.
+// The bundled catalogue: hand-written products plus the supplier imports.
+//
+// Since the admin panel arrived, the live catalogue is the `products` table in
+// Supabase (see src/lib/catalog.ts and SETUP.md). This list is
+//   1. the starting content: `npm run products:seed` turns it into supabase/seed.sql, and
+//   2. the fallback the site shows when Supabase isn't set up or can't be reached.
+// Edits made here do NOT reach the live site once the database is in use:
+// make them in /admin instead.
 // TODO(client): saunas (Harvia) are added once the dealer material arrives.
 const manualProducts: Product[] = [
 ];
@@ -44,35 +54,16 @@ const manualProducts: Product[] = [
 // The client's hand-picked spas: shown first on the spa page ("Our selection").
 export const selectionSlugs = ["spa-touch-pro", "spa-feel", "spa-essence", "spa-touch-5-pro", "spa-cube-ergo"];
 // Home page "Popular products": the priority categories, pool covers and spas, mixed.
-const featuredSlugs = ["octeo", "spa-touch-pro", "bellasun", "spa-feel", "sveltea", "spa-essence"];
+export const featuredSlugs = ["octeo", "spa-touch-pro", "bellasun", "spa-feel", "sveltea", "spa-essence"];
 
-const all = [
+export const bundledProducts: Product[] = [
   ...manualProducts,
   ...astralpoolProducts,
   ...zodiacProducts,
   ...fluidraRangeProducts,
   ...aquaviaProducts,
   ...fibreglassProducts,
-];
-
-export const products: Product[] = all.map((p) => ({ ...p, featured: featuredSlugs.includes(p.slug) }));
-
-/** The client's selection within a category, in the order listed above. */
-export const selectionIn = (category: CategorySlug) =>
-  selectionSlugs
-    .map((s) => products.find((p) => p.slug === s && p.category === category))
-    .filter((p): p is Product => !!p);
-
-export const featuredProducts = (n = 3) => {
-  const picked = featuredSlugs.map((s) => products.find((p) => p.slug === s)).filter((p): p is Product => !!p);
-  const fill = products.filter((p) => p.images?.length && !picked.includes(p));
-  return [...picked, ...fill].slice(0, n);
-};
-
-export const getProduct = (category: string, slug: string) =>
-  products.find((p) => p.category === category && p.slug === slug);
-
-export const productsIn = (category: CategorySlug) => products.filter((p) => p.category === category);
+].map((p) => ({ ...p, featured: featuredSlugs.includes(p.slug), selection: selectionSlugs.includes(p.slug) }));
 
 /** The light version of a product used by product cards (also in client components). */
 export type ProductCardData = {

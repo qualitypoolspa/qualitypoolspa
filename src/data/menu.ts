@@ -1,5 +1,5 @@
 import { categories, menuGroups, type CategorySlug, type MenuGroup } from "./categories";
-import { productsIn, selectionIn } from "./products";
+import type { Catalog } from "@/lib/catalog";
 import { href, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -18,19 +18,19 @@ const groupLabel = (g: MenuGroup, dict: Dictionary) =>
   })[g];
 
 /** Collection keys present in a category, in dict.collections order ("selection" first if any). */
-function collectionKeys(cat: CategorySlug, dict: Dictionary) {
+function collectionKeys(cat: CategorySlug, dict: Dictionary, catalog: Catalog) {
   const order = Object.keys(dict.collections);
-  const keys = [...new Set(productsIn(cat).map((p) => p.collection).filter((k): k is string => !!k))].sort(
+  const keys = [...new Set(catalog.productsIn(cat).map((p) => p.collection).filter((k): k is string => !!k))].sort(
     (a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99),
   );
-  if (selectionIn(cat).length) keys.unshift("selection");
+  if (catalog.selectionIn(cat).length) keys.unshift("selection");
   return keys;
 }
 
 /** Links for a category: one per collection when it has several, else the category itself. */
-function categoryLinks(cat: CategorySlug, lang: Locale, dict: Dictionary): MenuLink[] {
+function categoryLinks(cat: CategorySlug, lang: Locale, dict: Dictionary, catalog: Catalog): MenuLink[] {
   const base = href(lang, `/products/${cat}`);
-  const keys = collectionKeys(cat, dict);
+  const keys = collectionKeys(cat, dict, catalog);
   const names = dict.collections as Record<string, string>;
   return keys.length > 1
     ? keys.map((k) => ({ name: names[k] ?? k, href: `${base}#${k}` }))
@@ -38,7 +38,7 @@ function categoryLinks(cat: CategorySlug, lang: Locale, dict: Dictionary): MenuL
 }
 
 /** The product part of the main menu: Pool, Spas, Pool covers, Pool accessories, Sauna. */
-export function productNav(lang: Locale, dict: Dictionary): NavItem[] {
+export function productNav(lang: Locale, dict: Dictionary, catalog: Catalog): NavItem[] {
   return menuGroups.map((g) => {
     const cats = categories.filter((c) => c.group === g).map((c) => c.slug);
     const first = href(lang, `/products/${cats[0]}`);
@@ -46,7 +46,7 @@ export function productNav(lang: Locale, dict: Dictionary): NavItem[] {
     const overview = cats.length > 1 ? href(lang, `/products#${g}`) : first;
 
     if (g === "spas") {
-      const seats = [...new Set(productsIn("spas").flatMap((p) => p.seats ?? []))].sort((a, b) => a - b);
+      const seats = [...new Set(catalog.productsIn("spas").flatMap((p) => p.seats ?? []))].sort((a, b) => a - b);
       return {
         key: g,
         name: groupLabel(g, dict),
@@ -59,7 +59,7 @@ export function productNav(lang: Locale, dict: Dictionary): NavItem[] {
               href: `${first}#for-${n}`,
             })),
           },
-          { title: dict.products.collectionsTitle, links: categoryLinks("spas", lang, dict) },
+          { title: dict.products.collectionsTitle, links: categoryLinks("spas", lang, dict, catalog) },
         ],
       };
     }
@@ -72,10 +72,10 @@ export function productNav(lang: Locale, dict: Dictionary): NavItem[] {
       cats.length > 1
         ? cats.flatMap((c) =>
             c === "pool-accessories"
-              ? categoryLinks(c, lang, dict)
+              ? categoryLinks(c, lang, dict, catalog)
               : [{ name: dict.categories[c].name, href: href(lang, `/products/${c}`) }],
           )
-        : categoryLinks(cats[0], lang, dict);
+        : categoryLinks(cats[0], lang, dict, catalog);
     const isPlainLink = links.length === 1;
     return { key: g, name: groupLabel(g, dict), href: overview, columns: isPlainLink ? [] : [{ links }] };
   });
