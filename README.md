@@ -11,7 +11,9 @@ npm run build
 ## Where things live
 - `src/config/site.ts` (+ `.env.example`): email, WhatsApp number, phone, locations.
 - `src/data/categories.ts`: categories (priority ones: pool covers, spas, saunas).
-- `src/data/products.ts`: products (current ones are samples; replace with real data).
+- **Products are edited in the admin panel at `/admin`** (Supabase). Setup and how the client uses it: [SETUP.md](SETUP.md).
+  `src/data/products.ts` + `src/data/suppliers/` are the bundled catalogue: the starting content
+  (`npm run products:seed` → `supabase/seed.sql`) and the fallback when Supabase isn't set up.
 - `src/data/gallery.ts`: gallery photos (add the image to `public/gallery/` and an entry here).
 - `src/i18n/`: languages. Live: English. Planned: es, sv, fr, de, ru.
   To add a language: copy `dictionaries/en.json`, translate, register it in

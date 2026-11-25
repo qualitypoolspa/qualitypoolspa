@@ -5,10 +5,11 @@ import { MobileMenu } from "./MobileMenu";
 import { NavDropdown } from "./NavDropdown";
 import { productNav } from "@/data/menu";
 import { href, type Locale } from "@/i18n/config";
+import { getCatalog } from "@/lib/catalog";
 import type { Dictionary } from "@/i18n/dictionaries";
 
-export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
-  const products = productNav(lang, dict);
+export async function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
+  const products = productNav(lang, dict, await getCatalog());
   const pages = [
     { href: href(lang, "/campaigns"), name: dict.nav.campaigns },
     { href: href(lang, "/terms"), name: dict.nav.terms },
