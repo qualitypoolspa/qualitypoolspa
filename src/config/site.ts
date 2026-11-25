@@ -2,6 +2,12 @@
 // TODO(client): confirm email, WhatsApp number, phone and locations.
 export const site = {
   name: "Quality Pool & Spa",
+  /** The legal entity behind the site: shown in the footer and the terms (required by LSSI art. 10). */
+  company: {
+    name: "Scandinavian Quality Wood & Construction S.L.",
+    nif: "B21956750",
+    address: "Av. Puerta del Mar, 59, 29680 Estepona, Málaga",
+  },
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qualitypoolspa.es",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@qualitypoolspa.es",
   // Business WhatsApp number: digits only, international format, no "+".
