@@ -1,7 +1,11 @@
-// DRAFT terms of purchase. Placeholders in [brackets] must be filled in, and the whole
+// DRAFT terms of purchase. Company details come from src/config/site.ts. The remaining
+// placeholders in [brackets] (deposit, payment method, deadlines) must be filled in, and the whole
 // text reviewed by the client's lawyer or accountant before it is published as final.
 // Set `isDraft` to false once approved (removes the draft notice on the page).
+import { site } from "@/config/site";
 import type { Locale } from "@/i18n/config";
+
+const { company } = site;
 
 export const isDraft = true;
 export const lastUpdated = "2026-11-24";
@@ -12,7 +16,7 @@ const en: Section[] = [
   {
     title: "1. About us",
     paragraphs: [
-      "These terms apply to purchases of products and services from [COMPANY LEGAL NAME], trading as Quality Pool & Spa, with tax number (NIF/CIF) [NUMBER], registered address [ADDRESS], Spain. Email: info@qualitypoolspa.es. Phone: [PHONE].",
+      `These terms apply to purchases of products and services from ${company.name}, trading as ${site.name}, with tax number (NIF) ${company.nif}, registered address ${company.address}, Spain. Email: ${site.email}. Phone: ${site.phoneDisplay}.`,
       "By placing an order with us you accept these terms. If a written quote or order confirmation says something different, the quote or order confirmation applies.",
     ],
   },
@@ -93,7 +97,7 @@ const es: Section[] = [
   {
     title: "1. Quiénes somos",
     paragraphs: [
-      "Estas condiciones se aplican a la compra de productos y servicios de [RAZÓN SOCIAL], que opera como Quality Pool & Spa, con NIF/CIF [NÚMERO] y domicilio social en [DIRECCIÓN], España. Correo electrónico: info@qualitypoolspa.es. Teléfono: [TELÉFONO].",
+      `Estas condiciones se aplican a la compra de productos y servicios de ${company.name}, que opera como ${site.name}, con NIF ${company.nif} y domicilio social en ${company.address}, España. Correo electrónico: ${site.email}. Teléfono: ${site.phoneDisplay}.`,
       "Al realizar un pedido aceptas estas condiciones. Si un presupuesto o una confirmación de pedido por escrito dice algo distinto, prevalece el presupuesto o la confirmación de pedido.",
     ],
   },
@@ -172,7 +176,7 @@ const sv: Section[] = [
   {
     title: "1. Om oss",
     paragraphs: [
-      "Dessa villkor gäller köp av produkter och tjänster från [FÖRETAGETS JURIDISKA NAMN], som driver Quality Pool & Spa, med skattenummer (NIF/CIF) [NUMMER] och registrerad adress [ADRESS], Spanien. E-post: info@qualitypoolspa.es. Telefon: [TELEFON].",
+      `Dessa villkor gäller köp av produkter och tjänster från ${company.name}, som driver ${site.name}, med skattenummer (NIF) ${company.nif} och registrerad adress ${company.address}, Spanien. E-post: ${site.email}. Telefon: ${site.phoneDisplay}.`,
       "När du lägger en beställning hos oss godkänner du dessa villkor. Om en skriftlig offert eller orderbekräftelse anger något annat gäller offerten eller orderbekräftelsen.",
     ],
   },

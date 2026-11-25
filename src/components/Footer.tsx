@@ -82,7 +82,13 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pb-16 pt-8 text-xs text-white/40 md:pr-24">
-          <p>© {new Date().getFullYear()} {site.name}. {dict.footer.rights}</p>
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} {site.name}. {dict.footer.rights}</p>
+            {/* The legal entity, as Spanish law requires on business websites (LSSI art. 10). */}
+            <p>
+              {site.company.name} · NIF {site.company.nif} · {site.company.address}
+            </p>
+          </div>
           <Link href={href(lang, "/terms")} className={link}>{dict.nav.terms}</Link>
         </div>
       </div>
