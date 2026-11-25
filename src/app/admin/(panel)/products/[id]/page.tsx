@@ -5,7 +5,7 @@ import NotAdminWarning from "@/components/admin/NotAdminWarning";
 import ProductEditor from "@/components/admin/ProductEditor";
 import { adminNames } from "@/lib/admin-names";
 import { loadAdminPage } from "@/lib/admin-session";
-import { PRODUCT_COLS, PRODUCT_COLS_BASE, type ProductRow } from "@/lib/product-row";
+import { COLUMN_SETS, type ProductRow } from "@/lib/product-row";
 
 export const metadata: Metadata = { title: "Edit product" };
 
@@ -18,14 +18,25 @@ export default async function EditProductPage({ params }: PageProps<"/admin/prod
   const [{ user, isAdmin, data }, names] = await Promise.all([
     loadAdminPage(async (supabase) => {
       const one = (cols: string) => supabase.from("products").select(cols).eq("id", id).maybeSingle();
-      const [full, all] = await Promise.all([
-        one(PRODUCT_COLS),
+      const [first, all] = await Promise.all([
+        one(COLUMN_SETS[0].cols),
         // For the collection menu: which collections each category already uses.
         supabase.from("products").select("category, collection").not("collection", "is", null),
       ]);
-      // Before migration 0002 the translation columns don't exist: load without them.
-      const product = full.error ? await one(PRODUCT_COLS_BASE) : full;
-      return { product: product.data as unknown as ProductRow | null, hasTranslations: !full.error, used: (all.data ?? []) as { category: string; collection: string }[] };
+      // Until a translation migration has been run, its languages' columns don't
+      // exist: load with the newest set that works, and edit only those languages.
+      let product = first;
+      let set = COLUMN_SETS[0];
+      for (const next of COLUMN_SETS.slice(1)) {
+        if (!product.error) break;
+        set = next;
+        product = await one(next.cols);
+      }
+      return {
+        product: product.data as unknown as ProductRow | null,
+        locales: set.locales,
+        used: (all.data ?? []) as { category: string; collection: string }[],
+      };
     }),
     adminNames(),
   ]);
@@ -53,7 +64,7 @@ export default async function EditProductPage({ params }: PageProps<"/admin/prod
         categories={names.categories}
         collectionNames={names.collections}
         collectionsByCategory={collectionsByCategory}
-        hasTranslations={data.hasTranslations}
+        translatedLocales={data.locales}
       />
     </>
   );

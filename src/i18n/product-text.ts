@@ -1,19 +1,22 @@
-// Spanish and Swedish for the bundled catalogue's texts, as phrase lists:
+// Translations of the bundled catalogue's texts, as phrase lists:
 // English text -> translation (src/i18n/product-text/<lang>.json). One entry
 // covers every product that uses the same text, e.g. a spec label like "Weight".
 //
 // These are the starting translations. Once the catalogue lives in Supabase,
-// the client edits translations in /admin; migration 0002 copies these in.
+// the client edits translations in /admin; migrations 0002 and 0003 copy these in.
 import type { Localized } from "@/i18n/config";
 import type { Product, SupplierProduct } from "@/data/products";
 import es from "./product-text/es.json";
 import sv from "./product-text/sv.json";
+import de from "./product-text/de.json";
+import fr from "./product-text/fr.json";
+import ru from "./product-text/ru.json";
 
 import { productLocales, type ProductLocale } from "./product-locales";
 
 export { productLocales, type ProductLocale };
 
-const phrases: Record<ProductLocale, Record<string, string>> = { es, sv };
+const phrases: Record<ProductLocale, Record<string, string>> = { es, sv, de, fr, ru };
 
 /** English text -> all its translations. Missing ones fall back to English on the site. */
 export function localize(en: string): Localized {

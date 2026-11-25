@@ -26,8 +26,10 @@ Supabase dashboard → **SQL Editor → New query**. Paste in and run each file,
    bucket and the admin allowlist, all with security rules.
 2. `supabase/migrations/0002_translations.sql`: the Spanish and Swedish
    columns for product texts.
-3. `supabase/seed.sql`: the current catalogue, all 173 products with their
-   texts, specs and photos, in English, Spanish and Swedish.
+3. `supabase/migrations/0003_more_languages.sql`: the German, French and
+   Russian columns.
+4. `supabase/seed.sql`: the current catalogue, all 173 products with their
+   texts, specs and photos, in all six languages.
 
 Under **Table Editor** you should now see `products` with 173 rows.
 
@@ -35,13 +37,15 @@ The migrations are safe to re-run. `seed.sql` is **not**: it stops with an
 error if the table already has products, so pasting it a second time can't
 overwrite the client's edits.
 
-**Already set up before the translations arrived?** Run only
-`0002_translations.sql`. It adds the Spanish and Swedish columns and fills
+**Already set up before the translations arrived?** Run the translation
+migration(s) you haven't run yet: `0002_translations.sql` (Spanish,
+Swedish), then `0003_more_languages.sql` (German, French, Russian). It adds the Spanish and Swedish columns and fills
 them in for every product whose English text is still the original. Products
 the client has rewritten keep blank translations (the site shows their
 English until the client writes the translations in `/admin`), and nothing
-already translated is overwritten. Until it's run, the site works but shows
-product texts in English on the Spanish and Swedish pages.
+already translated is overwritten. Until each is run, the site works but shows
+product texts in English on those languages' pages, and the admin panel
+names the file still to run.
 
 Supabase may warn that the query "creates tables without enabling Row Level
 Security". That's a false alarm: the file turns RLS on itself. Choose **Run
@@ -122,7 +126,8 @@ description, check the product page shows it, then change it back.
   e.g. "Premium Line"), number of people (spas only, for the size filter) and
   web address.
 - **Texts**: the short description (on product cards) and the description.
-  The **English / Español / Svenska** tabs switch language; each translation
+  The **English / Español / Svenska / Deutsch / Français / Русский** tabs
+  switch language; each translation
   box shows the English above it. An empty translation shows the English text
   on that language's page, so a new product can go live in English first.
 - **Photos**: upload straight from a phone or computer. Photos are resized
@@ -147,18 +152,21 @@ description, check the product page shows it, then change it back.
   site**. Make them in `/admin` instead. To rebuild the starting content from
   the code (e.g. after a new supplier import, for a fresh project), run
   `npm run products:seed` and use the regenerated `supabase/seed.sql`.
-- The site is in English (`/en`), Spanish (`/es`) and Swedish (`/sv`). Site
-  texts live in `src/i18n/dictionaries/<lang>.json` (and `src/content/terms.ts`,
+- The site is in English (`/en`), Spanish (`/es`), Swedish (`/sv`), German
+  (`/de`), French (`/fr`) and Russian (`/ru`). Site texts live in `src/i18n/dictionaries/<lang>.json` (and `src/content/terms.ts`,
   `src/data/*.ts` for the few `Localized` texts). Product texts: English in
-  `tagline` / `description`, translations in `*_es` / `*_sv` twin columns and
-  `*_es` / `*_sv` keys on each spec row. Blank = show the English.
+  `tagline` / `description`, translations in `*_es`, `*_sv`, `*_de`, `*_fr`,
+  `*_ru` twin columns and matching keys on each spec row. Blank = show the
+  English. `localeMigrations` in `src/i18n/product-locales.ts` lists which
+  migration adds which languages; the site and admin read the newest columns
+  that exist, so code can be deployed before a migration is run.
 - The starting product translations are phrase lists,
   `src/i18n/product-text/<lang>.json` (English text → translation), used by
-  the bundled catalogue and by `npm run products:seed`, which writes both
-  `seed.sql` and `0002_translations.sql`.
+  the bundled catalogue and by `npm run products:seed`, which writes
+  `seed.sql` and the translation migrations.
 - The translations were written by Claude, not a professional translator.
-  Have a native speaker read the Spanish (especially the terms of purchase)
-  and the Swedish before relying on them.
+  Have native speakers read each language before relying on it, especially
+  the Spanish terms of purchase (the version that counts legally in Spain).
 - A visitor who opens an address without a language (e.g. `/products`) is sent
   to the language they picked before (a `lang` cookie set by the switcher),
   else their browser's language if the site has it, else English.
