@@ -27,13 +27,34 @@ type Imported = {
 const collections: Record<string, string> = {
   Alaska: "sauna-alaska",
   Komfort: "sauna-komfort",
+  Polaris: "sauna-polaris",
+  Olympus: "sauna-olympus",
   Panorama: "sauna-panorama",
   Family: "sauna-family",
+  Fenix: "sauna-fenix",
+  Utu: "sauna-utu",
+  Urban: "sauna-urban",
+  "Block Sauna Cabin": "sauna-block",
+  Ventura: "sauna-ventura",
+  Variant: "sauna-variant",
+  "Variant View": "sauna-variant-view",
   Himalaya: "sauna-himalaya",
 };
 
-// Typos in the supplier's texts.
-const tidy = (s: string) => s.replace(/\bElegent\b/g, "Elegant").replace(/\s+/g, " ").trim();
+// Where Harvia's page name or address is unusable (keyed by type code).
+const overrides: Record<string, { name?: string; slug?: string }> = {
+  S2020L: { name: "Variant 1945 × 1945 left", slug: "sauna-cabin-variant-1945x1945-left" },
+};
+
+// "Sauna cabin Variant 1505x1505 left" -> "Variant 1505 × 1505 left"
+const tidyName = (s: string) =>
+  s
+    .replace(/^Sauna cabin\s+/i, "")
+    .replace(/(\d)\s*x\s*(\d)/g, "$1 × $2");
+
+// Typos and stray HTML spaces in the supplier's texts.
+const tidy = (s: string) =>
+  s.replace(/&nbsp;/g, " ").replace(/\bElegent\b/g, "Elegant").replace(/\s+/g, " ").trim();
 
 const cm = (mm?: number) => (mm ? `${Math.round(mm / 10)} cm` : undefined);
 const m3 = (v?: number) => (v ? `${v.toLocaleString("en", { maximumFractionDigits: 1 })} m³` : undefined);
@@ -48,16 +69,23 @@ export const harviaProducts: Product[] = (raw as Imported[])
     const size = [s.width, s.depth, s.height].every(Boolean)
       ? `${[s.width, s.depth, s.height].map((v) => Math.round(v! / 10)).join(" × ")} cm`
       : undefined;
-    const infrared = /infra/i.test(p.name);
-    const kind = infrared ? "Sauna cabin with infrared heater and salt wall" : "Indoor sauna cabin in solid spruce";
+    const fix = overrides[p.code] ?? {};
+    const kind = /infra\+/i.test(p.name)
+      ? "Sauna cabin with infrared heater and salt wall"
+      : /\bset\b/i.test(p.name)
+        ? "Sauna cabin set with heater, control unit and infrared panel"
+        : "Indoor sauna cabin";
+    const tagline = size ? `${kind}, ${size}.` : `${kind}.`;
+    // No text from Harvia (e.g. Olympus Large): the tagline doubles as the description, which hides the empty section.
+    const description = p.description.map(tidy).join("\n\n") || tagline;
     return {
-      slug: p.slug,
+      slug: fix.slug ?? p.slug,
       category: "saunas-hammam",
       collection: (p.family && collections[p.family]) || undefined,
-      name: p.name,
+      name: fix.name ?? tidyName(p.name),
       brand: "Harvia",
-      tagline: { en: size ? `${kind}, ${size}.` : `${kind}.` },
-      description: { en: p.description.map(tidy).join("\n\n") },
+      tagline: { en: tagline },
+      description: { en: description },
       highlights: p.highlights.map((h) => ({ en: tidy(h) })),
       specs: [
         ...g("Dimensions", "Width", cm(s.width)),

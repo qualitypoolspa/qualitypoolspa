@@ -263,8 +263,9 @@ function parse(html, url) {
 async function onWhite(file) {
   const { data, info } = await sharp(file).resize(40, 40, { fit: "fill" }).raw().toBuffer({ resolveWithObject: true });
   const px = (x, y) => data.subarray((y * 40 + x) * info.channels, (y * 40 + x) * info.channels + 3);
-  const corners = [px(0, 0), px(39, 0), px(0, 39), px(39, 39), px(20, 0), px(0, 20), px(39, 20)];
-  return corners.every((c) => Math.min(...c) > 240);
+  // Points around the edge; a product that touches one edge still counts as on white.
+  const edge = [px(0, 0), px(39, 0), px(0, 39), px(39, 39), px(20, 0), px(0, 20), px(39, 20), px(20, 39)];
+  return edge.filter((c) => Math.min(...c) > 240).length >= 6;
 }
 
 async function image(slug, id, i) {
