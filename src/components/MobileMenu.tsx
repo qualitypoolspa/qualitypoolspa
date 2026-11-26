@@ -4,8 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { MenuLink, NavItem } from "@/data/menu";
+import type { Locale } from "@/i18n/config";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 type Props = {
+  lang: Locale;
+  languageLabel: string;
   menuLabel: string;
   viewAllLabel: string;
   products: NavItem[];
@@ -14,7 +18,7 @@ type Props = {
 };
 
 /** Mobile and tablet menu: full-width panel with an accordion per product group. */
-export function MobileMenu({ menuLabel, viewAllLabel, products, pages, contact }: Props) {
+export function MobileMenu({ lang, languageLabel, menuLabel, viewAllLabel, products, pages, contact }: Props) {
   // Open only on the page where it was opened, so navigating closes it.
   const pathname = usePathname();
   const [openOn, setOpenOn] = useState<string | null>(null);
@@ -86,6 +90,7 @@ export function MobileMenu({ menuLabel, viewAllLabel, products, pages, contact }
           <Link href={contact.href} onClick={close} className="btn btn-primary mt-8 w-full">
             {contact.name}
           </Link>
+          <LanguageSwitcher lang={lang} label={languageLabel} className="mt-8 justify-center text-sm tracking-[0.14em]" />
         </div>
       )}
     </div>

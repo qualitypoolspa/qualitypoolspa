@@ -8,6 +8,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { site } from "@/config/site";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import "./globals.css";
 
 // Display: an elegant, high-contrast serif. Body: a clean, modern sans. Both cover Cyrillic for Russian.
@@ -21,6 +22,11 @@ const body = Manrope({ subsets: ["latin", "cyrillic"], variable: "--font-body" }
 
 export const generateStaticParams = () => locales.map((lang) => ({ lang }));
 
+// Rebuild public pages at least hourly. Saves in /admin refresh them at once;
+// this covers a page built while the database couldn't be read (it then shows
+// the bundled catalogue) so it doesn't stay that way.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
@@ -29,7 +35,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     metadataBase: new URL(site.url),
     title: { default: dict.meta.title, template: `%s | ${dict.meta.title}` },
     description: dict.meta.description,
-    openGraph: { title: dict.meta.title, description: dict.meta.description, type: "website" },
+    // Fallback for pages without their own (see src/lib/seo.ts, which every page uses).
+    openGraph: { title: dict.meta.title, description: dict.meta.description, type: "website", images: [DEFAULT_OG_IMAGE] },
   };
 }
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site } from "@/config/site";
+import { mapsUrl, site } from "@/config/site";
 import { categories } from "@/data/categories";
 import { href, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -16,17 +16,28 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           <div className="md:col-span-7">
             <Image src="/brand/logo.png" alt={dict.meta.title} width={781} height={123} className="h-8 w-auto brightness-0 invert" />
             <p className="mt-8 max-w-xl font-serif text-4xl leading-[1.05] text-white/90 md:text-5xl">
-              <em>Wellness from the Swedish West Coast</em>, for homes by the Mediterranean.
+              <em>{dict.footer.statementEm}</em>{dict.footer.statementRest}
             </p>
           </div>
-          <div className="md:col-span-4 md:col-start-9 md:self-end">
+          <div className="md:col-span-5 md:col-start-8 md:self-end">
             <a href={`mailto:${site.email}`} className="link-line font-serif text-2xl text-white md:text-3xl">
               {site.email}
             </a>
             <p className="mt-3">
               <a href={`tel:${site.phoneTel}`} className={`${link} text-white/70`}>{site.phoneDisplay}</a>
             </p>
-            <p className="mt-1 text-sm text-white/50">{site.locations.join(" · ")}</p>
+            <div className="mt-8 grid gap-6 text-sm sm:grid-cols-2">
+              {site.offices.map((o) => (
+                <address key={o.name} className="not-italic">
+                  <p className="font-semibold text-white/85">{o.name}</p>
+                  <a href={mapsUrl(o.address)} target="_blank" rel="noopener noreferrer" className={`${link} mt-1 inline-block leading-relaxed text-white/55`}>
+                    {o.address.map((line) => (
+                      <span key={line} className="block">{line}</span>
+                    ))}
+                  </a>
+                </address>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -71,7 +82,13 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pb-16 pt-8 text-xs text-white/40 md:pr-24">
-          <p>© {new Date().getFullYear()} {site.name}. {dict.footer.rights}</p>
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} {site.name}. {dict.footer.rights}</p>
+            {/* The legal entity, as Spanish law requires on business websites (LSSI art. 10). */}
+            <p>
+              {site.company.name} · NIF {site.company.nif} · {site.company.address}
+            </p>
+          </div>
           <Link href={href(lang, "/terms")} className={link}>{dict.nav.terms}</Link>
         </div>
       </div>

@@ -1,6 +1,6 @@
 // Glass-fibre pools, imported by scripts/import-fibreglass.mjs. Supplier name intentionally
 // not shown (client's wish). English texts: fibreglass-en.json (translated from Polish).
-import type { Product } from "../products";
+import type { SupplierProduct } from "../products";
 import raw from "../imported/fibreglass.json";
 import en from "../imported/fibreglass-en.json";
 
@@ -43,7 +43,7 @@ const lengthGroup = (l = 0) => (l <= 5 ? "up-to-5m" : l <= 7 ? "5-7m" : l <= 9 ?
 
 const g = (group: string, label: string, value: string) => ({ group: { en: group }, label: { en: label }, value });
 
-export const fibreglassProducts: Product[] = (raw as Imported[])
+export const fibreglassProducts: SupplierProduct[] = (raw as Imported[])
   .map((p) => ({ ...p, ...overrides[p.slug] }))
   .filter((p) => p.name && p.length)
   .sort((a, b) => (a.length ?? 0) - (b.length ?? 0))
@@ -73,5 +73,5 @@ export const fibreglassProducts: Product[] = (raw as Imported[])
         g("Finishes", "3D metallic colours", "White, sand, blue"),
       ],
       images: p.images,
-    } satisfies Product;
+    } satisfies SupplierProduct;
   });

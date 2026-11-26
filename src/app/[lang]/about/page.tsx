@@ -4,11 +4,13 @@ import { PageHero } from "@/components/PageHero";
 import { TeamSection } from "@/components/TeamSection";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/about">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  return { title: (await getDictionary(lang)).about.title };
+  const { about } = await getDictionary(lang);
+  return pageMetadata({ lang, path: "/about", title: about.title, description: about.text1 });
 }
 
 export default async function AboutPage({ params }: PageProps<"/[lang]/about">) {

@@ -7,9 +7,11 @@ import { ProductGallery } from "@/components/ProductGallery";
 import type { Product } from "@/data/products";
 import { site } from "@/config/site";
 import { getCategory } from "@/data/categories";
-import { getProduct, products, productsIn, toCard } from "@/data/products";
+import { toCard } from "@/data/products";
 import { hasLocale, href, locales, pick, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { getCatalog } from "@/lib/catalog";
+import { pageMetadata } from "@/lib/seo";
 
 type Spec = NonNullable<Product["specs"]>[number];
 
@@ -23,25 +25,36 @@ function groupSpecs(specs: Spec[], lang: Locale): [string, Spec[]][] {
   return [...groups];
 }
 
-export const generateStaticParams = () =>
-  locales.flatMap((lang) => products.map((p) => ({ lang, category: p.category, slug: p.slug })));
+// Products added later in /admin are rendered on first visit (dynamicParams is on).
+export const generateStaticParams = async () => {
+  const { products } = await getCatalog();
+  return locales.flatMap((lang) => products.map((p) => ({ lang, category: p.category, slug: p.slug })));
+};
 
 export async function generateMetadata({
   params,
 }: PageProps<"/[lang]/products/[category]/[slug]">): Promise<Metadata> {
   const { lang, category, slug } = await params;
-  const product = getProduct(category, slug);
+  const product = (await getCatalog()).getProduct(category, slug);
   if (!hasLocale(lang) || !product) return {};
-  return { title: product.name, description: pick(product.tagline, lang) };
+  const photo = product.images?.[0];
+  return pageMetadata({
+    lang,
+    path: `/products/${product.category}/${product.slug}`,
+    title: product.name,
+    description: pick(product.tagline, lang),
+    image: photo ? { url: photo.src, width: photo.width, height: photo.height } : undefined,
+  });
 }
 
 export default async function ProductPage({ params }: PageProps<"/[lang]/products/[category]/[slug]">) {
   const { lang, category, slug } = await params;
-  const product = getProduct(category, slug);
+  const catalog = await getCatalog();
+  const product = catalog.getProduct(category, slug);
   const cat = getCategory(category);
   if (!hasLocale(lang) || !product || !cat) notFound();
   const dict = await getDictionary(lang);
-  const related = productsIn(cat.slug).filter((p) => p.slug !== product.slug).slice(0, 3);
+  const related = catalog.productsIn(cat.slug).filter((p) => p.slug !== product.slug).slice(0, 3);
   const url = `${site.url}${href(lang, `/products/${cat.slug}/${product.slug}`)}`;
 
   return (
@@ -100,7 +113,7 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
                   {rows.map((s) => (
                     <div key={pick(s.label, lang)} className="grid grid-cols-2 gap-4 py-3 text-sm">
                       <dt className="text-navy/60">{pick(s.label, lang)}</dt>
-                      <dd className="text-navy">{s.value}</dd>
+                      <dd className="text-navy">{pick(s.value, lang)}</dd>
                     </div>
                   ))}
                 </dl>

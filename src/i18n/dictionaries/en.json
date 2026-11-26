@@ -20,7 +20,8 @@
     "campaigns": "Campaigns",
     "terms": "Terms of purchase",
     "contactUs": "Contact us",
-    "viewAll": "View all"
+    "viewAll": "View all",
+    "language": "Language"
   },
   "hero": {
     "eyebrow": "Pools, spas and wellness · Costa del Sol & Mallorca",
@@ -190,7 +191,9 @@
     "consultationBody": "Hello, I would like to book a private consultation about a project. Preferred location and timing:",
     "consultationWhatsapp": "Hello! I would like to book a private consultation about a project.",
     "campaignSubject": "Enquiry about the campaign",
-    "campaignWhatsapp": "Hello! I would like to know more about the campaign:"
+    "campaignWhatsapp": "Hello! I would like to know more about the campaign:",
+    "offices": "Our offices",
+    "directions": "Get directions"
   },
   "about": {
     "title": "About us",
@@ -215,7 +218,9 @@
     "contact": "Contact",
     "rights": "All rights reserved.",
     "guides": "Guides",
-    "locations": "Where we work"
+    "locations": "Where we work",
+    "statementEm": "Wellness from the Swedish West Coast",
+    "statementRest": ", for homes by the Mediterranean."
   },
   "notFound": {
     "title": "Page not found",
@@ -264,7 +269,7 @@
   },
   "guides": {
     "title": "Guides",
-    "intro": "Straightforward advice to help you choose well. Draft content, to be reviewed with the client.",
+    "intro": "Straightforward advice to help you choose well.",
     "read": "Read the guide",
     "seeProducts": "See the products",
     "ctaTitle": "Not sure what suits your home?",

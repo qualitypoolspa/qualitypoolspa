@@ -1,17 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HeaderFrame } from "./HeaderFrame";
+import { LanguageMenu } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { NavDropdown } from "./NavDropdown";
 import { productNav } from "@/data/menu";
 import { href, type Locale } from "@/i18n/config";
+import { getCatalog } from "@/lib/catalog";
 import type { Dictionary } from "@/i18n/dictionaries";
 
-export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
-  const products = productNav(lang, dict);
+export async function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
+  const products = productNav(lang, dict, await getCatalog());
   const pages = [
     { href: href(lang, "/campaigns"), name: dict.nav.campaigns },
-    { href: href(lang, "/terms"), name: dict.nav.terms },
   ];
   const contact = { href: href(lang, "/contact"), name: dict.nav.contactUs };
 
@@ -53,6 +54,7 @@ export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               {l.name}
             </Link>
           ))}
+          <LanguageMenu lang={lang} label={dict.nav.language} />
           <Link
             href={contact.href}
             className="border border-current px-5 py-2.5 transition-colors duration-300 hover:bg-navy hover:text-paper group-data-[overlay=true]/header:hover:bg-white group-data-[overlay=true]/header:hover:text-navy"
@@ -61,7 +63,7 @@ export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           </Link>
         </nav>
 
-        <MobileMenu menuLabel={dict.nav.menu} viewAllLabel={dict.nav.viewAll} products={products} pages={pages} contact={contact} />
+        <MobileMenu lang={lang} languageLabel={dict.nav.language} menuLabel={dict.nav.menu} viewAllLabel={dict.nav.viewAll} products={products} pages={pages} contact={contact} />
       </div>
     </HeaderFrame>
   );

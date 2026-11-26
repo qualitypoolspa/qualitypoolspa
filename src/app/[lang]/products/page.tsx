@@ -6,11 +6,13 @@ import { CategoryTiles } from "@/components/CategoryGrid";
 import { categories, menuGroups } from "@/data/categories";
 import { hasLocale, href } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/products">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  return { title: (await getDictionary(lang)).products.title };
+  const { products } = await getDictionary(lang);
+  return pageMetadata({ lang, path: "/products", title: products.title, description: products.intro });
 }
 
 export default async function ProductsPage({ params }: PageProps<"/[lang]/products">) {

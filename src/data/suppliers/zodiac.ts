@@ -1,7 +1,7 @@
 // Zodiac (Fluidra) heat pumps. Specs: Fluidra Katalog 2023, pages 166–177 (translated from Swedish).
 // Photos: Zodiac's official product pages (dam.fluidra.com). Performance figures are per model
 // range, measured at air 28 °C / water 28 °C / 80 % humidity unless stated otherwise.
-import type { Product, ProductImage } from "../products";
+import type { SupplierProduct, ProductImage } from "../products";
 
 const photos = (slug: string, list: [number, number, boolean?][]): ProductImage[] =>
   list.map(([width, height, contain = true], i) => ({
@@ -16,7 +16,7 @@ const g = (group: string, label: string, value: string) => ({ group: { en: group
 const modes =
   "Full inverter with three modes: Boost (maximum power for fast heating), Smart (adjusts automatically) and Ecosilence (lowest energy use and noise)";
 
-export const zodiacProducts: Product[] = [
+export const zodiacProducts: SupplierProduct[] = [
   {
     slug: "z550iq",
     category: "heat-pumps",

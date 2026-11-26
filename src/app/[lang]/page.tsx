@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -9,18 +10,28 @@ import { Rail } from "@/components/Rail";
 import { site } from "@/config/site";
 import type { CategorySlug } from "@/data/categories";
 import { brands, heroSlides } from "@/data/home";
-import { featuredProducts, toCard } from "@/data/products";
+import { toCard } from "@/data/products";
 import { hasLocale, href, pick } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { getCatalog } from "@/lib/catalog";
+import { businessJsonLd, jsonLdHtml, pageMetadata } from "@/lib/seo";
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
+
+export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  // "Quality Pool & Spa | Pools, spas and wellness · Costa del Sol & Mallorca"
+  return pageMetadata({ lang, path: "", title: `${dict.meta.title} | ${dict.hero.eyebrow}`, absoluteTitle: true, description: dict.meta.description });
+}
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
   const h = dict.home;
-  const featured = featuredProducts(6);
+  const featured = (await getCatalog()).featuredProducts(6);
   const slides = heroSlides.map((s) => ({
     image: s.image,
     href: href(lang, `/products/${s.product.category}/${s.product.slug}`),
@@ -32,6 +43,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
+      {/* The business, for search engines (src/lib/seo.ts). */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(businessJsonLd(lang, dict.meta.description)) }} />
       {/* ---------- Hero ---------- */}
       <HeroSlideshow slides={slides}>
         <div className="mx-auto flex w-full max-w-[90rem] flex-1 flex-col justify-end px-5 pb-14 pt-48 md:px-8 md:pb-20">
