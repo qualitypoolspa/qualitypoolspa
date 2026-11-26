@@ -31,6 +31,7 @@ const CACHE = path.join(ROOT, ".cache/harvia");
 const IMG_DIR = path.join(ROOT, "public/products/harvia");
 const OUT = path.join(ROOT, "src/data/imported/harvia.json");
 const DELAY = 4000;
+const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 const MAX_IMAGES = 8;
 // Harvia's PIM asset store (the id is their catalogue, the same for every asset).
 const PIM = "https://pim.harvia.com/rockon-images/CIP";
@@ -117,8 +118,13 @@ async function page(url, code) {
     const { chromium } = await import("playwright").catch(() => createRequire(import.meta.url)("playwright"));
     browser = await chromium.launch();
   }
-  const tab = await browser.newPage();
-  await tab.goto(url, { waitUntil: "networkidle", timeout: 90_000 });
+  // A normal desktop user agent: the site's browser check turns away "HeadlessChrome".
+  // (Used with the permission of the client, an authorised Harvia dealer.)
+  const tab = await browser.newPage({ userAgent: UA });
+  await tab.goto(url, { waitUntil: "domcontentloaded", timeout: 90_000 });
+  // The check page reloads itself into the product page once it has passed.
+  await tab.waitForFunction(() => document.documentElement.innerHTML.includes("self.__next_f"), null, { timeout: 60_000 }).catch(() => {});
+  await tab.waitForLoadState("networkidle", { timeout: 30_000 }).catch(() => {});
   const html = await tab.content();
   await tab.close();
   if (!html.includes("self.__next_f")) throw new Error(`no product data on ${url} (browser check not passed?)`);
