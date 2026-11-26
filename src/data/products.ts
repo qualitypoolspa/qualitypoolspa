@@ -4,6 +4,7 @@ import { aquaviaProducts } from "./suppliers/aquavia";
 import { astralpoolProducts } from "./suppliers/astralpool";
 import { fibreglassProducts } from "./suppliers/fibreglass";
 import { fluidraRangeProducts } from "./suppliers/fluidra-range";
+import { harviaProducts } from "./suppliers/harvia";
 import { zodiacProducts } from "./suppliers/zodiac";
 
 export type ProductImage = {
@@ -27,6 +28,8 @@ export type Product = {
   brand?: string;
   tagline: Localized;
   description: Localized;
+  /** Key features, shown as a bullet list under the description. */
+  highlights?: Localized[];
   specs?: { group?: Localized; label: Localized; value: string }[];
   /** Photos under /public. Empty = placeholder art. */
   images?: ProductImage[];
@@ -37,7 +40,6 @@ export type Product = {
 };
 
 // Hand-written products. Supplier imports are merged in below.
-// TODO(client): saunas (Harvia) are added once the dealer material arrives.
 const manualProducts: Product[] = [
 ];
 
@@ -53,6 +55,7 @@ const all = [
   ...fluidraRangeProducts,
   ...aquaviaProducts,
   ...fibreglassProducts,
+  ...harviaProducts,
 ];
 
 export const products: Product[] = all.map((p) => ({ ...p, featured: featuredSlugs.includes(p.slug) }));

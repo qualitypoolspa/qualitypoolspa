@@ -80,7 +80,18 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
           {pick(product.description, lang) !== pick(product.tagline, lang) && (
             <>
               <h2 className="eyebrow mt-8">{dict.products.description}</h2>
-              <p className="mt-3 leading-relaxed text-navy/75">{pick(product.description, lang)}</p>
+              <p className="mt-3 whitespace-pre-line leading-relaxed text-navy/75">{pick(product.description, lang)}</p>
+            </>
+          )}
+
+          {product.highlights && product.highlights.length > 0 && (
+            <>
+              <h2 className="eyebrow mt-8">{dict.products.highlights}</h2>
+              <ul className="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed text-navy/75 marker:text-brass">
+                {product.highlights.map((h) => (
+                  <li key={pick(h, lang)}>{pick(h, lang)}</li>
+                ))}
+              </ul>
             </>
           )}
 

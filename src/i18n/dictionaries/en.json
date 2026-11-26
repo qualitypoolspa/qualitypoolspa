@@ -149,7 +149,12 @@
     "up-to-5m": "Up to 5 m",
     "5-7m": "5 to 7 m",
     "7-9m": "7 to 9 m",
-    "over-9m": "Over 9 m"
+    "over-9m": "Over 9 m",
+    "sauna-alaska": "Alaska",
+    "sauna-komfort": "Komfort",
+    "sauna-panorama": "Panorama",
+    "sauna-family": "Family",
+    "sauna-himalaya": "Himalaya Infra+"
   },
   "products": {
     "title": "Products",
@@ -159,6 +164,7 @@
     "backToProducts": "All products",
     "specs": "Specifications",
     "description": "Description",
+    "highlights": "Highlights",
     "downloads": "Downloads",
     "askAbout": "Ask about this product",
     "sample": "Sample product",
