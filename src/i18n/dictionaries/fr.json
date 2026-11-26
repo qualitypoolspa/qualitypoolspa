@@ -219,6 +219,7 @@
       "title": "Découvrez l’équipe",
       "intro": "Les personnes qui vous accompagnent de la première idée jusqu’à l’installation finale.",
       "roles": {
+        "generalManager": "Directrice générale",
         "storeManager": "Responsable des ventes en magasin",
         "sales": "Ventes",
         "technician": "Technicien"

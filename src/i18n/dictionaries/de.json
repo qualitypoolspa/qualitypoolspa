@@ -219,6 +219,7 @@
       "title": "Lernen Sie das Team kennen",
       "intro": "Die Menschen, die Sie von der ersten Idee bis zur fertigen Installation begleiten.",
       "roles": {
+        "generalManager": "Geschäftsführerin",
         "storeManager": "Verkaufsleiterin Showroom",
         "sales": "Verkauf",
         "technician": "Techniker"
