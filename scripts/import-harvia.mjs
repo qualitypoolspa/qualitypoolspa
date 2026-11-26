@@ -22,6 +22,7 @@
  * Only use with Harvia's permission to reuse their content (e.g. as an authorised dealer).
  */
 import fs from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -48,6 +49,46 @@ const PRODUCTS = [
   "https://www.harvia.com/en/products/FAMILY-L/family-large",
   "https://www.harvia.com/en/products/HIMALAYA-S-IR+/himalaya-small-infra+",
   "https://www.harvia.com/en/products/HIMALAYA-C-IR+/himalaya-corner-infra+",
+  "https://www.harvia.com/en/products/S1212/sauna-cabin-variant-1150x1150",
+  "https://www.harvia.com/en/products/S1212SV/sauna-cabin-variant-view-s1212sv",
+  "https://www.harvia.com/en/products/S1515/sauna-cabin-variant-1505x1505",
+  "https://www.harvia.com/en/products/S1515L/sauna-cabin-variant-1505x1505-left",
+  "https://www.harvia.com/en/products/S1515R/sauna-cabin-variant-1505x1505-right",
+  "https://www.harvia.com/en/products/S1616CV/sauna-cabin-variant-view-s1616cv",
+  "https://www.harvia.com/en/products/S1616SV/sauna-cabin-variant-view-s1616sv",
+  "https://www.harvia.com/en/products/S1620SV/sauna-cabin-variant-view-s1620sv",
+  "https://www.harvia.com/en/products/S2015/sauna-cabin-variant-1945x1505",
+  "https://www.harvia.com/en/products/S2015L/sauna-cabin-variant-1945x1505-left",
+  "https://www.harvia.com/en/products/S2015R/sauna-cabin-variant-1945x1505-right",
+  "https://www.harvia.com/en/products/S2020/sauna-cabin-variant-1945x1945",
+  "https://www.harvia.com/en/products/S2020CV/sauna-cabin-variant-view-s2020cv",
+  "https://www.harvia.com/en/products/S2020L/variant",
+  "https://www.harvia.com/en/products/S2020R/sauna-cabin-variant-1945x1945-right",
+  "https://www.harvia.com/en/products/S2020SV/sauna-cabin-variant-view-s2020sv",
+  "https://www.harvia.com/en/products/S2520/sauna-cabin-variant-2380x1945",
+  "https://www.harvia.com/en/products/S2520L/sauna-cabin-variant-2380x1945-left",
+  "https://www.harvia.com/en/products/S2520R/sauna-cabin-variant-2380x1945-right",
+  "https://www.harvia.com/en/products/SHB1620ALD/block-right-medium",
+  "https://www.harvia.com/en/products/SHB2020ALD/block-right-large",
+  "https://www.harvia.com/en/products/SHF1620S/sauna-cabin-fenix-1620s",
+  "https://www.harvia.com/en/products/SHF2020S/sauna-cabin-fenix-2020s",
+  "https://www.harvia.com/en/products/SHU0909/utu-mini",
+  "https://www.harvia.com/en/products/SHU1212/utu-small",
+  "https://www.harvia.com/en/products/SHU1616/utu-medium",
+  "https://www.harvia.com/en/products/SHV2020/ventura-large",
+  "https://www.harvia.com/en/products/SHU1616V/utu-vision-medium",
+  "https://www.harvia.com/en/products/URB1616FG/urban-black-medium",
+  "https://www.harvia.com/en/products/URW1212FG/urban-white-small",
+  "https://www.harvia.com/en/products/URW1616FG/urban-white-medium",
+  "https://www.harvia.com/en/products/FAMILY-L-S/family-large-set-fin",
+  "https://www.harvia.com/en/products/KOMFORT-C-L/komfort-corner-large",
+  "https://www.harvia.com/en/products/POLARIS-L/polaris-large",
+  "https://www.harvia.com/en/products/FAMILY-S-S/family-small-set-fin",
+  "https://www.harvia.com/en/products/URB1212FG/urban-black-small",
+  "https://www.harvia.com/en/products/PANORAMA-MN/panorama-mini",
+  "https://www.harvia.com/en/products/OLYMPUS-L/olympus-large",
+  "https://www.harvia.com/en/products/FAMILY-M-S/family-medium-set-fin",
+  "https://www.harvia.com/en/products/KOMFORT-S/komfort-small",
 ];
 
 const args = process.argv.slice(2);
@@ -72,7 +113,8 @@ async function page(url, code) {
   } catch {}
   if (offline) throw new Error(`not cached: ${url}`);
   if (!browser) {
-    const { chromium } = await import("playwright");
+    // import() ignores NODE_PATH, so fall back to require() for a globally installed Playwright.
+    const { chromium } = await import("playwright").catch(() => createRequire(import.meta.url)("playwright"));
     browser = await chromium.launch();
   }
   const tab = await browser.newPage();
