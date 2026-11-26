@@ -241,7 +241,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <div>
               <dt className="eyebrow">{dict.contact.phone}</dt>
               <dd className="mt-2">
-                <a href={`tel:+${site.whatsapp}`} className="link-line text-navy">{site.phoneDisplay}</a>
+                <a href={`tel:${site.phoneTel}`} className="link-line text-navy">{site.phoneDisplay}</a>
               </dd>
             </div>
             <div>

@@ -199,7 +199,18 @@
     "title": "À propos",
     "text1": "Quality Pool & Spa donne vie à des piscines, spas, saunas et produits de bien-être sur la Costa del Sol et à Majorque, avec des racines sur la côte ouest de la Suède.",
     "text2": "Nous sélectionnons des produits auprès de fournisseurs européens de confiance et vous accompagnons de la première idée à l’installation, en passant par la planification et la livraison.",
-    "text3": "Notre objectif est simple : des produits de qualité, des conseils honnêtes et un résultat dont vous profiterez pendant de nombreuses années."
+    "text3": "Notre objectif est simple : des produits de qualité, des conseils honnêtes et un résultat dont vous profiterez pendant de nombreuses années.",
+    "team": {
+      "eyebrow": "Notre équipe",
+      "title": "Découvrez l’équipe",
+      "intro": "Les personnes qui vous accompagnent de la première idée jusqu’à l’installation finale.",
+      "roles": {
+        "storeManager": "Responsable des ventes en magasin",
+        "sales": "Ventes",
+        "technician": "Technicien"
+      },
+      "call": "Appeler"
+    }
   },
   "footer": {
     "blurb": "Piscines, spas, saunas et produits de bien-être avec conseils personnalisés et installation locale.",

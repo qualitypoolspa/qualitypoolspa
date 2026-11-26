@@ -199,7 +199,18 @@
     "title": "Über uns",
     "text1": "Quality Pool & Spa bringt Pools, Whirlpools, Saunen und Wellnessprodukte an die Costa del Sol und nach Mallorca, mit Wurzeln an der schwedischen Westküste.",
     "text2": "Wir wählen Produkte von bewährten europäischen Lieferanten aus und begleiten Sie von der ersten Idee über Planung und Lieferung bis zur Installation.",
-    "text3": "Unser Ziel ist einfach: Qualitätsprodukte, ehrliche Beratung und ein Ergebnis, an dem Sie viele Jahre Freude haben."
+    "text3": "Unser Ziel ist einfach: Qualitätsprodukte, ehrliche Beratung und ein Ergebnis, an dem Sie viele Jahre Freude haben.",
+    "team": {
+      "eyebrow": "Unser Team",
+      "title": "Lernen Sie das Team kennen",
+      "intro": "Die Menschen, die Sie von der ersten Idee bis zur fertigen Installation begleiten.",
+      "roles": {
+        "storeManager": "Verkaufsleiterin Showroom",
+        "sales": "Verkauf",
+        "technician": "Techniker"
+      },
+      "call": "Anrufen:"
+    }
   },
   "footer": {
     "blurb": "Pools, Whirlpools, Saunen und Wellnessprodukte mit persönlicher Beratung und Installation vor Ort.",

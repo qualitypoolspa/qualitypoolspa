@@ -199,7 +199,18 @@
     "title": "Om oss",
     "text1": "Quality Pool & Spa förverkligar pooler, spabad, bastur och wellnessprodukter på Costa del Sol och Mallorca, med rötterna på svenska västkusten.",
     "text2": "Vi väljer produkter från europeiska leverantörer vi litar på, och vi hjälper dig från första idén via planering och leverans till installation.",
-    "text3": "Vårt mål är enkelt: kvalitetsprodukter, ärliga råd och ett resultat du får glädje av i många år."
+    "text3": "Vårt mål är enkelt: kvalitetsprodukter, ärliga råd och ett resultat du får glädje av i många år.",
+    "team": {
+      "eyebrow": "Våra medarbetare",
+      "title": "Möt teamet",
+      "intro": "Personerna som hjälper dig från första idé till färdig installation.",
+      "roles": {
+        "storeManager": "Butiksförsäljningschef",
+        "sales": "Säljare",
+        "technician": "Tekniker"
+      },
+      "call": "Ring"
+    }
   },
   "footer": {
     "blurb": "Pooler, spabad, bastur och wellnessprodukter med personlig rådgivning och lokal installation.",

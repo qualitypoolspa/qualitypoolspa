@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
+import { TeamSection } from "@/components/TeamSection";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/seo";
@@ -29,6 +30,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
           <p>{about.text3}</p>
         </div>
       </section>
+      <TeamSection dict={about.team} />
     </>
   );
 }
