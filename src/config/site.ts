@@ -1,5 +1,14 @@
 // Central place for business details. Override with env vars (see .env.example).
 // TODO(client): confirm email, WhatsApp number, phone and locations.
+/** Spanish numbers given as bare digits get the usual "+34 951 17 38 06" spacing. */
+function formatPhone(raw: string) {
+  const digits = raw.replace(/\D/g, "");
+  if (/^\s*\+?\d+\s*$/.test(raw) && /^34\d{9}$/.test(digits)) {
+    return `+34 ${digits.slice(2, 5)} ${digits.slice(5, 7)} ${digits.slice(7, 9)} ${digits.slice(9)}`;
+  }
+  return raw.trim();
+}
+
 export const site = {
   name: "Quality Pool & Spa",
   /** The legal entity behind the site: shown in the footer and the terms (required by LSSI art. 10). */
@@ -12,11 +21,12 @@ export const site = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@qualitypoolspa.es",
   // Business WhatsApp number (mobile): digits only, international format, no "+".
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? "34648126377",
-  whatsappDisplay: process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY ?? "+34 648 12 63 77",
+  whatsappDisplay: formatPhone(process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY ?? process.env.NEXT_PUBLIC_WHATSAPP ?? "34648126377"),
   // Main office line / switchboard, used for "Call us" (tel:) links.
-  phoneDisplay: process.env.NEXT_PUBLIC_PHONE ?? "+34 951 17 38 06",
+  // Accepts "+34 951 17 38 06" or plain digits like "34951173806".
+  phoneDisplay: formatPhone(process.env.NEXT_PUBLIC_PHONE ?? "+34 951 17 38 06"),
   get phoneTel() {
-    return this.phoneDisplay.replace(/[^\d+]/g, "");
+    return "+" + this.phoneDisplay.replace(/\D/g, "");
   },
   locations: ["Marbella", "Costa del Sol", "Mallorca"],
   /** Offices, shown on the contact page and in the footer. Names and addresses aren't translated. */
