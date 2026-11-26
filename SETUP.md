@@ -28,10 +28,10 @@ Supabase dashboard → **SQL Editor → New query**. Paste in and run each file,
    columns for product texts.
 3. `supabase/migrations/0003_more_languages.sql`: the German, French and
    Russian columns.
-4. `supabase/seed.sql`: the current catalogue, all 173 products with their
-   texts, specs and photos, in all six languages.
+4. `supabase/seed.sql`: the current catalogue, all 225 products with their
+   texts, specs and photos, in all six languages (the Harvia saunas included).
 
-Under **Table Editor** you should now see `products` with 173 rows.
+Under **Table Editor** you should now see `products` with 225 rows.
 
 The migrations are safe to re-run. `seed.sql` is **not**: it stops with an
 error if the table already has products, so pasting it a second time can't
@@ -46,6 +46,12 @@ English until the client writes the translations in `/admin`), and nothing
 already translated is overwritten. Until each is run, the site works but shows
 product texts in English on those languages' pages, and the admin panel
 names the file still to run.
+
+**Already set up before the Harvia saunas arrived?** Run
+`supabase/migrations/0004_harvia_saunas.sql` (after 0003). It adds the 52
+Harvia sauna cabins to the Saunas category, after any saunas already there.
+Safe to re-run: saunas already in the table are skipped, so nothing edited in
+`/admin` changes.
 
 Supabase may warn that the query "creates tables without enabling Row Level
 Security". That's a false alarm: the file turns RLS on itself. Choose **Run

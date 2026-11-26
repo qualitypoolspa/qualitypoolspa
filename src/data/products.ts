@@ -5,6 +5,7 @@ import { aquaviaProducts } from "./suppliers/aquavia";
 import { astralpoolProducts } from "./suppliers/astralpool";
 import { fibreglassProducts } from "./suppliers/fibreglass";
 import { fluidraRangeProducts } from "./suppliers/fluidra-range";
+import { harviaProducts } from "./suppliers/harvia";
 import { zodiacProducts } from "./suppliers/zodiac";
 
 export type ProductImage = {
@@ -57,7 +58,6 @@ export type SupplierProduct = Omit<Product, "specs"> & {
 //   2. the fallback the site shows when Supabase isn't set up or can't be reached.
 // Edits made here do NOT reach the live site once the database is in use:
 // make them in /admin instead.
-// TODO(client): saunas (Harvia) are added once the dealer material arrives.
 const manualProducts: SupplierProduct[] = [
 ];
 
@@ -73,6 +73,7 @@ export const bundledProducts: Product[] = [
   ...fluidraRangeProducts,
   ...aquaviaProducts,
   ...fibreglassProducts,
+  ...harviaProducts,
 ].map((p) => ({
   ...translateProduct(p),
   featured: featuredSlugs.includes(p.slug),
