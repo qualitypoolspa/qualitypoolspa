@@ -1,0 +1,424 @@
+{
+  "meta": {
+    "title": "Quality Pool & Spa",
+    "description": "Pools, Whirlpools, Saunen und Wellnessprodukte mit persönlicher Beratung und Installation vor Ort an der Costa del Sol und auf Mallorca."
+  },
+  "nav": {
+    "products": "Produkte",
+    "gallery": "Galerie",
+    "services": "Leistungen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "getQuote": "Angebot anfordern",
+    "menu": "Menü",
+    "allProducts": "Alle Produkte",
+    "pool": "Pool",
+    "spas": "Whirlpools",
+    "poolCovers": "Abdeckungen",
+    "poolAccessories": "Zubehör",
+    "sauna": "Sauna",
+    "campaigns": "Angebote",
+    "terms": "Kaufbedingungen",
+    "contactUs": "Kontakt",
+    "viewAll": "Alle ansehen",
+    "language": "Sprache"
+  },
+  "hero": {
+    "eyebrow": "Pools, Whirlpools und Wellness · Costa del Sol & Mallorca",
+    "line1": "Skandinavische Qualität",
+    "line2": "für das Leben am Mittelmeer.",
+    "body": "Wir wählen aus, liefern und installieren Pools, Whirlpools, Abdeckungen und Saunen für Häuser in Marbella, an der gesamten Costa del Sol und auf Mallorca.",
+    "ctaProducts": "Kollektion entdecken",
+    "ctaBuilder": "Ihren eigenen Pool gestalten"
+  },
+  "trust": {
+    "one": {
+      "title": "Beratung von Anfang bis Ende",
+      "text": "Wir helfen Ihnen, die richtige Lösung zu finden."
+    },
+    "two": {
+      "title": "Für Costa del Sol & Mallorca",
+      "text": "Vor Ort präsent, mit persönlichem Service."
+    },
+    "three": {
+      "title": "Qualitätsprodukte aus Europa",
+      "text": "Pools, Whirlpools und Wellness von bewährten Lieferanten."
+    }
+  },
+  "home": {
+    "brandsLabel": "Marken, die wir liefern",
+    "introTitle": "Ein Team, von der ersten Idee bis zum ersten Bad.",
+    "introText": "Erzählen Sie uns, wie Sie mit Ihrem Pool oder Whirlpool leben möchten. Wir empfehlen, was zu Ihrem Zuhause passt, kümmern uns mit lokalen Partnern um Lieferung und Installation und sind auch danach für Sie da.",
+    "introLink": "So arbeiten wir",
+    "collectionEyebrow": "Die Kollektion",
+    "collectionTitle": "Alles für das Leben am Wasser",
+    "models": "{n} Modelle",
+    "explore": "Entdecken",
+    "moreTitle": "Außerdem in unserem Sortiment",
+    "selectedEyebrow": "Ausgewählt",
+    "selectedTitle": "Modelle, die wir empfehlen",
+    "viewAll": "Alle Produkte ansehen",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "storyEyebrow": "Unsere Geschichte",
+    "storyTitle": "Von der schwedischen Westküste ans Mittelmeer",
+    "storyText": "Unsere Wurzeln liegen an der schwedischen Westküste, wo Qualität und langlebige Materialien selbstverständlich sind. Dieselbe Sorgfalt bringen wir in Häuser an der Costa del Sol und auf Mallorca: ehrliche Beratung, sorgfältig ausgewählte Produkte und eine fachgerechte Installation.",
+    "steps": [
+      "Beratung und Hausbesuch",
+      "Lieferung bis vor die Tür",
+      "Professionelle Installation",
+      "Nachbetreuung und Service"
+    ],
+    "builderEyebrow": "Thermopool",
+    "builderTitle": "Gestalten Sie Ihren eigenen Pool",
+    "builderText": "Wählen Sie Größe, Tiefe, Treppe, Farbe und Extras. Senden Sie uns Ihren Entwurf, und wir melden uns mit Beratung und einem persönlichen Angebot.",
+    "builderCta": "Jetzt gestalten",
+    "ctaTitle": "Sprechen wir über Ihr Projekt",
+    "ctaText": "Schreiben Sie uns oder rufen Sie an. Wir antworten in der Regel innerhalb eines Werktags.",
+    "areas": "Wir sind tätig in"
+  },
+  "categories": {
+    "pool-covers": {
+      "name": "Poolabdeckungen",
+      "blurb": "Automatische Lamellenabdeckungen und Solarplanen, die Ihren Pool sauber, warm und sicher halten."
+    },
+    "spas": {
+      "name": "Whirlpools",
+      "blurb": "Whirlpools und Swim-Spas für Entspannung, Training und Zeit mit der Familie."
+    },
+    "saunas-hammam": {
+      "name": "Saunen",
+      "blurb": "Innensaunen für tägliches Wohlbefinden zu Hause."
+    },
+    "ep-pools": {
+      "name": "EP-Pools",
+      "blurb": "Leichte, isolierte Pools für Terrassen und Gärten."
+    },
+    "fibreglass-pools": {
+      "name": "GFK-Pools",
+      "blurb": "Fertige Glasfaserpools in vielen Formen und Größen, schnell installiert."
+    },
+    "thermopool": {
+      "name": "Thermopool",
+      "blurb": "Gestalten Sie Ihren eigenen isolierten Pool in vier Größen und senden Sie uns Ihre Anfrage."
+    },
+    "heat-pumps": {
+      "name": "Wärmepumpen",
+      "blurb": "Leise, effiziente Wärmepumpen, die Ihre Badesaison verlängern, von kompakten Invertergeräten bis zu Anlagen für große Pools."
+    },
+    "pool-robots": {
+      "name": "Poolroboter",
+      "blurb": "Reinigungsroboter, die Boden, Wände und Wasserlinie makellos sauber halten, bei den Spitzenmodellen mit App-Steuerung."
+    },
+    "lighting": {
+      "name": "Poolbeleuchtung",
+      "blurb": "LED-Leuchten für Pools und Whirlpools, in Weiß, Warmweiß oder Farbe, für Stimmung nach Einbruch der Dunkelheit."
+    },
+    "pool-accessories": {
+      "name": "Leitern & Duschen",
+      "blurb": "Edelstahlleitern, Handläufe und Solarduschen, die Ihren Pool stilvoll vervollständigen."
+    },
+    "pool-renovation-liners": {
+      "name": "Folien & Renovierung",
+      "blurb": "Maßgefertigte Poolfolien und Renovierung, die einem bestehenden Pool neues Leben geben."
+    }
+  },
+  "collections": {
+    "selection": "Unsere Auswahl",
+    "exclusive-line": "Exclusive Line",
+    "premium-line": "Premium Line",
+    "aurora-line": "Aurora Line",
+    "aqualife-line": "Aqualife Line",
+    "city-line": "City Line",
+    "built-in-line": "Built-in Line",
+    "cold-plunge": "Cold Plunge",
+    "swim-spas": "Swim-Spas",
+    "infinity-line": "Infinity Line",
+    "steel-line": "Steel Line",
+    "mosaic-line": "Mosaic Line",
+    "hot-tubs": "Weitere Whirlpools",
+    "professional-spas": "Profi-Whirlpools",
+    "accessories": "Whirlpool-Zubehör",
+    "slatted-covers": "Lamellenabdeckungen",
+    "solar-covers": "Solarplanen",
+    "inverter-heat-pumps": "Inverter-Wärmepumpen",
+    "on-off-heat-pumps": "Klassische Wärmepumpen",
+    "large-pool-heat-pumps": "Für große Pools",
+    "ladders": "Leitern & Handläufe",
+    "showers": "Solarduschen",
+    "liners": "Poolfolien",
+    "up-to-5m": "Bis 5 m",
+    "5-7m": "5 bis 7 m",
+    "7-9m": "7 bis 9 m",
+    "over-9m": "Über 9 m",
+    "sauna-alaska": "Alaska",
+    "sauna-komfort": "Komfort",
+    "sauna-polaris": "Polaris",
+    "sauna-olympus": "Olympus",
+    "sauna-panorama": "Panorama",
+    "sauna-family": "Family",
+    "sauna-fenix": "Fenix",
+    "sauna-utu": "Utu",
+    "sauna-urban": "Urban",
+    "sauna-block": "Block",
+    "sauna-ventura": "Ventura",
+    "sauna-variant": "Variant",
+    "sauna-variant-view": "Variant View",
+    "sauna-himalaya": "Himalaya Infra+"
+  },
+  "products": {
+    "title": "Produkte",
+    "intro": "Entdecken Sie unser Sortiment. Zu jedem Produkt beraten wir Sie gern und erstellen Ihnen ein persönliches Angebot.",
+    "inCategory": "Produkte in dieser Kategorie",
+    "empty": "Wir ergänzen gerade Produkte in dieser Kategorie. Kontaktieren Sie uns, wir helfen Ihnen gern sofort weiter.",
+    "backToProducts": "Alle Produkte",
+    "specs": "Technische Daten",
+    "description": "Beschreibung",
+    "downloads": "Downloads",
+    "askAbout": "Fragen zu diesem Produkt",
+    "sample": "Beispielprodukt",
+    "related": "Mehr aus dieser Kategorie",
+    "selectionIntro": "Von unserem Team ausgewählt: die Modelle, die wir am häufigsten empfehlen.",
+    "bySize": "Nach Größe",
+    "collectionsTitle": "Kollektionen",
+    "allSizes": "Alle Größen",
+    "forPeople": "Für {n} Personen",
+    "forPeopleShort": "{n} Personen",
+    "allSpas": "Alle Whirlpools",
+    "showing": "{count} Whirlpools für {n} Personen"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "intro": "Erzählen Sie uns von Ihrem Projekt. Wir antworten in der Regel innerhalb eines Werktags.",
+    "email": "E-Mail schreiben",
+    "whatsapp": "Per WhatsApp chatten",
+    "phone": "Anrufen",
+    "areas": "Wir sind tätig in",
+    "emailSubject": "Anfrage über die Website",
+    "emailBody": "Hallo, ich möchte gern mehr über Ihre Produkte erfahren.",
+    "whatsappText": "Hallo! Ich möchte gern mehr über Ihre Produkte erfahren.",
+    "productSubject": "Anfrage zu",
+    "productBody": "Hallo, ich interessiere mich für das folgende Produkt und hätte gern weitere Informationen:",
+    "productWhatsapp": "Hallo! Ich interessiere mich für",
+    "consultation": "Private Beratung vereinbaren",
+    "consultationSubject": "Anfrage für eine private Beratung",
+    "consultationBody": "Hallo, ich möchte eine private Beratung zu einem Projekt vereinbaren. Gewünschter Ort und Zeitpunkt:",
+    "consultationWhatsapp": "Hallo! Ich möchte eine private Beratung zu einem Projekt vereinbaren.",
+    "campaignSubject": "Anfrage zum Angebot",
+    "campaignWhatsapp": "Hallo! Ich möchte gern mehr über dieses Angebot erfahren:",
+    "offices": "Unsere Büros",
+    "directions": "Route planen"
+  },
+  "about": {
+    "title": "Über uns",
+    "text1": "Quality Pool & Spa bringt Pools, Whirlpools, Saunen und Wellnessprodukte an die Costa del Sol und nach Mallorca, mit Wurzeln an der schwedischen Westküste.",
+    "text2": "Wir wählen Produkte von bewährten europäischen Lieferanten aus und begleiten Sie von der ersten Idee über Planung und Lieferung bis zur Installation.",
+    "text3": "Unser Ziel ist einfach: Qualitätsprodukte, ehrliche Beratung und ein Ergebnis, an dem Sie viele Jahre Freude haben."
+  },
+  "footer": {
+    "blurb": "Pools, Whirlpools, Saunen und Wellnessprodukte mit persönlicher Beratung und Installation vor Ort.",
+    "explore": "Entdecken",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten.",
+    "guides": "Ratgeber",
+    "locations": "Wo wir tätig sind",
+    "statementEm": "Wellness von der schwedischen Westküste",
+    "statementRest": ", für Häuser am Mittelmeer."
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "text": "Die gesuchte Seite existiert nicht.",
+    "back": "Zur Startseite"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "intro": "Ein Einblick in Pools, Whirlpools, Saunen und Abdeckungen, die wir geliefert und installiert haben.",
+    "all": "Alle",
+    "close": "Schließen",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "sample": "Beispielbild",
+    "ctaTitle": "Möchten Sie etwas Ähnliches?",
+    "ctaText": "Erzählen Sie uns von Ihrem Projekt, und wir helfen Ihnen, die richtige Lösung zu finden."
+  },
+  "services": {
+    "title": "Leistungen",
+    "intro": "Vom ersten Gespräch bis zum ersten Bad kümmern wir uns um jeden Schritt, damit Sie das Ergebnis einfach genießen können.",
+    "stepLabel": "Schritt",
+    "steps": [
+      {
+        "title": "Private Beratung",
+        "text": "Wir hören zu, wie Sie mit Ihrem Pool, Whirlpool oder Ihrer Sauna leben möchten, und besuchen Ihr Grundstück, wenn es hilft."
+      },
+      {
+        "title": "Design und Planung",
+        "text": "Wir empfehlen die passenden Produkte und helfen bei Standort, Zugang, Stromanschluss und Vorarbeiten."
+      },
+      {
+        "title": "Lieferung",
+        "text": "Sorgfältige, koordinierte Lieferung bis vor Ihre Tür, auch von großen und schweren Produkten."
+      },
+      {
+        "title": "Installation",
+        "text": "Professionelle Installation mit lokalen Partnern, geprüft und betriebsbereit übergeben."
+      },
+      {
+        "title": "Nachbetreuung",
+        "text": "Tipps zu Pflege und Wartung und ein Ansprechpartner, den Sie erreichen, wenn Sie Hilfe brauchen."
+      }
+    ],
+    "ctaTitle": "Beginnen Sie mit einem Gespräch",
+    "ctaText": "Erzählen Sie uns von Ihrem Grundstück und was Sie sich vorstellen. Unverbindlich."
+  },
+  "guides": {
+    "title": "Ratgeber",
+    "intro": "Klare Ratschläge, die Ihnen bei der richtigen Wahl helfen.",
+    "read": "Ratgeber lesen",
+    "seeProducts": "Produkte ansehen",
+    "ctaTitle": "Nicht sicher, was zu Ihrem Zuhause passt?",
+    "ctaText": "Wir besprechen es gern mit Ihnen.",
+    "items": {
+      "pool-covers": {
+        "title": "So wählen Sie eine Poolabdeckung",
+        "intro": "Eine gute Abdeckung hält Ihren Pool sauberer, wärmer und sicherer und verringert den Pflegeaufwand.",
+        "sections": [
+          {
+            "h": "Warum den Pool abdecken",
+            "p": "Eine Abdeckung verringert Verdunstung und Wärmeverlust, hält Laub und Schmutz fern und erhöht die Sicherheit, vor allem mit Kindern oder Haustieren. Über eine Saison kann sie die Betriebskosten spürbar senken."
+          },
+          {
+            "h": "Gängige Arten",
+            "p": "Automatische Abdeckungen öffnen und schließen sich per Knopfdruck und können über oder unter dem Wasser liegen. Solarplanen fangen die Wärme der Sonne ein. Sicherheitsabdeckungen sind belastbar. Jede bietet eine andere Mischung aus Komfort, Budget und Optik."
+          },
+          {
+            "h": "Worauf Sie achten sollten",
+            "p": "Form und Größe Ihres Pools, wie Sie ihn übers Jahr nutzen, wie wichtig Ihnen Komfort und Optik sind und ob die Abdeckung im geöffneten Zustand verborgen sein soll. Das entscheidet, welche Art passt."
+          },
+          {
+            "h": "Installation",
+            "p": "Manche Abdeckungen eignen sich für bestehende Pools, andere plant man am besten beim Neubau mit ein. Wir beraten Sie gern, sobald wir Ihren Pool und Ihr Grundstück kennen."
+          }
+        ]
+      },
+      "spas": {
+        "title": "So wählen Sie einen Whirlpool",
+        "intro": "Ein Whirlpool dient der Entspannung, der Erholung und gemeinsamer Zeit. Die richtige Wahl hängt von Platz, Nutzung und Umgebung ab.",
+        "sections": [
+          {
+            "h": "Whirlpool oder Swim-Spa",
+            "p": "Ein Whirlpool ist zum Entspannen und Beisammensein da. Ein Swim-Spa bietet zusätzlich eine Gegenstromanlage zum Schwimmen und eignet sich für Training wie Freizeit, braucht aber mehr Platz."
+          },
+          {
+            "h": "Größe und Plätze",
+            "p": "Überlegen Sie, wie viele Personen ihn gleichzeitig nutzen und ob Sie lieber sitzen, liegen oder beides."
+          },
+          {
+            "h": "Innen oder außen",
+            "p": "Whirlpools im Freien brauchen einen festen Untergrund und einen sinnvollen Zugang. Im Innenbereich sind ein tragfähiger Boden, Belüftung und Feuchtigkeitskontrolle nötig."
+          },
+          {
+            "h": "Strom und Vorarbeiten",
+            "p": "Whirlpools brauchen einen geeigneten Stromanschluss und einen ebenen Untergrund. Wir helfen Ihnen, beides vor der Lieferung zu planen."
+          },
+          {
+            "h": "Pflege",
+            "p": "Moderne Whirlpools machen die Wasserpflege einfach. Wir erklären Ihnen die Routine und organisieren auf Wunsch den Service."
+          }
+        ]
+      },
+      "saunas-hammam": {
+        "title": "So wählen Sie eine Sauna oder einen Hammam",
+        "intro": "Wärme zu Hause ist eine der einfachsten Arten, sich etwas Gutes zu tun. Die beste Wahl hängt davon ab, wie und wo Sie sie nutzen.",
+        "sections": [
+          {
+            "h": "Arten",
+            "p": "Traditionelle Saunen bieten klassische trockene Hitze. Infrarotkabinen wärmen den Körper direkt bei niedrigerer Lufttemperatur. Ein Hammam ist ein Dampfbad mit hoher Luftfeuchtigkeit. Fasssaunen sind eine beliebte Wahl für draußen."
+          },
+          {
+            "h": "Innen oder außen",
+            "p": "Außensaunen lassen sich leichter aufstellen und sehen im Garten schön aus. Innensaunen sind das ganze Jahr nutzbar und brauchen gute Belüftung und Feuchtigkeitsschutz."
+          },
+          {
+            "h": "Beheizung",
+            "p": "Elektroöfen sind schnell und einfach. Holzöfen bieten ein klassisches Erlebnis, wo die Vorschriften es erlauben."
+          },
+          {
+            "h": "Platz und Komfort",
+            "p": "Wählen Sie die Größe danach, wie viele Personen sie nutzen, und denken Sie an die Höhe der Bänke und Platz zum Umziehen."
+          }
+        ]
+      }
+    }
+  },
+  "locations": {
+    "title": "Wo wir tätig sind",
+    "intro": "Beratung, Lieferung und Installation vor Ort an der gesamten Costa del Sol und auf Mallorca.",
+    "ctaTitle": "Erzählen Sie uns von Ihrem Grundstück",
+    "ctaText": "Wir helfen Ihnen, den richtigen Pool, Whirlpool oder die richtige Sauna zu finden, und kümmern uns um alles von der Lieferung bis zur Installation.",
+    "items": {
+      "marbella": {
+        "name": "Marbella",
+        "title": "Pools, Whirlpools und Saunen in Marbella",
+        "intro": "Das Leben im Freien gehört in Marbella dazu. Wir helfen Hausbesitzern, Poolabdeckungen, Whirlpools und Saunen auszuwählen, liefern zu lassen und zu installieren, die zu ihrem Zuhause passen.",
+        "text": "Von Villen in den Hügeln bis zu Wohnungen mit Terrasse stimmen wir das Produkt auf den Platz ab und kümmern uns um die Details."
+      },
+      "costa-del-sol": {
+        "name": "Costa del Sol",
+        "title": "Pools, Whirlpools und Saunen an der Costa del Sol",
+        "intro": "Bei langen, warmen Saisons wird ein gut gewählter Pool, Whirlpool oder eine Sauna einen Großteil des Jahres genutzt. Wir betreuen Häuser und Projekte entlang der gesamten Küste.",
+        "text": "Wir bieten persönliche Beratung und arbeiten mit bewährten lokalen Installateuren, sodass Sie von der ersten Idee bis zur Fertigstellung ein Team haben."
+      },
+      "mallorca": {
+        "name": "Mallorca",
+        "title": "Pools, Whirlpools und Saunen auf Mallorca",
+        "intro": "Denselben persönlichen Service bieten wir auf Mallorca, für Privathäuser ebenso wie für Fincas.",
+        "text": "Erzählen Sie uns von Ihrem Grundstück, und wir empfehlen, was passt, und kümmern uns um Lieferung und Installation."
+      }
+    }
+  },
+  "builder": {
+    "intro": "Wählen Sie eine Größe und die Details unten und senden Sie uns Ihre Anfrage. Wir melden uns mit Beratung und einem persönlichen Angebot. Unverbindlich.",
+    "steps": {
+      "size": "Größe",
+      "depth": "Tiefe",
+      "stairs": "Treppe",
+      "finish": "Folienfarbe",
+      "extras": "Extras",
+      "project": "Ihr Projekt",
+      "contact": "Ihre Kontaktdaten"
+    },
+    "extrasHint": "Wählen Sie so viele, wie Sie möchten.",
+    "location": "Standort",
+    "timeframe": "Wann",
+    "notes": "Sollten wir noch etwas wissen?",
+    "notesPlaceholder": "Zugang zum Garten, Hanglage, bestehender Pool, Wünsche…",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "required": "Bitte geben Sie Ihren Namen und eine E-Mail-Adresse oder Telefonnummer an.",
+    "summary": "Ihr Pool",
+    "noneSelected": "Nichts ausgewählt",
+    "send": "Anfrage per E-Mail senden",
+    "sendWhatsapp": "Per WhatsApp senden",
+    "sendNote": "Öffnet Ihr E-Mail-Programm oder WhatsApp mit Ihrer Auswahl, bereit zum Senden an uns.",
+    "subject": "Thermopool-Anfrage",
+    "greeting": "Hallo, ich hätte gern ein Angebot für einen Thermopool mit dieser Auswahl:",
+    "drawing": "Draufsicht (nicht maßstabsgetreu)"
+  },
+  "campaigns": {
+    "title": "Angebote & Pakete",
+    "intro": "Aktuelle Angebote und Paketpreise für Pools, Whirlpools und Abdeckungen. Fragen Sie uns nach den Details und einem persönlichen Angebot.",
+    "includes": "Enthalten",
+    "validUntil": "Gültig bis {date}",
+    "ask": "Zu diesem Angebot anfragen",
+    "sample": "Beispiel",
+    "empty": "Zurzeit gibt es keine Angebote. Fragen Sie uns nach Paketen für Ihr Projekt.",
+    "bar": "Planen Sie einen Pool oder Whirlpool?",
+    "barLink": "Fragen Sie nach unseren aktuellen Angeboten"
+  },
+  "terms": {
+    "title": "Kaufbedingungen",
+    "updated": "Zuletzt aktualisiert am {date}",
+    "draft": "Entwurf: Diese Bedingungen werden derzeit geprüft und in Kürze fertiggestellt."
+  }
+}

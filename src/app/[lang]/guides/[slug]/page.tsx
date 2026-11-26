@@ -6,6 +6,7 @@ import { ContactButtons } from "@/components/ContactButtons";
 import { guideSlugs, type GuideSlug } from "@/data/content";
 import { hasLocale, href, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 const isGuide = (s: string): s is GuideSlug => (guideSlugs as readonly string[]).includes(s);
 
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/guides/[sl
   const { lang, slug } = await params;
   if (!hasLocale(lang) || !isGuide(slug)) return {};
   const g = (await getDictionary(lang)).guides.items[slug];
-  return { title: g.title, description: g.intro };
+  return pageMetadata({ lang, path: `/guides/${slug}`, title: g.title, description: g.intro });
 }
 
 export default async function GuidePage({ params }: PageProps<"/[lang]/guides/[slug]">) {

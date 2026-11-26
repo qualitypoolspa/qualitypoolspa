@@ -1,6 +1,6 @@
 // AstralPool (Fluidra) pool covers. Source: Fluidra Katalog 2023 (pages 135–145, 155)
 // and AstralPool's product leaflets for the photos. Specs translated from Swedish.
-import type { Product, ProductImage } from "../products";
+import type { SupplierProduct, ProductImage } from "../products";
 
 const photos = (slug: string, sizes: [number, number][]): ProductImage[] =>
   sizes.map(([width, height], i) => ({ src: `/products/astralpool/${slug}/${i + 1}.webp`, width, height }));
@@ -14,7 +14,7 @@ const slatSpecs = [
   { group: { en: "Slats" }, label: { en: "Supplied" }, value: "7 slats pre-assembled (0.5 m) to save installation time" },
 ];
 
-export const astralpoolProducts: Product[] = [
+export const astralpoolProducts: SupplierProduct[] = [
   {
     slug: "octeo",
     category: "pool-covers",

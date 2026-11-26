@@ -1,6 +1,6 @@
 // Adapter for Harvia sauna cabins imported from harvia.com by scripts/import-harvia.mjs.
 // Re-run the script to refresh (add product links to its list); this file maps its output onto our Product shape.
-import type { Product } from "../products";
+import type { SupplierProduct } from "../products";
 import raw from "../imported/harvia.json";
 
 type Imported = {
@@ -60,7 +60,7 @@ const cm = (mm?: number) => (mm ? `${Math.round(mm / 10)} cm` : undefined);
 const m3 = (v?: number) => (v ? `${v.toLocaleString("en", { maximumFractionDigits: 1 })} m³` : undefined);
 const g = (group: string, label: string, value?: string) => (value ? [{ group: { en: group }, label: { en: label }, value }] : []);
 
-export const harviaProducts: Product[] = (raw as Imported[])
+export const harviaProducts: SupplierProduct[] = (raw as Imported[])
   .filter((p) => p.name)
   // Smallest first within each family.
   .sort((a, b) => (a.specs.width ?? 0) * (a.specs.depth ?? 0) - (b.specs.width ?? 0) * (b.specs.depth ?? 0))
@@ -76,8 +76,12 @@ export const harviaProducts: Product[] = (raw as Imported[])
         ? "Sauna cabin set with heater, control unit and infrared panel"
         : "Indoor sauna cabin";
     const tagline = size ? `${kind}, ${size}.` : `${kind}.`;
+    // Harvia's key features go at the end of the description as bullet lines (the database has no
+    // separate field for them, and this way the client can edit them in /admin like any text).
+    const bullets = p.highlights.map((h) => `• ${tidy(h)}`).join("\n");
+    const text = p.description.map(tidy).join("\n\n");
     // No text from Harvia (e.g. Olympus Large): the tagline doubles as the description, which hides the empty section.
-    const description = p.description.map(tidy).join("\n\n") || tagline;
+    const description = [text, bullets].filter(Boolean).join("\n\n") || tagline;
     return {
       slug: fix.slug ?? p.slug,
       category: "saunas-hammam",
@@ -86,7 +90,6 @@ export const harviaProducts: Product[] = (raw as Imported[])
       brand: "Harvia",
       tagline: { en: tagline },
       description: { en: description },
-      highlights: p.highlights.map((h) => ({ en: tidy(h) })),
       specs: [
         ...g("Dimensions", "Width", cm(s.width)),
         ...g("Dimensions", "Depth", cm(s.depth)),
@@ -94,12 +97,12 @@ export const harviaProducts: Product[] = (raw as Imported[])
         ...g("Dimensions", "Sauna volume", m3(s.saunaVolume)),
         ...g("Dimensions", "Net weight", s.netWeight ? `${s.netWeight} kg` : undefined),
         ...g("Heating", "Max. recommended room volume", m3(s.roomMaxVolume)),
-        ...g("Product", "Product family", p.family),
+        ...g("Product", "Product family", p.family?.replace(/ Sauna Cabin$/, "")),
         ...g("Product", "Type code", p.code),
         ...g("Product", "Harvia item number", s.itemNumber !== p.code ? s.itemNumber : undefined),
         ...g("Product", "Installation", "Indoors, free-standing on the floor"),
       ],
       images: p.images,
       downloads: p.downloads.map((d) => ({ label: { en: d.label }, url: d.url })),
-    } satisfies Product;
+    } satisfies SupplierProduct;
   });

@@ -2,16 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { categories, type CategorySlug } from "@/data/categories";
 import { categoryImages } from "@/data/home";
-import { productsIn } from "@/data/products";
 import { href, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { getCatalog } from "@/lib/catalog";
 
 type Props = { slug: CategorySlug; lang: Locale; dict: Dictionary; className?: string; large?: boolean; delay?: number };
 
 /** A category tile: photo with a wipe-in reveal, or a typographic tile when there's no photo yet. */
-export function Tile({ slug, lang, dict, className = "", large = false, delay = 0 }: Props) {
+export async function Tile({ slug, lang, dict, className = "", large = false, delay = 0 }: Props) {
   const img = categoryImages[slug];
-  const count = productsIn(slug).length;
+  const count = (await getCatalog()).productsIn(slug).length;
   const name = dict.categories[slug].name;
   const style = { "--d": `${delay}ms` } as React.CSSProperties;
 

@@ -4,12 +4,13 @@ import { PageHero } from "@/components/PageHero";
 import { ContactButtons } from "@/components/ContactButtons";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/services">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const { services } = await getDictionary(lang);
-  return { title: services.title, description: services.intro };
+  return pageMetadata({ lang, path: "/services", title: services.title, description: services.intro });
 }
 
 export default async function ServicesPage({ params }: PageProps<"/[lang]/services">) {
