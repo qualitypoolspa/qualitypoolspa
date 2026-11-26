@@ -13,6 +13,7 @@ export async function Header({ lang, dict }: { lang: Locale; dict: Dictionary })
   const products = productNav(lang, dict, await getCatalog());
   const pages = [
     { href: href(lang, "/campaigns"), name: dict.nav.campaigns },
+    { href: href(lang, "/about"), name: dict.nav.about },
   ];
   const contact = { href: href(lang, "/contact"), name: dict.nav.contactUs };
 
