@@ -205,6 +205,7 @@
       "title": "Conoce al equipo",
       "intro": "Las personas que te ayudarán desde la primera idea hasta la instalación terminada.",
       "roles": {
+        "generalManager": "Directora general",
         "storeManager": "Responsable de ventas de tienda",
         "sales": "Ventas",
         "technician": "Técnico"

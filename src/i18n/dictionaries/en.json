@@ -205,6 +205,7 @@
       "title": "Meet the team",
       "intro": "The people who will help you from the first idea to the finished installation.",
       "roles": {
+        "generalManager": "General Manager",
         "storeManager": "Store Sales Manager",
         "sales": "Sales",
         "technician": "Technician"
