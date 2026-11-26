@@ -24,7 +24,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               {site.email}
             </a>
             <p className="mt-3">
-              <a href={`tel:+${site.whatsapp}`} className={`${link} text-white/70`}>{site.phoneDisplay}</a>
+              <a href={`tel:${site.phoneTel}`} className={`${link} text-white/70`}>{site.phoneDisplay}</a>
             </p>
             <p className="mt-1 text-sm text-white/50">{site.locations.join(" · ")}</p>
           </div>
